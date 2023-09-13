@@ -1,5 +1,10 @@
 import './style.css';
 
+// run "npm start" in terminal to watch project.
+// "control+c" to close, or kill terminal.
+
+
+
 
 function component() {
     const element = document.createElement(`div`);
@@ -11,9 +16,10 @@ function component() {
 document.body.appendChild(component());
 
 
-function createElement(id){
+function createElement([array]){
     const element = document.createElement(`div`);
-    element.setAttribute(`id`, `${id}`);
+
+    element.setAttribute(`id`, `${array[0]}`);
     element.innerHTML = `something`;
     if (arguments.length > 1){
         for (let i = 1; i < arguments.length; i++ ){
@@ -41,7 +47,8 @@ function enchilada(array, content, location){
     placeElement(element,location);
 }
 
-console.log(`something else`);
+console.log(`something`);
+console.log(`something  else`);
 
 enchilada([`kevin`, `frederick`, `boutilier`], "I can't believe it mother fucking worked", "content")
 
