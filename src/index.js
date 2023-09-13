@@ -11,7 +11,7 @@ function component() {
 document.body.appendChild(component());
 
 
-function newElement(id){
+function createElement(id){
     const element = document.createElement(`div`);
     element.setAttribute(`id`, `${id}`);
     element.innerHTML = `something`;
@@ -20,7 +20,25 @@ function newElement(id){
             element.classList.add(`${arguments[i]}`)
         }
     }
-    document.body.appendChild(element)
+    return element;
+}
+
+function populateElement(element, content){
+    element.innerHTML = content;
+    return element;
+}
+
+function placeElement(element, location){
+    const locationDiv = document.getElementById(`${location}`);
+    locationDiv.appendChild(element);
+    return;
+}
+
+
+function enchilada(array, content, location){
+    let element = createElement(array);
+    populateElement(element, content);
+    placeElement(element,location);
 }
 
 console.log(`something else`);
