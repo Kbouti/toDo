@@ -7,7 +7,7 @@ import './style.css';
 
 
 
-function createEl(array, type){
+function makeEl(array, type){
     const element = document.createElement(`${type}`);
     let id = array[0];
 
@@ -34,7 +34,7 @@ function placeEl(element, location){
 
 
 function createElement(array, type, content, location){
-    let element = createEl(array, type);
+    let element = makeEl(array, type);
     populateEl(element, content);
     placeEl(element,location);
 }
