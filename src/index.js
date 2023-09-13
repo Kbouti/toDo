@@ -43,9 +43,13 @@ function enchilada(array, content, location){
 
 console.log(`something else`);
 
+enchilada([`kevin`, `frederick`, `boutilier`], "I can't believe it mother fucking worked", "content")
 
-newElement(`sassy`);
-newElement(`kevin`, `frederick`, `boutilier`);
+
+
+
+// newElement(`sassy`);
+// newElement(`kevin`, `frederick`, `boutilier`);
 
 
 
