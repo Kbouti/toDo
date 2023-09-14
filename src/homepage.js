@@ -10,9 +10,8 @@ import createElement from './elementMaker.js';
 function buildPage(){
     createElement([`header`], `div`, ``,`content`);
         createElement([`title`], `div`, `To Do List`, `header`);
-    createElement([`body`], `div`, ``, `content`);
-        createElement([`sidebar`], `div`, ``, `body`);
-        createElement([`mainBody`], `div`, ``, `body`);
+    createElement([`sidebar`], `div`, ``, `content`);
+    createElement([`mainBody`], `div`, ``, `content`);
     createElement([`footer`], `div`, ``, `content`);
 }
 
