@@ -15,3 +15,15 @@ let task1 = new Task(`car`, `Roof Bike Rack`, `Mount fork mount on roof rack. Ne
 console.log(task1)
 
 
+function add(a, b){
+    return a + b;
+}
+
+function subtract(a, b){
+    return a-b;
+}
+
+module.exports = {
+    add,
+    subtract
+}

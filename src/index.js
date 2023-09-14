@@ -17,3 +17,14 @@ buildPage();
 //class constructor to make tasks
 //projects to organize tasks
 //ui to manipulate tasks
+
+
+
+const taskConstructor = require(`./taskConstructor.js`);
+
+const result1 = taskConstructor.add(5, 3);
+const result2 = taskConstructor.subtract(70, 1);
+
+console.log(result1);
+console.log(result2);
+
