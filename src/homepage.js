@@ -8,8 +8,12 @@ import createElement from './elementMaker.js';
 //  4. A string containing the id of the element you'd like to append the new element to. The main container is #content.
 
 function buildPage(){
-    createElement([`header`], `div`, ``,`content`)
-    createElement([`title`, `headerContent`], `div`, `To Do List`, `header`)
+    createElement([`header`], `div`, ``,`content`);
+        createElement([`title`], `div`, `To Do List`, `header`);
+    createElement([`body`], `div`, ``, `content`);
+        createElement([`sidebar`], `div`, ``, `body`);
+        createElement([`mainBody`], `div`, ``, `body`);
+    createElement([`footer`], `div`, ``, `content`);
 }
 
 
