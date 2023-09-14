@@ -17,8 +17,15 @@
     background-color: aqua;
     grid-column-start: 1;
     grid-column-end: 3;
-
     background-image: linear-gradient(to top left,rgb(0, 163, 217), aqua);
+    display:flex;
+}
+
+#title{
+    color:white;
+    font-size:44px;
+    padding:16px;
+    margin-top:auto;
 }
 
 #sidebar{
