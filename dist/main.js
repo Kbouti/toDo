@@ -110,13 +110,23 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/elementMaker.js":
+/*!*****************************!*\
+  !*** ./src/elementMaker.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n//div creation function:\n\n//  Create element takes 4 arguments:\n//  1. Array containing first the id, then any class attributes.\n//  2. A string indicating the type of the new element    'div'\n//  3. A string containing the innerhtml content.\n//  4. A string containing the id of the element you'd like to append the new element to. The main container is #content.\n\n\nfunction makeEl(array, type){\n    const element = document.createElement(`${type}`);\n    let id = array[0];\n    element.setAttribute(`id`, `${id}`);\n    element.innerHTML = `something`;\n    if (array.length > 1){\n        for (let i = 1; i < array.length; i++ ){\n            element.classList.add(`${array[i]}`)\n        }\n    }\n    return element;\n}\nfunction populateEl(element, content){\n    element.innerHTML = content;\n    return element;\n}\nfunction placeEl(element, location){\n    const locationDiv = document.getElementById(`${location}`);\n    locationDiv.appendChild(element);\n    return;\n}\nfunction createElement(array, type, content, location){\n    let element = makeEl(array, type);\n    populateEl(element, content);\n    placeEl(element,location);\n}\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createElement);\n\n\n\n//# sourceURL=webpack://todo/./src/elementMaker.js?");
+
+/***/ }),
+
 /***/ "./src/homepage.js":
 /*!*************************!*\
   !*** ./src/homepage.js ***!
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n//div creation function:\n\nfunction makeEl(array, type){\n    const element = document.createElement(`${type}`);\n    let id = array[0];\n    element.setAttribute(`id`, `${id}`);\n    element.innerHTML = `something`;\n    if (array.length > 1){\n        for (let i = 1; i < array.length; i++ ){\n            element.classList.add(`${array[i]}`)\n        }\n    }\n    return element;\n}\nfunction populateEl(element, content){\n    element.innerHTML = content;\n    return element;\n}\nfunction placeEl(element, location){\n    const locationDiv = document.getElementById(`${location}`);\n    locationDiv.appendChild(element);\n    return;\n}\nfunction createElement(array, type, content, location){\n    let element = makeEl(array, type);\n    populateEl(element, content);\n    placeEl(element,location);\n}\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createElement);\n\n//  Create element takes 4 arguments:\n//  1. Array containing first the id, then any class attributes.\n//  2. A string indicating the type of the new element    'div'\n//  3. A string containing the innerhtml content.\n//  4. A string containing the id of the element you'd like to append the new element to. The main container is #content.\n\n\n//# sourceURL=webpack://todo/./src/homepage.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _elementMaker_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elementMaker.js */ \"./src/elementMaker.js\");\n\n\n\n//  Create element takes 4 arguments:\n//  1. Array containing first the id, then any class attributes.\n//  2. A string indicating the type of the new element    'div'\n//  3. A string containing the innerhtml content.\n//  4. A string containing the id of the element you'd like to append the new element to. The main container is #content.\n\nfunction buildPage(){\n    (0,_elementMaker_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])([`header`], `div`, ``,`content`)\n    ;(0,_elementMaker_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])([`title`, `headerContent`], `div`, `To Do List`, `header`)\n}\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (buildPage);\n\n//# sourceURL=webpack://todo/./src/homepage.js?");
 
 /***/ }),
 
@@ -126,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _homepage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./homepage.js */ \"./src/homepage.js\");\n\n\n// run \"npm start\" in terminal to watch project.\n// \"control+c\" to close, or kill terminal.\n\n\n\n\n(0,_homepage_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])([`kevin`, `frederick`, `boutilier`], `div`, \"I can't believe it friggin worked\", \"content\");\n(0,_homepage_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(['sassy', 'boutilier'], 'div', 'Another sentence up on the mafuckin screen', 'content');\n\n\n\n\n//class constructor to make divs\n//homepage dom element loading\n//class constructor to make tasks\n//projects to organize tasks\n//ui to manipulate tasks\n\n//# sourceURL=webpack://todo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _homepage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./homepage */ \"./src/homepage.js\");\n\n\n\n\n(0,_homepage__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n// run \"npm start\" in terminal to watch project.\n// \"control+c\" to close, or kill terminal.\n\n\n\n\n\n\n//class constructor to make divs\n//homepage dom element loading\n//class constructor to make tasks\n//projects to organize tasks\n//ui to manipulate tasks\n\n//# sourceURL=webpack://todo/./src/index.js?");
 
 /***/ })
 
