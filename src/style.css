@@ -50,7 +50,8 @@
     background-color: var(--colorD);
     border: 8px solid var(--colorC);
     border-radius:15px;
-    width:min(30vw, 300px);
+    width:30vw;
+    max-width:300px;
     margin:20px;
 }
 
@@ -59,7 +60,7 @@
 }
 
 #mainBody{
-    background-color: rgb(255, 255, 255);
+    background-color: var(--colorD);
 }
 
 #footer{
