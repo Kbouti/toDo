@@ -14,10 +14,9 @@
 #content{
     height:100vh;
     width:100vw;
-    display:grid;
+    display:flex;
+    flex-direction:column;
 
-    grid-template-columns: 300px auto;
-    grid-template-rows: 20vh 65vh 15vh;
 }
 
 #header{
@@ -26,6 +25,7 @@
     grid-column-end: 3;
     background-image: linear-gradient(to top left,var(--colorA), var(--colorB));
     display:flex;
+    height: auto;
 }
 
 #title{
@@ -35,11 +35,17 @@
     margin-top:auto;
 }
 
+#body{
+    display:flex;
+    flex-direction:row;
+    flex-grow:1;
+}
+
 #sidebar{
     background-color: var(--colorD);
     border: 8px solid var(--colorC);
     border-radius:15px;
-
+    width:min(30vw, 300px);
     margin:20px;
 }
 
@@ -51,5 +57,5 @@
     grid-column-start: 1;
     grid-column-end: 3;
     background-image: linear-gradient(to top right,var(--colorA), var(--colorB));
-
+    height:60px;
 }
