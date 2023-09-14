@@ -9,7 +9,7 @@
     width:100vw;
     display:grid;
 
-    grid-template-columns: max(1fr, 400px) 5fr;
+    grid-template-columns: 300px auto;
     grid-template-rows: 20vh 65vh 15vh;
 }
 
@@ -17,19 +17,22 @@
     background-color: aqua;
     grid-column-start: 1;
     grid-column-end: 3;
+
+    background-image: linear-gradient(to top left,rgb(0, 163, 217), aqua);
 }
 
 #sidebar{
-    background-color: darkcyan;
+    background-color: rgb(176, 177, 177);
 }
 
 #mainBody{
-    background-color: darkgoldenrod;
+    background-color: rgb(255, 255, 255);
 }
 
 #footer{
     background-color: aqua;
     grid-column-start: 1;
     grid-column-end: 3;
+    background-image: linear-gradient(to top right,rgb(0, 163, 217), aqua);
 
 }
