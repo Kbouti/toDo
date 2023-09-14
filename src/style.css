@@ -9,6 +9,11 @@
     --colorB: rgb(0, 255, 255);
     --colorC: rgb(176, 177, 177);
     --colorD: rgb(255, 255, 255);
+
+    --fontSizeA: 44px;
+    --fontSizeB: 36px;
+    --fontSizeC: 24px;
+    --fontSizeD: 18px;
 }
 
 #content{
@@ -30,7 +35,7 @@
 
 #title{
     color: var(--colorD);
-    font-size:44px;
+    font-size:var(--fontSizeA);
     padding:16px;
     margin-top:auto;
 }
@@ -47,6 +52,10 @@
     border-radius:15px;
     width:min(30vw, 300px);
     margin:20px;
+}
+
+#sidebarTitle{
+    font-size: var(--fontSizeC);
 }
 
 #mainBody{
