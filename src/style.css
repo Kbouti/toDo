@@ -1,21 +1,3 @@
-.hello {
-    /* background-color: black; */
-    color:aqua;
-}
-
-
-#sassy{
-    background-color: red;;
-}
-
-#kevin {
-    background-color: aqua;
-}
-
-.boutilier {
-    font-size: 40px;
-}
-
-.frederick {
-    color:blue;
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
