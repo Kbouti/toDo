@@ -25,6 +25,10 @@ const taskConstructor = require(`./taskConstructor.js`);
 const result1 = taskConstructor.add(5, 3);
 const result2 = taskConstructor.subtract(70, 1);
 
+const Task = taskConstructor.Task;
+const task1 = new Task(`car`, `Roof Bike Rack`, `Mount fork mount on roof rack. Need brackets to secure fork mount to roof rails`, `low`, `need parts`);
+console.log(task1);
+
 console.log(result1);
 console.log(result2);
 

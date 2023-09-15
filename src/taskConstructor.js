@@ -12,11 +12,17 @@ class Task {
         this.status = status;
     }
 
+    log(){
+        console.log(this.task);
+    }
+
 }
 
 let task1 = new Task(`car`, `Roof Bike Rack`, `Mount fork mount on roof rack. Need brackets to secure fork mount to roof rails`, `low`, `need parts`);
 
-console.log(task1)
+// console.log(task1)
+
+// log(task1);
 
 
 function add(a, b){
@@ -29,5 +35,6 @@ function subtract(a, b){
 
 module.exports = {
     add,
-    subtract
+    subtract,
+    Task
 }
