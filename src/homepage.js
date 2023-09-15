@@ -13,12 +13,16 @@ function buildPage(){
     createElement([`body`], `div`, ``, `content`)
     createElement([`sidebar`], `div`, ``, `body`);
         createElement([`sidebarTitle`], `div`, `Projects`, `sidebar`);
-        createElement([`newProjectBtn`, `btn`], `div`, ``, `sidebar`);
+        createElement([`newProjectBtn`, `addBtn`], `div`, ``, `sidebar`);
             createElement([`addGraphic`, `material-symbols-outlined`], `span`, `add`, `newProjectBtn`);
             createElement([`addProject`, `btnText`], `span`, `New Project`, `newProjectBtn`);
         createElement([`projectsContainer`], `div`, ``, `sidebar`);
     createElement([`mainBody`], `div`, ``, `body`);
-        
+        createElement([`bodyTitle`], `div`, `Tasks`, `mainBody`)
+        createElement([`newTaskBtn`, `addBtn`], `div`, ``, `mainBody`);
+            createElement([`addGraphic2`, `material-symbols-outlined`], `span`, `add`, `newTaskBtn`);
+            createElement([`addTask`, `btnText`], `span`, `New Task`, `newTaskBtn`);
+
     createElement([`footer`], `div`, ``, `content`);
 }
 
