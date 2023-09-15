@@ -13,6 +13,7 @@ function buildPage(){
     createElement([`body`], `div`, ``, `content`)
     createElement([`sidebar`], `div`, ``, `body`);
         createElement([`sidebarTitle`], `div`, `Projects`, `sidebar`);
+        createElement([`addGraphic`, `material-symbols-outlined`], `span`, `add`, `sidebar`);
     createElement([`mainBody`], `div`, ``, `body`);
     createElement([`footer`], `div`, ``, `content`);
 }
