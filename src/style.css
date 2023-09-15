@@ -76,6 +76,10 @@
     /* border: 3px solid black; */
 }
 
+.addBtn:hover{
+    color:var(--colorB);
+}
+
 .title{
     font-size: var(--fontSizeC);
     margin:8px;
