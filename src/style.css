@@ -73,11 +73,14 @@
     justify-content:center;
     align-content:center;
     cursor:pointer;
-    /* border: 3px solid black; */
+    font-size: var(--fontSizeD);
+    transition: color .7s;
+    transition: font-size .7s;
 }
 
 .addBtn:hover{
     color:var(--colorB);
+    font-size: var(--fontSizeC);
 }
 
 .title{
