@@ -74,8 +74,7 @@
     align-content:center;
     cursor:pointer;
     font-size: var(--fontSizeD);
-    transition: color .7s;
-    transition: font-size .7s;
+    transition: color .7s, font-size .7s;
 }
 
 .addBtn:hover{
