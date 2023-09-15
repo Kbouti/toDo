@@ -17,8 +17,8 @@ function buildPage(){
             createElement([`addGraphic`, `material-symbols-outlined`], `span`, `add`, `newProjectBtn`);
             createElement([`addProject`, `btnText`], `span`, `New Project`, `newProjectBtn`);
         createElement([`projectsContainer`], `div`, ``, `sidebar`);
-
     createElement([`mainBody`], `div`, ``, `body`);
+        
     createElement([`footer`], `div`, ``, `content`);
 }
 
