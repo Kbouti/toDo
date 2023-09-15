@@ -82,6 +82,14 @@
     font-size: var(--fontSizeC);
 }
 
+.form{
+    height:400px;
+    width:800px;
+    background-color: var(--colorC);
+}
+
+
+
 .title{
     font-size: var(--fontSizeC);
     margin:8px;
