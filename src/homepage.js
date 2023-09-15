@@ -12,13 +12,13 @@ function buildPage(){
         createElement([`title`], `div`, `To Do List`, `header`);
     createElement([`body`], `div`, ``, `content`)
     createElement([`sidebar`], `div`, ``, `body`);
-        createElement([`sidebarTitle`], `div`, `Projects`, `sidebar`);
+        createElement([`sidebarTitle`, `title`], `div`, `Projects`, `sidebar`);
         createElement([`newProjectBtn`, `addBtn`], `div`, ``, `sidebar`);
             createElement([`addGraphic`, `material-symbols-outlined`], `span`, `add`, `newProjectBtn`);
             createElement([`addProject`, `btnText`], `span`, `New Project`, `newProjectBtn`);
         createElement([`projectsContainer`], `div`, ``, `sidebar`);
     createElement([`mainBody`], `div`, ``, `body`);
-        createElement([`bodyTitle`], `div`, `Tasks`, `mainBody`)
+        createElement([`bodyTitle`, `title`], `div`, `Tasks`, `mainBody`)
         createElement([`newTaskBtn`, `addBtn`], `div`, ``, `mainBody`);
             createElement([`addGraphic2`, `material-symbols-outlined`], `span`, `add`, `newTaskBtn`);
             createElement([`addTask`, `btnText`], `span`, `New Task`, `newTaskBtn`);
