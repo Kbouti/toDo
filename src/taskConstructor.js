@@ -1,5 +1,22 @@
 class Project {
 
+    constructor(title,canDelete){
+        this.title = title;
+        this.canDelete = canDelete;
+    }
+
+    delete(){
+        //to delete this project and all tasks it contains. Cannot be performed on the default "misc" project.
+        if (this.canDelete = true){
+
+        }
+    }
+
+    clearContents(){
+        //to remove all tasks from this project
+    }
+
+
 }
 
 class Task {
@@ -18,23 +35,11 @@ class Task {
 
 }
 
-let task1 = new Task(`car`, `Roof Bike Rack`, `Mount fork mount on roof rack. Need brackets to secure fork mount to roof rails`, `low`, `need parts`);
-
-// console.log(task1)
-
-// log(task1);
 
 
-function add(a, b){
-    return a + b;
-}
 
-function subtract(a, b){
-    return a-b;
-}
 
 module.exports = {
-    add,
-    subtract,
-    Task
+    Task,
+    Project
 }
