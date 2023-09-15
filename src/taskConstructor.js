@@ -5,7 +5,11 @@ class Project {
 class Task {
 
     constructor(project, title, description, urgency, status){
-
+        this.project = project;
+        this.title = title;
+        this.description = description;
+        this.urgency = urgency;
+        this.status = status;
     }
 
 }

@@ -158,7 +158,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \********************************/
 /***/ ((module) => {
 
-eval("class Project {\n\n}\n\nclass Task {\n\n    constructor(project, title, description, urgency, status){\n\n    }\n\n}\n\nlet task1 = new Task(`car`, `Roof Bike Rack`, `Mount fork mount on roof rack. Need brackets to secure fork mount to roof rails`, `low`, `need parts`);\n\nconsole.log(task1)\n\n\nfunction add(a, b){\n    return a + b;\n}\n\nfunction subtract(a, b){\n    return a-b;\n}\n\nmodule.exports = {\n    add,\n    subtract\n}\n\n//# sourceURL=webpack://todo/./src/taskConstructor.js?");
+eval("class Project {\n\n}\n\nclass Task {\n\n    constructor(project, title, description, urgency, status){\n        this.project = project;\n        this.title = title;\n        this.description = description;\n        this.urgency = urgency;\n        this.status = status;\n    }\n\n}\n\nlet task1 = new Task(`car`, `Roof Bike Rack`, `Mount fork mount on roof rack. Need brackets to secure fork mount to roof rails`, `low`, `need parts`);\n\nconsole.log(task1)\n\n\nfunction add(a, b){\n    return a + b;\n}\n\nfunction subtract(a, b){\n    return a-b;\n}\n\nmodule.exports = {\n    add,\n    subtract\n}\n\n//# sourceURL=webpack://todo/./src/taskConstructor.js?");
 
 /***/ })
 
