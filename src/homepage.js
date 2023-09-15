@@ -24,6 +24,7 @@ function buildPage(){
             createElement([`addTask`, `btnText`], `span`, `New Task`, `newTaskBtn`);
 
     createElement([`footer`], `div`, ``, `content`);
+        createElement([`signature`], `div`, `Kbouti 2023`, `footer`);
 }
 
 

@@ -111,4 +111,9 @@
     grid-column-end: 3;
     background-image: linear-gradient(to top right,var(--colorA), var(--colorB));
     height:60px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:var(--colorD);
 }
+
