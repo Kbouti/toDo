@@ -1,5 +1,4 @@
 class Project {
-
     constructor(title,canDelete){
         this.title = title;
         this.canDelete = canDelete;
@@ -30,13 +29,10 @@ class Task {
     }
 
     log(){
-        console.log(this.task);
+        console.log(this);
     }
 
 }
-
-
-
 
 
 module.exports = {
