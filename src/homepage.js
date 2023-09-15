@@ -7,6 +7,9 @@ import createElement from './elementMaker.js';
 //  3. A string containing the innerhtml content.
 //  4. A string containing the id of the element you'd like to append the new element to. The main container is #content.
 
+//createElement([`id`, `class`], `div`,`innerText`, `locationId`)
+
+
 function buildPage(){
     createElement([`header`], `div`, ``,`content`);
         createElement([`title`], `div`, `To Do List`, `header`);
