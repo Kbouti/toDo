@@ -6,12 +6,12 @@ import createElement from './elementMaker.js';
 
 function generateforms(){
     function taskForm(){
-        createElement([`taskForm`, `form`], `div`, ``, `content`);
-        createElement([`taskFormTitle`, `title`], `div`, `Create New Task`, `taskForm`);
+        createElement([`taskFormDiv`, `form`], `div`, ``, `content`);
+            createElement([`taskFormTitle`, `title`], `div`, `Create New Task`, `taskFormDiv`);
     }
     function projectForm(){
-        createElement([`projectForm`, `form`], `div`, ``, `content`);
-        createElement([`projectFormTitle`, `title`], `div`, `Create New Project`, `projectForm`);
+        createElement([`projectFormDiv`, `form`], `div`, ``, `content`);
+            createElement([`projectFormTitle`, `title`], `div`, `Create New Project`, `projectFormDiv`);
     }
 
     taskForm();
