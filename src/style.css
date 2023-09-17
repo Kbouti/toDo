@@ -89,12 +89,18 @@
     background-color: var(--colorC);
     display:flex;
     justify-content: center;
-    color: var(--colorD);
+    color: var(--colorE);
+    border: 3px solid var(--colorA);
+    background-color: var(--colorD);
     border-radius:15px;
     position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
+}
+
+.form .title {
+    font-size: var(--fontSizeB);
 }
 
 
