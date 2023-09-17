@@ -18,11 +18,13 @@ const speak = taskConstructor.speak
 
 const domManipulator = require(`./domManipulator.js`)
 const toggleDisplay = domManipulator.toggleDisplay;
+const addEventListeners = domManipulator.addEventListeners;
+
 
 buildPage();
 generateforms();
-toggleDisplay(`projectFormDiv`, `flex`);
-toggleDisplay(`taskFormDiv`, `flex`);
+addEventListeners();
+
 
 
 const task1 = new Task(`Car`, `Roof Bike Rack`, `Mount fork clamp on roof rack. Need brackets to secure fork mount to roof rails`, `low`, `need parts`);

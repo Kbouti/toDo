@@ -11,10 +11,20 @@ function toggleDisplay(id, standardDisplay){
 }
 
 
+function addEventListeners(){
+    const newProjectBtn = document.getElementById(`newProjectBtn`);
+    newProjectBtn.addEventListener(`click`, function(){
+    toggleDisplay(`projectFormDiv`, `flex`)
+    })
 
+    const newTaskBtn = document.getElementById(`newTaskBtn`);
+    newTaskBtn.addEventListener(`click`, function(){
+    toggleDisplay(`taskFormDiv`, `flex`)
+    })
+}
 
 
 module.exports = {
-
-    toggleDisplay
+    toggleDisplay,
+    addEventListeners
 }
