@@ -36,4 +36,3 @@ function createElement(array, type, content, location){
 
 
 export default createElement;
-
