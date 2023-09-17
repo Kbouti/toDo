@@ -119,6 +119,16 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/domManipulator.js":
+/*!*******************************!*\
+  !*** ./src/domManipulator.js ***!
+  \*******************************/
+/***/ ((module) => {
+
+eval("function test(){\n    console.log(`All is working well here`);\n}\n\nmodule.exports = {\n    test\n}\n\n//# sourceURL=webpack://todo/./src/domManipulator.js?");
+
+/***/ }),
+
 /***/ "./src/elementMaker.js":
 /*!*****************************!*\
   !*** ./src/elementMaker.js ***!
@@ -159,7 +169,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _homepage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./homepage */ \"./src/homepage.js\");\n/* harmony import */ var _forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./forms */ \"./src/forms.js\");\n\n\n\n\n// run \"npm start\" in terminal to watch project.\n// \"control+c\" to close, or kill terminal.\n\n\n\n\n\n\n\nconst taskConstructor = __webpack_require__(/*! ./taskConstructor.js */ \"./src/taskConstructor.js\");\nconst Task = taskConstructor.Task;\nconst Project = taskConstructor.Project;\n\n\n(0,_homepage__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n(0,_forms__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n// taskForm();\n\n\nconst task1 = new Task(`Car`, `Roof Bike Rack`, `Mount fork clamp on roof rack. Need brackets to secure fork mount to roof rails`, `low`, `need parts`);\nconsole.log(task1.project)\n\n\ntask1.log()\n\n\n//# sourceURL=webpack://todo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _homepage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./homepage */ \"./src/homepage.js\");\n/* harmony import */ var _forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./forms */ \"./src/forms.js\");\n\n\n\n\n// run \"npm start\" in terminal to watch project.\n// \"control+c\" to close, or kill terminal.\n\n\n\n\n\n\n\nconst taskConstructor = __webpack_require__(/*! ./taskConstructor.js */ \"./src/taskConstructor.js\");\nconst Task = taskConstructor.Task;\nconst Project = taskConstructor.Project;\nconst speak = taskConstructor.speak\n\nconst domManipulator = __webpack_require__(/*! ./domManipulator.js */ \"./src/domManipulator.js\")\nconst test = domManipulator.test;\n\n(0,_homepage__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n(0,_forms__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n// taskForm();\ntest();\n\n\nconst task1 = new Task(`Car`, `Roof Bike Rack`, `Mount fork clamp on roof rack. Need brackets to secure fork mount to roof rails`, `low`, `need parts`);\nconsole.log(task1.project)\n\n\ntask1.log()\n\n\n//# sourceURL=webpack://todo/./src/index.js?");
 
 /***/ }),
 
@@ -169,7 +179,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \********************************/
 /***/ ((module) => {
 
-eval("class Project {\n    constructor(title,canDelete){\n        this.title = title;\n        this.canDelete = canDelete;\n    }\n\n    delete(){\n        //to delete this project and all tasks it contains. Cannot be performed on the default \"misc\" project.\n        if (this.canDelete = true){\n\n        }\n    }\n\n    clearContents(){\n        //to remove all tasks from this project\n    }\n\n\n}\n\nclass Task {\n\n    constructor(project, title, description, urgency, status){\n        this.project = project;\n        this.title = title;\n        this.description = description;\n        this.urgency = urgency;\n        this.status = status;\n    }\n\n    log(){\n        console.log(this);\n    }\n\n}\n\n\nmodule.exports = {\n    Task,\n    Project\n}\n\n//# sourceURL=webpack://todo/./src/taskConstructor.js?");
+eval("class Project {\n    constructor(title,canDelete){\n        this.title = title;\n        this.canDelete = canDelete;\n    }\n\n    delete(){\n        //to delete this project and all tasks it contains. Cannot be performed on the default \"misc\" project.\n        if (this.canDelete = true){\n\n        }\n    }\n\n    clearContents(){\n        //to remove all tasks from this project\n    }\n\n\n}\n\nclass Task {\n\n    constructor(project, title, description, urgency, status){\n        this.project = project;\n        this.title = title;\n        this.description = description;\n        this.urgency = urgency;\n        this.status = status;\n    }\n\n    log(){\n        console.log(this);\n    }\n\n}\n\n\n\nfunction speak(){\n    console.log(`something cool`);\n}\n\nmodule.exports = {\n    Task,\n    Project\n}\n\n//# sourceURL=webpack://todo/./src/taskConstructor.js?");
 
 /***/ })
 
