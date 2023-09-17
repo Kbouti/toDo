@@ -14,7 +14,6 @@ import generateforms from './forms';
 const taskConstructor = require(`./taskConstructor.js`);
 const Task = taskConstructor.Task;
 const Project = taskConstructor.Project;
-const speak = taskConstructor.speak
 
 const domManipulator = require(`./domManipulator.js`)
 const toggleDisplay = domManipulator.toggleDisplay;
