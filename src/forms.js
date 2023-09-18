@@ -23,11 +23,16 @@ function generateforms(){
                 projectForm.setAttribute(`autocomplete`, `off`);
                 createElement([`projectNameLabel`, `label`], `label`, `Project Name: `, `projectForm`);
                     const projectNameLabel = document.getElementById(`projectNameLabel`);
-                        projectNameLabel.setAttribute(`for`, `projectName`);
+                    projectNameLabel.setAttribute(`for`, `projectName`);
                 createElement([`projectNameInput`, `textInput`], `input`, ``, `projectForm`);
                     const projectNameInput = document.getElementById(`projectNameInput`);
                     projectNameLabel.setAttribute(`required`, `true`);
                     projectNameLabel.setAttribute(`for`, `projectName`);
+                createElement([`newProjectCancelButton`, `cancel`, `button`], `button`, `Cancel`, `projectForm` )
+                createElement([`newProjectSubmitButton`, `submit`, `button`], `button`, `Submit`, `projectForm` )
+                    const newProjectSubmitButton = document.getElementById(`newProjectSubmitButton`);
+                    newProjectSubmitButton.setAttribute(`type`, `submit`);
+
 
     }
 
