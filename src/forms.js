@@ -23,6 +23,29 @@ function generateForms(){
                         option += '<option value="'+projects[i] + '">' + projects[i]+"</option>"
                     }
                     projectDropDown.innerHTML = option;
+                    createElement([`taskFormContainer2`, `formContainer`], `div`, ``, `taskForm`)
+                        createElement([`taskNameLabel`, `label`], `label`, `Task Name: `, `taskFormContainer2`);
+                            const taskNameLabel = document.getElementById(`taskNameLabel`);
+                            taskNameLabel.setAttribute(`for`, `taskName`);
+                        createElement([`taskNameInput`, `textInput`], `input`, ``, `taskFormContainer2`);
+                            const taskNameInput = document.getElementById(`taskNameInput`);
+                            taskNameInput.setAttribute(`required`, `true`);
+                            taskNameInput.setAttribute(`for`, `taskName`);
+                            
+
+                    createElement([`taskFormContainer3`, `formContainer`], `div`, ``, `taskForm`)
+                        createElement([`taskDescriptionLabel`, `label`], `label`, `Task Description: `, `taskFormContainer3`);
+                            const taskDescriptionLabel = document.getElementById(`taskDescriptionLabel`);
+                            taskDescriptionLabel.setAttribute(`for`, `taskDescription`);
+                        createElement([`taskDescriptionInput`, `textInput`], `input`, ``, `taskFormContainer3`);
+                            const taskDescriptionInput = document.getElementById(`taskDescriptionInput`);
+                            taskNameInput.setAttribute(`for`, `taskDescription`);
+    
+
+
+
+
+
 
     }
     function projectForm(){
@@ -37,8 +60,8 @@ function generateForms(){
                     projectNameLabel.setAttribute(`for`, `projectName`);
                 createElement([`projectNameInput`, `textInput`], `input`, ``, `projectFormContainer1`);
                     const projectNameInput = document.getElementById(`projectNameInput`);
-                    projectNameLabel.setAttribute(`required`, `true`);
-                    projectNameLabel.setAttribute(`for`, `projectName`);
+                    projectNameInput.setAttribute(`required`, `true`);
+                    projectNameInput.setAttribute(`for`, `projectName`);
                 createElement([`projectFormContainer2`, `formContainer`], `div`, ``, `projectForm`)
                 createElement([`newProjectCancelButton`, `cancel`, `button`], `button`, `Cancel`, `projectFormContainer2` )
                 createElement([`newProjectSubmitButton`, `submit`, `button`], `button`, `Submit`, `projectFormContainer2` )
