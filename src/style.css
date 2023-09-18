@@ -83,9 +83,9 @@
     font-size: var(--fontSizeC);
 }
 
-.form{
-    height:400px;
-    width:800px;
+.formDiv{
+    height:50vh;
+    width:70vw;
     background-color: var(--colorC);
     display:none;
     justify-content: center;

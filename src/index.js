@@ -31,3 +31,6 @@ console.log(task1.project)
 
 
 task1.log()
+
+
+console.log(`something cool`);
