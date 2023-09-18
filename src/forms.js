@@ -13,8 +13,16 @@ function generateForms(){
                 taskForm.setAttribute(`autocomplete`, `off`);
             createElement([`taskFormContainer1`, `formContainer`], `div`, ``, `taskForm`)
                 createElement([`projectSelectorLabel`, `label`], `label`, `Project:`, `taskFormContainer1`);
-                createElement([`projectDropDown`], `select`, ``, `taskFormContainer1`)
+                createElement([`projectDropDown`], `select`, ``, `taskFormContainer1`);
+                    const projectDropDown = document.getElementById(`projectDropDown`);
+                    let option = ``;
 
+                    let projects = [`car`, `bike`, `guns`]
+                    //need array projects 
+                    for(let i = 0; i < projects.length; i++){
+                        option += '<option value="'+projects[i] + '">' + projects[i]+"</option>"
+                    }
+                    projectDropDown.innerHTML = option;
 
     }
     function projectForm(){
