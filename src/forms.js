@@ -21,15 +21,17 @@ function generateforms(){
             createElement([`projectForm`, `form`], `form`, ``, `projectFormDiv`);
                 const projectForm = document.getElementById(`projectForm`);
                 projectForm.setAttribute(`autocomplete`, `off`);
-                createElement([`projectNameLabel`, `label`], `label`, `Project Name: `, `projectForm`);
+                createElement([`projectFormContainer1`, `formContainer`], `div`, ``, `projectForm`)
+                createElement([`projectNameLabel`, `label`], `label`, `Project Name: `, `projectFormContainer1`);
                     const projectNameLabel = document.getElementById(`projectNameLabel`);
                     projectNameLabel.setAttribute(`for`, `projectName`);
-                createElement([`projectNameInput`, `textInput`], `input`, ``, `projectForm`);
+                createElement([`projectNameInput`, `textInput`], `input`, ``, `projectFormContainer1`);
                     const projectNameInput = document.getElementById(`projectNameInput`);
                     projectNameLabel.setAttribute(`required`, `true`);
                     projectNameLabel.setAttribute(`for`, `projectName`);
-                createElement([`newProjectCancelButton`, `cancel`, `button`], `button`, `Cancel`, `projectForm` )
-                createElement([`newProjectSubmitButton`, `submit`, `button`], `button`, `Submit`, `projectForm` )
+                createElement([`projectFormContainer2`, `formContainer`], `div`, ``, `projectForm`)
+                createElement([`newProjectCancelButton`, `cancel`, `button`], `button`, `Cancel`, `projectFormContainer2` )
+                createElement([`newProjectSubmitButton`, `submit`, `button`], `button`, `Submit`, `projectFormContainer2` )
                     const newProjectSubmitButton = document.getElementById(`newProjectSubmitButton`);
                     newProjectSubmitButton.setAttribute(`type`, `submit`);
 
