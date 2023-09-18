@@ -11,7 +11,9 @@ function generateForms(){
             createElement([`taskForm`, `form`], `form`, ``, `taskFormDiv`);
                 const taskForm = document.getElementById(`taskForm`);
                 taskForm.setAttribute(`autocomplete`, `off`);
-                createElement([`projectSelectorLabel`, `label`], `label`, `Project:`, `taskForm`);
+            createElement([`taskFormContainer1`, `formContainer`], `div`, ``, `taskForm`)
+                createElement([`projectSelectorLabel`, `label`], `label`, `Project:`, `taskFormContainer1`);
+                createElement([`projectDropDown`], `select`, ``, `taskFormContainer1`)
 
 
     }

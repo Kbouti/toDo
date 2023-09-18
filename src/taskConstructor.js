@@ -20,7 +20,6 @@ class Project {
 }
 
 class Task {
-
     constructor(project, title, description, urgency, status){
         this.project = project;
         this.title = title;
