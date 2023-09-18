@@ -24,6 +24,10 @@ function generateforms(){
                 createElement([`projectNameLabel`, `label`], `label`, `Project Name: `, `projectForm`);
                     const projectNameLabel = document.getElementById(`projectNameLabel`);
                         projectNameLabel.setAttribute(`for`, `projectName`);
+                createElement([`projectNameInput`, `textInput`], `input`, ``, `projectForm`);
+                    const projectNameInput = document.getElementById(`projectNameInput`);
+                    projectNameLabel.setAttribute(`required`, `true`);
+                    projectNameLabel.setAttribute(`for`, `projectName`);
 
     }
 
