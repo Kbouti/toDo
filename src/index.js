@@ -16,7 +16,7 @@
 
 import './style.css';
 import buildPage from './homepage';
-import generateforms from './forms';
+import generateForms from './forms';
 
 
 const taskConstructor = require(`./taskConstructor.js`);
@@ -29,7 +29,7 @@ const addEventListeners = domManipulator.addEventListeners;
 
 
 buildPage();
-generateforms();
+generateForms();
 addEventListeners();
 
 

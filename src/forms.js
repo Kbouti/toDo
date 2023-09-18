@@ -4,7 +4,7 @@ import createElement from './elementMaker.js';
 
 
 
-function generateforms(){
+function generateForms(){
     function taskForm(){
         createElement([`taskFormDiv`, `formDiv`], `div`, ``, `content`);
             createElement([`taskFormTitle`, `title`], `div`, `Create New Task`, `taskFormDiv`);
@@ -42,7 +42,7 @@ function generateforms(){
     projectForm();
 }
 
-    export default generateforms;
+    export default generateForms;
 
 
     // module.exports = {
