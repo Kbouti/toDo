@@ -35,11 +35,11 @@ function generateForms(){
 
                     createElement([`taskFormContainer3`, `formContainer`], `div`, ``, `taskForm`)
                         createElement([`taskDescriptionLabel`, `label`], `label`, `Task Description: `, `taskFormContainer3`);
-                            const taskDescriptionLabel = document.getElementById(`taskDescriptionLabel`);
+                            const taskDescriptionLabel = document.getElementById(`taskDescriptionLabel`);                            
                             taskDescriptionLabel.setAttribute(`for`, `taskDescription`);
                         createElement([`taskDescriptionInput`, `textInput`], `input`, ``, `taskFormContainer3`);
                             const taskDescriptionInput = document.getElementById(`taskDescriptionInput`);
-                            taskNameInput.setAttribute(`for`, `taskDescription`);
+                            taskDescriptionInput.setAttribute(`for`, `taskDescription`);
     
 
 
