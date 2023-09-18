@@ -8,12 +8,23 @@ function generateforms(){
     function taskForm(){
         createElement([`taskFormDiv`, `formDiv`], `div`, ``, `content`);
             createElement([`taskFormTitle`, `title`], `div`, `Create New Task`, `taskFormDiv`);
-            createElement([`taskForm`], `form`, ``, `taskFormDiv`);
+            createElement([`taskForm`, `form`], `form`, ``, `taskFormDiv`);
+                const taskForm = document.getElementById(`taskForm`);
+                taskForm.setAttribute(`autocomplete`, `off`);
+                createElement([`projectSelectorLabel`, `label`], `label`, `Project:`, `taskForm`);
+
+
     }
     function projectForm(){
         createElement([`projectFormDiv`, `formDiv`], `div`, ``, `content`);
             createElement([`projectFormTitle`, `title`], `div`, `Create New Project`, `projectFormDiv`);
-            createElement([`projectForm`], `form`, ``, `projectFormDiv`);
+            createElement([`projectForm`, `form`], `form`, ``, `projectFormDiv`);
+                const projectForm = document.getElementById(`projectForm`);
+                projectForm.setAttribute(`autocomplete`, `off`);
+                createElement([`projectNameLabel`, `label`], `label`, `Project Name: `, `projectForm`);
+                    const projectNameLabel = document.getElementById(`projectNameLabel`);
+                        projectNameLabel.setAttribute(`for`, `projectName`);
+
     }
 
     taskForm();
