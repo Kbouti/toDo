@@ -6,6 +6,14 @@
 // "control+c" to close, or kill terminal.
 
 
+// In order to push changes to live site on github pages, run the following command:
+//git subtree push --prefix dist origin gh-pages
+
+
+
+
+
+
 import './style.css';
 import buildPage from './homepage';
 import generateforms from './forms';
