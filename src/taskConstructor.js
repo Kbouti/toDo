@@ -1,7 +1,8 @@
 class Project {
-    constructor(title,canDelete){
+    constructor(title, canDelete, contents){
         this.title = title;
         this.canDelete = canDelete;
+        this.contents = contents;
     }
 
     delete(){
