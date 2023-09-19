@@ -42,13 +42,32 @@ function generateForms(){
                 createElement([`urgencyDropDown`], `select`, ``, `taskFormContainer4`);
                     const urgencyDropDown = document.getElementById(`urgencyDropDown`);                            
                     urgencyDropDown.setAttribute(`for`, `taskUrgency`);
-                    let option = '';
+                    let urgencyOption = '';
                     let urgency = [`HIGH`, `Mid`, `Low`];
                     for(let i = 0; i < urgency.length; i++){
-                        option += '<option value="'+urgency[i] + '">' + urgency[i]+"</option>"
+                        urgencyOption += '<option value="'+urgency[i] + '">' + urgency[i]+"</option>"
                     }
-                    urgencyDropDown.innerHTML = option;
+                    urgencyDropDown.innerHTML = urgencyOption;
                     urgencyDropDown.selectedIndex = 1;
+
+
+
+
+                    createElement([`taskFormContainer5`, `formContainer`], `div`, ``, `taskForm`)
+                    createElement([`taskStatusLabel`, `label`], `label`, `Status:`, `taskFormContainer5`);
+                        const taskStatusLabel = document.getElementById(`taskStatusLabel`);                            
+                        taskStatusLabel.setAttribute(`for`, `taskStatus`);
+                    createElement([`statusDropDown`], `select`, ``, `taskFormContainer5`);
+                        const statusDropDown = document.getElementById(`statusDropDown`);                            
+                        statusDropDown.setAttribute(`for`, `taskStatus`);
+                        let statusOption = '';
+                        let status = [`Not Started`, `In Progress`, `Parts On Order`, `Nearly Complete`, `Complete`];
+                        for(let i = 0; i < status.length; i++){
+                            statusOption += '<option value="'+status[i] + '">' + status[i]+"</option>"
+                        }
+                        statusDropDown.innerHTML = statusOption;
+                        statusDropDown.selectedIndex = 0;
+    
 
 
 
