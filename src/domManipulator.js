@@ -9,17 +9,24 @@ function toggleDisplay(id, standardDisplay){
     return;
 
 }
+// let projects = [`car`, `bike`, `guns`];
 
 
-function addEventListeners(){
+function addEventListeners(projects){
     const newProjectBtn = document.getElementById(`newProjectBtn`);
-    newProjectBtn.addEventListener(`click`, function(){
-    toggleDisplay(`projectFormDiv`, `flex`)
-    })
+        newProjectBtn.addEventListener(`click`, function(){
+        toggleDisplay(`projectFormDiv`, `flex`)
+        })
 
     const newTaskBtn = document.getElementById(`newTaskBtn`);
-    newTaskBtn.addEventListener(`click`, function(){
-    toggleDisplay(`taskFormDiv`, `flex`)
+        newTaskBtn.addEventListener(`click`, function(){
+        //populate dropdown menu with current projects:
+        let option = ``;
+        for(let i = 0; i < projects.length; i++){
+            option += '<option value="'+projects[i] + '">' + projects[i]+"</option>"
+        }
+        projectDropDown.innerHTML = option;
+        toggleDisplay(`taskFormDiv`, `flex`)
     })
 
 
