@@ -1,6 +1,9 @@
+let projectList = [``];
+
+
 class Project {
-    constructor(title, canDelete, contents){
-        this.title = title;
+    constructor(name, canDelete, contents){
+        this.name = name;
         this.canDelete = canDelete;
         this.contents = contents;
     }
@@ -13,7 +16,13 @@ class Project {
     clearContents(){
         //to remove all tasks from this project
     }
+
+    // appendToList(){
+    //     projectList.push(Project);
+    // }
 }
+
+
 
 class Task {
     constructor(project, name, description, urgency, status){
@@ -28,8 +37,15 @@ class Task {
     }
 }
 
-let projectList = [`Misc`];
+console.log(projectList);
 
+
+let project1 = new Project(`Misc`, `no`, ``);
+console.log(project1);
+projectList.push(project1);
+console.log(projectList);
+
+//this seems to be working, but project is an object
 
 
 module.exports = {
