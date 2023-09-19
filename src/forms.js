@@ -12,42 +12,51 @@ function generateForms(){
             createElement([`taskForm`, `form`], `form`, ``, `taskFormDiv`);
                 const taskForm = document.getElementById(`taskForm`);
                 taskForm.setAttribute(`autocomplete`, `off`);
+
             createElement([`taskFormContainer1`, `formContainer`], `div`, ``, `taskForm`)
                 createElement([`projectSelectorLabel`, `label`], `label`, `Project:`, `taskFormContainer1`);
                 createElement([`projectDropDown`], `select`, ``, `taskFormContainer1`);
-                    createElement([`taskFormContainer2`, `formContainer`], `div`, ``, `taskForm`)
-                        createElement([`taskNameLabel`, `label`], `label`, `Task Name: `, `taskFormContainer2`);
-                            const taskNameLabel = document.getElementById(`taskNameLabel`);
-                            taskNameLabel.setAttribute(`for`, `taskName`);
-                        createElement([`taskNameInput`, `textInput`], `input`, ``, `taskFormContainer2`);
-                            const taskNameInput = document.getElementById(`taskNameInput`);
-                            taskNameInput.setAttribute(`required`, `true`);
-                            taskNameInput.setAttribute(`for`, `taskName`);
+
+            createElement([`taskFormContainer2`, `formContainer`], `div`, ``, `taskForm`)
+                createElement([`taskNameLabel`, `label`], `label`, `Task Name: `, `taskFormContainer2`);
+                    const taskNameLabel = document.getElementById(`taskNameLabel`);
+                    taskNameLabel.setAttribute(`for`, `taskName`);
+                createElement([`taskNameInput`, `textInput`], `input`, ``, `taskFormContainer2`);
+                    const taskNameInput = document.getElementById(`taskNameInput`);
+                    taskNameInput.setAttribute(`required`, `true`);
+                    taskNameInput.setAttribute(`for`, `taskName`);
                             
 
-                    createElement([`taskFormContainer3`, `formContainer`], `div`, ``, `taskForm`)
-                        createElement([`taskDescriptionLabel`, `label`], `label`, `Task Description: `, `taskFormContainer3`);
-                            const taskDescriptionLabel = document.getElementById(`taskDescriptionLabel`);                            
-                            taskDescriptionLabel.setAttribute(`for`, `taskDescription`);
-                        createElement([`taskDescriptionInput`, `textInput`], `input`, ``, `taskFormContainer3`);
-                            const taskDescriptionInput = document.getElementById(`taskDescriptionInput`);
-                            taskDescriptionInput.setAttribute(`for`, `taskDescription`);
+            createElement([`taskFormContainer3`, `formContainer`], `div`, ``, `taskForm`)
+                createElement([`taskDescriptionLabel`, `label`], `label`, `Task Description: `, `taskFormContainer3`);
+                    const taskDescriptionLabel = document.getElementById(`taskDescriptionLabel`);                            
+                    taskDescriptionLabel.setAttribute(`for`, `taskDescription`);
+                createElement([`taskDescriptionInput`, `textInput`], `input`, ``, `taskFormContainer3`);
+                    const taskDescriptionInput = document.getElementById(`taskDescriptionInput`);
+                    taskDescriptionInput.setAttribute(`for`, `taskDescription`);
     
-                    createElement([`taskFormContainer4`, `formContainer`], `div`, ``, `taskForm`)
-                        createElement([`taskUrgencyLabel`, `label`], `label`, `Urgency:`, `taskFormContainer4`);
-                            const taskUrgencyLabel = document.getElementById(`taskUrgencyLabel`);                            
-                            taskUrgencyLabel.setAttribute(`for`, `taskUrgency`);
-                        createElement([`urgencyDropDown`], `select`, ``, `taskFormContainer4`);
-                            const urgencyDropDown = document.getElementById(`urgencyDropDown`);                            
-                            urgencyDropDown.setAttribute(`for`, `taskUrgency`);
+            createElement([`taskFormContainer4`, `formContainer`], `div`, ``, `taskForm`)
+                createElement([`taskUrgencyLabel`, `label`], `label`, `Urgency:`, `taskFormContainer4`);
+                    const taskUrgencyLabel = document.getElementById(`taskUrgencyLabel`);                            
+                    taskUrgencyLabel.setAttribute(`for`, `taskUrgency`);
+                createElement([`urgencyDropDown`], `select`, ``, `taskFormContainer4`);
+                    const urgencyDropDown = document.getElementById(`urgencyDropDown`);                            
+                    urgencyDropDown.setAttribute(`for`, `taskUrgency`);
+                    let option = '';
+                    let urgency = [`HIGH`, `Mid`, `Low`];
+                    for(let i = 0; i < urgency.length; i++){
+                        option += '<option value="'+urgency[i] + '">' + urgency[i]+"</option>"
+                    }
+                    urgencyDropDown.innerHTML = option;
+                    urgencyDropDown.selectedIndex = 1;
 
 
 
-                    createElement([`taskFormContainer-1`, `formContainer`], `div`, ``, `taskForm`)
-                        createElement([`newTaskCancelButton`, `cancel`, `button`], `button`, `Cancel`, `taskFormContainer-1` )
-                        createElement([`newTaskSubmitButton`, `submit`, `button`], `button`, `Submit`, `taskFormContainer-1` )
-                            const newTaskSubmitButton = document.getElementById(`newTaskSubmitButton`);
-                            newTaskSubmitButton.setAttribute(`type`, `submit`);
+            createElement([`taskFormContainer-1`, `formContainer`], `div`, ``, `taskForm`)
+                createElement([`newTaskCancelButton`, `cancel`, `button`], `button`, `Cancel`, `taskFormContainer-1` )
+                createElement([`newTaskSubmitButton`, `submit`, `button`], `button`, `Submit`, `taskFormContainer-1` )
+                    const newTaskSubmitButton = document.getElementById(`newTaskSubmitButton`);
+                    newTaskSubmitButton.setAttribute(`type`, `submit`);
             
 
 
