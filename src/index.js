@@ -13,15 +13,15 @@ import buildPage from './homepage';
 import generateForms from './forms';
 
 
-const taskConstructor = require(`./taskConstructor.js`);
-const Task = taskConstructor.Task;
-const Project = taskConstructor.Project;
+const projectManager = require(`./projectManager.js`);
+const Task = projectManager.Task;
+const Project = projectManager.Project;
 
 const domManipulator = require(`./domManipulator.js`)
 const toggleDisplay = domManipulator.toggleDisplay;
 const addEventListeners = domManipulator.addEventListeners;
 
-let projects = [`Car`, `bike`, `guns`];
+let projects = [`Misc`];
 
 buildPage();
 generateForms();
@@ -35,5 +35,3 @@ console.log(task1.project)
 
 task1.log()
 
-
-console.log(`something cool`);

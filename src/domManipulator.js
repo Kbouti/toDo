@@ -40,6 +40,13 @@ function addEventListeners(projects){
         this.form.reset();
         toggleDisplay(`taskFormDiv`, `flex`);
     })
+
+    const projectForm = document.getElementById(`projectForm`);
+    projectForm.addEventListener(`submit`, function(){
+
+        //need function for project creation
+
+    })
 }
 
 
