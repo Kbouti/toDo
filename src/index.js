@@ -16,12 +16,12 @@ import generateForms from './forms';
 const projectManager = require(`./projectManager.js`);
 const Task = projectManager.Task;
 const Project = projectManager.Project;
+const projectList = projectManager.projectList;
 
 const domManipulator = require(`./domManipulator.js`)
 const toggleDisplay = domManipulator.toggleDisplay;
 const addEventListeners = domManipulator.addEventListeners;
 
-let projectList = [`Misc`];
 
 buildPage();
 generateForms();

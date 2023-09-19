@@ -28,9 +28,12 @@ class Task {
     }
 }
 
+let projectList = [`Misc`];
+
 
 
 module.exports = {
     Task,
-    Project
+    Project,
+    projectList
 }
