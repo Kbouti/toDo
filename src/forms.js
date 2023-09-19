@@ -33,6 +33,14 @@ function generateForms(){
                             const taskDescriptionInput = document.getElementById(`taskDescriptionInput`);
                             taskDescriptionInput.setAttribute(`for`, `taskDescription`);
     
+                    createElement([`taskFormContainer4`, `formContainer`], `div`, ``, `taskForm`)
+                        createElement([`taskUrgencyLabel`, `label`], `label`, `Urgency:`, `taskFormContainer4`);
+                            const taskUrgencyLabel = document.getElementById(`taskUrgencyLabel`);                            
+                            taskUrgencyLabel.setAttribute(`for`, `taskUrgency`);
+                        createElement([`urgencyDropDown`], `select`, ``, `taskFormContainer4`);
+                            const urgencyDropDown = document.getElementById(`urgencyDropDown`);                            
+                            urgencyDropDown.setAttribute(`for`, `taskUrgency`);
+
 
 
                     createElement([`taskFormContainer-1`, `formContainer`], `div`, ``, `taskForm`)
