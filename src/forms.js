@@ -1,7 +1,5 @@
 import createElement from './elementMaker.js';
 
-const domManipulator = require(`./domManipulator.js`)
-const toggleDisplay = domManipulator.toggleDisplay;
 
 //createElement([`id`, `class`], `div`,`innerText`, `locationId`)
 
@@ -79,22 +77,9 @@ function generateForms(){
 
     }
 
-    function addEventListeners() {
-        const newProjectCancelButton = document.getElementById(`newProjectCancelButton`);
-        newProjectCancelButton.addEventListener(`click`, function(){
-            this.form.reset();
-            toggleDisplay(`projectFormDiv`, `flex`);
-        })
-        const newTaskCancelButton = document.getElementById(`newTaskCancelButton`);
-        newTaskCancelButton.addEventListener(`click`, function(){
-            this.form.reset();
-            toggleDisplay(`taskFormDiv`, `flex`);
-        })
-    }
 
     taskForm();
     projectForm();
-    addEventListeners();
 }
 
     export default generateForms;

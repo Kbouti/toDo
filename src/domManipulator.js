@@ -21,6 +21,18 @@ function addEventListeners(){
     newTaskBtn.addEventListener(`click`, function(){
     toggleDisplay(`taskFormDiv`, `flex`)
     })
+
+
+    const newProjectCancelButton = document.getElementById(`newProjectCancelButton`);
+    newProjectCancelButton.addEventListener(`click`, function(){
+        this.form.reset();
+        toggleDisplay(`projectFormDiv`, `flex`);
+    })
+    const newTaskCancelButton = document.getElementById(`newTaskCancelButton`);
+    newTaskCancelButton.addEventListener(`click`, function(){
+        this.form.reset();
+        toggleDisplay(`taskFormDiv`, `flex`);
+    })
 }
 
 
