@@ -21,11 +21,11 @@ const domManipulator = require(`./domManipulator.js`)
 const toggleDisplay = domManipulator.toggleDisplay;
 const addEventListeners = domManipulator.addEventListeners;
 
-let projects = [`Misc`];
+let projectList = [`Misc`];
 
 buildPage();
 generateForms();
-addEventListeners(projects);
+addEventListeners(projectList);
 
 
 

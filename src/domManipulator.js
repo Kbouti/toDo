@@ -12,7 +12,7 @@ function toggleDisplay(id, standardDisplay){
 // let projects = [`car`, `bike`, `guns`];
 
 
-function addEventListeners(projects){
+function addEventListeners(projectList){
     const newProjectBtn = document.getElementById(`newProjectBtn`);
         newProjectBtn.addEventListener(`click`, function(){
         toggleDisplay(`projectFormDiv`, `flex`)
@@ -22,8 +22,8 @@ function addEventListeners(projects){
         newTaskBtn.addEventListener(`click`, function(){
         //populate dropdown menu with current projects:
         let option = ``;
-        for(let i = 0; i < projects.length; i++){
-            option += '<option value="'+projects[i] + '">' + projects[i]+"</option>"
+        for(let i = 0; i < projectList.length; i++){
+            option += '<option value="'+projectList[i] + '">' + projectList[i]+"</option>"
         }
         projectDropDown.innerHTML = option;
         toggleDisplay(`taskFormDiv`, `flex`)
