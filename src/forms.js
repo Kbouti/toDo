@@ -85,6 +85,11 @@ function generateForms(){
             this.form.reset();
             toggleDisplay(`projectFormDiv`, `flex`);
         })
+        const newTaskCancelButton = document.getElementById(`newTaskCancelButton`);
+        newTaskCancelButton.addEventListener(`click`, function(){
+            this.form.reset();
+            toggleDisplay(`taskFormDiv`, `flex`);
+        })
     }
 
     taskForm();
