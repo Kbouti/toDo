@@ -42,7 +42,7 @@ function addEventListeners(projectList){
 
     const projectForm = document.getElementById(`projectForm`);
     projectForm.addEventListener(`submit`, function(){
-
+        console.log(`nooooow something happened`);
         //need function for project creation
 
     })

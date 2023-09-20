@@ -18,10 +18,7 @@ class Project {
     }
 }
 
-// const projectForm = document.getElementById(`projectForm`);
-// projectForm.addEventListener(`submit`, function(projectList){
 
-// })
 
 
 class Task {
@@ -37,14 +34,11 @@ class Task {
     }
 }
 
-console.log(projectList);
-
-
 let project1 = new Project(`Misc`, `no`, ``);
 let project2 = new Project(`cars`, `yes`, ``);
-console.log(project1);
+
 projectList.push(project1, project2);
-console.log(projectList);
+
 
 //this seems to be working, but project is an object
 

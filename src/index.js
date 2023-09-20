@@ -30,8 +30,5 @@ addEventListeners(projectList);
 
 
 const task1 = new Task(`Car`, `Roof Bike Rack`, `Mount fork clamp on roof rack. Need brackets to secure fork mount to roof rails`, `low`, `need parts`);
-console.log(task1.project)
 
-
-task1.log()
 
