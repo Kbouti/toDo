@@ -16,12 +16,12 @@ class Project {
     clearContents(){
         //to remove all tasks from this project
     }
-
-    // appendToList(){
-    //     projectList.push(Project);
-    // }
 }
 
+// const projectForm = document.getElementById(`projectForm`);
+// projectForm.addEventListener(`submit`, function(projectList){
+
+// })
 
 
 class Task {

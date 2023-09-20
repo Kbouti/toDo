@@ -24,7 +24,7 @@ function generateForms(){
                 createElement([`taskNameInput`, `textInput`], `input`, ``, `taskFormContainer2`);
                     const taskNameInput = document.getElementById(`taskNameInput`);
                     taskNameInput.setAttribute(`required`, `true`);
-                    taskNameInput.setAttribute(`for`, `taskName`);
+                    taskNameInput.setAttribute(`name`, `taskName`);
                             
 
             createElement([`taskFormContainer3`, `formContainer`], `div`, ``, `taskForm`)
@@ -33,7 +33,7 @@ function generateForms(){
                     taskDescriptionLabel.setAttribute(`for`, `taskDescription`);
                 createElement([`taskDescriptionInput`, `textInput`], `input`, ``, `taskFormContainer3`);
                     const taskDescriptionInput = document.getElementById(`taskDescriptionInput`);
-                    taskDescriptionInput.setAttribute(`for`, `taskDescription`);
+                    taskDescriptionInput.setAttribute(`name`, `taskDescription`);
     
             createElement([`taskFormContainer4`, `formContainer`], `div`, ``, `taskForm`)
                 createElement([`taskUrgencyLabel`, `label`], `label`, `Urgency:`, `taskFormContainer4`);
@@ -41,7 +41,7 @@ function generateForms(){
                     taskUrgencyLabel.setAttribute(`for`, `taskUrgency`);
                 createElement([`urgencyDropDown`], `select`, ``, `taskFormContainer4`);
                     const urgencyDropDown = document.getElementById(`urgencyDropDown`);                            
-                    urgencyDropDown.setAttribute(`for`, `taskUrgency`);
+                    urgencyDropDown.setAttribute(`name`, `taskUrgency`);
                     let urgencyOption = '';
                     let urgency = [`HIGH`, `Mid`, `Low`];
                     for(let i = 0; i < urgency.length; i++){
@@ -59,7 +59,7 @@ function generateForms(){
                         taskStatusLabel.setAttribute(`for`, `taskStatus`);
                     createElement([`statusDropDown`], `select`, ``, `taskFormContainer5`);
                         const statusDropDown = document.getElementById(`statusDropDown`);                            
-                        statusDropDown.setAttribute(`for`, `taskStatus`);
+                        statusDropDown.setAttribute(`name`, `taskStatus`);
                         let statusOption = '';
                         let status = [`Not Started`, `In Progress`, `Parts On Order`, `Nearly Complete`, `Complete`];
                         for(let i = 0; i < status.length; i++){
@@ -94,7 +94,7 @@ function generateForms(){
                 createElement([`projectNameInput`, `textInput`], `input`, ``, `projectFormContainer1`);
                     const projectNameInput = document.getElementById(`projectNameInput`);
                     projectNameInput.setAttribute(`required`, `true`);
-                    projectNameInput.setAttribute(`for`, `projectName`);
+                    projectNameInput.setAttribute(`name`, `projectName`);
                 createElement([`projectFormContainer2`, `formContainer`], `div`, ``, `projectForm`)
                 createElement([`newProjectCancelButton`, `cancel`, `button`], `button`, `Cancel`, `projectFormContainer2` )
                 createElement([`newProjectSubmitButton`, `submit`, `button`], `button`, `Submit`, `projectFormContainer2` )
