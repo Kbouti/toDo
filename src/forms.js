@@ -97,6 +97,8 @@ function generateForms(){
                     projectNameInput.setAttribute(`name`, `projectName`);
                 createElement([`projectFormContainer2`, `formContainer`], `div`, ``, `projectForm`)
                 createElement([`newProjectCancelButton`, `cancel`, `button`], `button`, `Cancel`, `projectFormContainer2` )
+                    const newProjectCancelButton = document.getElementById(`newProjectCancelButton`);
+                    newProjectCancelButton.setAttribute(`type`, `reset`);
                 createElement([`newProjectSubmitButton`, `submit`, `button`], `button`, `Submit`, `projectFormContainer2` )
                     const newProjectSubmitButton = document.getElementById(`newProjectSubmitButton`);
                     newProjectSubmitButton.setAttribute(`type`, `submit`);

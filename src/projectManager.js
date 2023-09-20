@@ -1,3 +1,4 @@
+
 let projectList = [];
 
 
@@ -19,8 +20,6 @@ class Project {
 }
 
 
-
-
 class Task {
     constructor(project, name, description, urgency, status){
         this.project = project;
@@ -40,7 +39,6 @@ let project2 = new Project(`cars`, `yes`, ``);
 projectList.push(project1, project2);
 
 
-//this seems to be working, but project is an object
 
 
 module.exports = {

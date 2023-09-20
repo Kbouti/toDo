@@ -40,12 +40,28 @@ function addEventListeners(projectList){
         toggleDisplay(`taskFormDiv`, `flex`);
     })
 
-    const projectForm = document.getElementById(`projectForm`);
-    projectForm.addEventListener(`submit`, function(){
-        console.log(`nooooow something happened`);
-        //need function for project creation
 
+
+
+
+    const projectForm = document.getElementById(`projectForm`);
+    projectForm.addEventListener(`submit`, function(event){
+        event.preventDefault();
+        
+        console.log(`The form has been submitted`);
+        //need function for project creation
     })
+
+
+
+
+
+
+    const newProjectSubmitButton = document.getElementById(`newProjectSubmitButton`);
+        newProjectSubmitButton.addEventListener(`click`, function(){
+            console.log(`The submit button has been clicked`);
+        })
+
 }
 
 

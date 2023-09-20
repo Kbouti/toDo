@@ -27,7 +27,7 @@ buildPage();
 generateForms();
 addEventListeners(projectList);
 
-
+console.log(`index.js loaded`);
 
 const task1 = new Task(`Car`, `Roof Bike Rack`, `Mount fork clamp on roof rack. Need brackets to secure fork mount to roof rails`, `low`, `need parts`);
 
