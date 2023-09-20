@@ -1,4 +1,4 @@
-let projectList = [``];
+let projectList = [];
 
 
 class Project {

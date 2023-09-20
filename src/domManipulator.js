@@ -29,7 +29,7 @@ function addEventListeners(projectList){
         for(let i = 0; i < projectList.length; i++){
             //option += '<option value="'+projectList[i] + '">' + projectList[i]+"</option>"
 
-            option += `<option value=${projectList[i]}">` + projectList[i]+"</option>"
+            option += `<option value=${projectList[i].name}">` + projectList[i].name+"</option>"
                 //
 
         }
