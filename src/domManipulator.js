@@ -1,3 +1,9 @@
+const projectManager = require(`./projectManager.js`);
+const Task = projectManager.Task;
+const Project = projectManager.Project;
+
+
+
 function toggleDisplay(id, standardDisplay){
     const element = document.getElementById(id);
     const elementDisplayValue = window.getComputedStyle(element).getPropertyValue(`display`);
@@ -49,9 +55,13 @@ function addEventListeners(projectList){
         event.preventDefault();
         
         const projectNameInput = document.getElementById(`projectNameInput`);
-        const newProject = projectNameInput.value;
+        
+        const newProject = new Project(projectNameInput.ariaValueMax, `no`, []);
+        projectList.push(newProject)
+        toggleDisplay(`projectFormDiv`, `flex`);
 
-        console.log(`the name of the new project is ${newProject}`);
+        // const newProject = projectNameInput.value;
+        // console.log(`the name of the new project is ${newProject}`);
         //need function for project creation
     })
 
