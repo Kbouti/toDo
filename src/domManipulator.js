@@ -20,10 +20,18 @@ function addEventListeners(projectList){
 
     const newTaskBtn = document.getElementById(`newTaskBtn`);
         newTaskBtn.addEventListener(`click`, function(){
+
+
         //populate dropdown menu with current projects:
+
+
         let option = ``;
         for(let i = 0; i < projectList.length; i++){
-            option += '<option value="'+projectList[i] + '">' + projectList[i]+"</option>"
+            //option += '<option value="'+projectList[i] + '">' + projectList[i]+"</option>"
+
+            option += `<option value=${projectList[i]}">` + projectList[i]+"</option>"
+                //
+
         }
         projectDropDown.innerHTML = option;
         toggleDisplay(`taskFormDiv`, `flex`)
