@@ -48,7 +48,10 @@ function addEventListeners(projectList){
     projectForm.addEventListener(`submit`, function(event){
         event.preventDefault();
         
-        console.log(`The form has been submitted`);
+        const projectNameInput = document.getElementById(`projectNameInput`);
+        const newProject = projectNameInput.value;
+
+        console.log(`the name of the new project is ${newProject}`);
         //need function for project creation
     })
 
