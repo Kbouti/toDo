@@ -56,7 +56,8 @@ function addEventListeners(projectList){
         const newProject = new Project(projectNameInput.value, `no`, []);
         projectList.push(newProject);
         const newElement = document.createElement(`div`);
-            newElement.setAttribute(`id`, `${projectNameInput.value}`);
+            // newElement.setAttribute(`id`, `${projectNameInput.value}`);
+            //removed id declaration to avoid poluting global scope
             newElement.classList.add(`project`);
             newElement.innerHTML = projectNameInput.value;
             projectsContainer = document.getElementById(`projectsContainer`);

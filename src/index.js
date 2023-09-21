@@ -29,6 +29,11 @@ addEventListeners(projectList);
 
 let project1 = new Project(`Misc`, `no`, []);
 projectList.push(project1);
+const miscProject = document.createElement(`div`);
+    miscProject.classList.add(`project`);
+    miscProject.innerHTML = `Misc`;
+    projectsContainer = document.getElementById(`projectsContainer`);
+    projectsContainer.appendChild(miscProject);
 
 
 console.log(`index.js loaded`);
