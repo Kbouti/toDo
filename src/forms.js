@@ -73,6 +73,9 @@ function generateForms(){
 
             createElement([`taskFormContainer-1`, `formContainer`], `div`, ``, `taskForm`)
                 createElement([`newTaskCancelButton`, `cancel`, `button`], `button`, `Cancel`, `taskFormContainer-1` )
+                    const newTaskCancelButton = document.getElementById(`newTaskCancelButton`);
+                    newTaskCancelButton.setAttribute(`type`, `reset`);
+
                 createElement([`newTaskSubmitButton`, `submit`, `button`], `button`, `Submit`, `taskFormContainer-1` )
                     const newTaskSubmitButton = document.getElementById(`newTaskSubmitButton`);
                     newTaskSubmitButton.setAttribute(`type`, `submit`);
