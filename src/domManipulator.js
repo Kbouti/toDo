@@ -3,7 +3,6 @@ const Task = projectManager.Task;
 const Project = projectManager.Project;
 
 
-
 function toggleDisplay(id, standardDisplay){
     const element = document.getElementById(id);
     const elementDisplayValue = window.getComputedStyle(element).getPropertyValue(`display`);
@@ -57,14 +56,18 @@ function addEventListeners(projectList){
         const projectNameInput = document.getElementById(`projectNameInput`);
         
         const newProject = new Project(projectNameInput.value, `no`, []);
-        projectList.push(newProject)
-        console.log(projectList);
+        projectList.push(newProject);
 
+        const newElement = document.createElement(`div`);
+            newElement.setAttribute(`id`, `${projectNameInput.value}`);
+            newElement.classList.add(`project`);
+            newElement.innerHTML = projectNameInput.value;
+            projectsContainer = document.getElementById(`projectsContainer`);
+            projectsContainer.appendChild(newElement);
+        
         toggleDisplay(`projectFormDiv`, `flex`);
         projectForm.reset();
-        // const newProject = projectNameInput.value;
-        // console.log(`the name of the new project is ${newProject}`);
-        //need function for project creation
+        
     })
 
 
