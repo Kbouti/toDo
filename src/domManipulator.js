@@ -85,6 +85,28 @@ function addEventListeners(projectList){
                     projectList[i].contents.push(newTask);
             }
         }
+        //^Adds the task to the correct project
+
+
+        //Creates the task element and adds to the dom:
+        const taskElement = document.createElement(`div`);
+            taskElement.classList.add(`task`);
+            const taskName = document.createElement(`div`);
+                taskName.classList.add(`taskName`);
+                taskName.innerHTML = taskNameInput.value;
+                taskElement.appendChild(taskName);
+            const taskUrgency = document.createElement(`div`);
+                taskUrgency.classList.add(`taskName`);
+                taskUrgency.innerHTML = urgencyDropDown.value;
+                taskElement.appendChild(taskUrgency);
+             const taskStatus = document.createElement(`div`);
+                taskStatus.classList.add(`taskName`);
+                taskStatus.innerHTML = statusDropDown.value;
+                taskElement.appendChild(taskStatus);
+        const taskContainer = document.getElementById(`taskContainer`);
+            taskContainer.appendChild(taskElement);
+
+
         toggleDisplay(`taskFormDiv`, `flex`);
         taskForm.reset();
     })
