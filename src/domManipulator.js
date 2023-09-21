@@ -74,11 +74,13 @@ function addEventListeners(projectList){
         const urgencyDropDown = document.getElementById(`urgencyDropDown`);
         const statusDropDown = document.getElementById(`statusDropDown`);
 
-
-
-        
         const newTask = new Task(projectDropDown.value, taskNameInput.value, taskDescriptionInput.value, urgencyDropDown.value, statusDropDown.value);
-        console.log(newTask);
+        for (let i = 0; i < projectList.length;i++){
+            if ( projectList[i].name + '"' == projectDropDown.value){
+                    projectList[i].contents.push(newTask);
+                    return;
+            }
+        }
     })
 }
 
