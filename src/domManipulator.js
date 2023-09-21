@@ -59,7 +59,7 @@ function addEventListeners(projectList){
         const newProject = new Project(projectNameInput.ariaValueMax, `no`, []);
         projectList.push(newProject)
         toggleDisplay(`projectFormDiv`, `flex`);
-
+        projectForm.reset();
         // const newProject = projectNameInput.value;
         // console.log(`the name of the new project is ${newProject}`);
         //need function for project creation
@@ -67,13 +67,6 @@ function addEventListeners(projectList){
 
 
 
-
-
-
-    const newProjectSubmitButton = document.getElementById(`newProjectSubmitButton`);
-        newProjectSubmitButton.addEventListener(`click`, function(){
-            console.log(`The submit button has been clicked`);
-        })
 
 }
 
