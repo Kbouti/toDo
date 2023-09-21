@@ -27,8 +27,12 @@ buildPage();
 generateForms();
 addEventListeners(projectList);
 
+let project1 = new Project(`Misc`, `no`, []);
+projectList.push(project1);
+
+
 console.log(`index.js loaded`);
 
-const task1 = new Task(`Car`, `Roof Bike Rack`, `Mount fork clamp on roof rack. Need brackets to secure fork mount to roof rails`, `low`, `need parts`);
+// const task1 = new Task(`Car`, `Roof Bike Rack`, `Mount fork clamp on roof rack. Need brackets to secure fork mount to roof rails`, `low`, `need parts`);
 
 

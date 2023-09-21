@@ -33,10 +33,6 @@ class Task {
     }
 }
 
-let project1 = new Project(`Misc`, `no`, []);
-let project2 = new Project(`cars`, `yes`, []);
-
-projectList.push(project1, project2);
 
 
 
