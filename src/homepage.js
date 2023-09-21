@@ -19,12 +19,14 @@ function buildPage(){
         createElement([`newProjectBtn`, `addBtn`], `div`, ``, `sidebar`);
             createElement([`addGraphic`, `material-symbols-outlined`], `span`, `add`, `newProjectBtn`);
             createElement([`addProject`, `btnText`], `span`, `New Project`, `newProjectBtn`);
-        createElement([`projectsContainer`], `div`, ``, `sidebar`);
+        createElement([`projectContainer`], `div`, ``, `sidebar`);
     createElement([`mainBody`], `div`, ``, `body`);
         createElement([`bodyTitle`, `title`], `div`, `Tasks`, `mainBody`)
         createElement([`newTaskBtn`, `addBtn`], `div`, ``, `mainBody`);
             createElement([`addGraphic2`, `material-symbols-outlined`], `span`, `add`, `newTaskBtn`);
             createElement([`addTask`, `btnText`], `span`, `New Task`, `newTaskBtn`);
+        createElement([`taskContainer`], `div`, ``, `mainBody`);
+
 
     createElement([`footer`], `div`, ``, `content`);
         createElement([`signature`], `div`, `Kbouti 2023`, `footer`);

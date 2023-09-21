@@ -32,8 +32,8 @@ projectList.push(project1);
 const miscProject = document.createElement(`div`);
     miscProject.classList.add(`project`);
     miscProject.innerHTML = `Misc`;
-    projectsContainer = document.getElementById(`projectsContainer`);
-    projectsContainer.appendChild(miscProject);
+    projectContainer = document.getElementById(`projectContainer`);
+    projectContainer.appendChild(miscProject);
 
 
 console.log(`index.js loaded`);

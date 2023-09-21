@@ -60,8 +60,8 @@ function addEventListeners(projectList){
             //removed id declaration to avoid poluting global scope
             newElement.classList.add(`project`);
             newElement.innerHTML = projectNameInput.value;
-            projectsContainer = document.getElementById(`projectsContainer`);
-            projectsContainer.appendChild(newElement);
+            projectContainer = document.getElementById(`projectContainer`);
+            projectContainer.appendChild(newElement);
             const projectDeleteButton = document.createElement(`div`);
             projectDeleteButton.classList.add(`projectDeleteButton`);
             projectDeleteButton.innerHTML = "X";
