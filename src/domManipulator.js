@@ -68,10 +68,17 @@ function addEventListeners(projectList){
     const taskForm = document.getElementById(`taskForm`);
     taskForm.addEventListener(`submit`, function(event){
         event.preventDefault();
+        const projectDropDown = document.getElementById(`projectDropDown`);
         const taskNameInput = document.getElementById(`taskNameInput`);
-        const newTaskName = taskNameInput.value;
-        console.log(newTaskName);
+        const taskDescriptionInput = document.getElementById(`taskNameInput`);
+        const urgencyDropDown = document.getElementById(`urgencyDropDown`);
+        const statusDropDown = document.getElementById(`statusDropDown`);
 
+
+
+        
+        const newTask = new Task(projectDropDown.value, taskNameInput.value, taskDescriptionInput.value, urgencyDropDown.value, statusDropDown.value);
+        console.log(newTask);
     })
 }
 
