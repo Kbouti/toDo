@@ -151,6 +151,23 @@
     min-width:500px;
 }
 
+#projectsContainer{
+    margin-top:10px;
+    display:flex;
+    flex-direction:column;
+    /* justify-content:center; */
+    
+    width:100%;
+}
+.project{
+    /* background:white; */
+    width:85%;
+    border:3px solid var(--colorA);
+    padding:3px;
+    margin:8px;
+}
+
+
 #bodyTitle{
 }
 
