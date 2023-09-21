@@ -78,10 +78,12 @@ function addEventListeners(projectList){
         for (let i = 0; i < projectList.length;i++){
             if ( projectList[i].name + '"' == projectDropDown.value){
                     projectList[i].contents.push(newTask);
-                    return;
             }
         }
+        toggleDisplay(`taskFormDiv`, `flex`);
+        taskForm.reset();
     })
+    
 }
 
 
