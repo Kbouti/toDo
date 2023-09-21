@@ -56,8 +56,10 @@ function addEventListeners(projectList){
         
         const projectNameInput = document.getElementById(`projectNameInput`);
         
-        const newProject = new Project(projectNameInput.ariaValueMax, `no`, []);
+        const newProject = new Project(projectNameInput.value, `no`, []);
         projectList.push(newProject)
+        console.log(projectList);
+
         toggleDisplay(`projectFormDiv`, `flex`);
         projectForm.reset();
         // const newProject = projectNameInput.value;
