@@ -62,6 +62,10 @@ function addEventListeners(projectList){
             newElement.innerHTML = projectNameInput.value;
             projectsContainer = document.getElementById(`projectsContainer`);
             projectsContainer.appendChild(newElement);
+            const projectDeleteButton = document.createElement(`div`);
+            projectDeleteButton.classList.add(`projectDeleteButton`);
+            projectDeleteButton.innerHTML = "X";
+            newElement.appendChild(projectDeleteButton);
         toggleDisplay(`projectFormDiv`, `flex`);
         projectForm.reset();
     })
