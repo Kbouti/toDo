@@ -27,7 +27,7 @@ function addEventListeners(projectList){
 //populate dropdown menu with current projects:
         let option = ``;
         for(let i = 0; i < projectList.length; i++){
-            option += `<option value=${projectList[i].name}">` + projectList[i].name+"</option>"
+            option += `<option value=${projectList[i].name}>` + projectList[i].name+"</option>"
         }
         projectDropDown.innerHTML = option;
         toggleDisplay(`taskFormDiv`, `flex`)
@@ -81,7 +81,7 @@ function addEventListeners(projectList){
 
         const newTask = new Task(projectDropDown.value, taskNameInput.value, taskDescriptionInput.value, urgencyDropDown.value, statusDropDown.value);
         for (let i = 0; i < projectList.length;i++){
-            if ( projectList[i].name + '"' == projectDropDown.value){
+            if ( projectList[i].name == projectDropDown.value){
                     projectList[i].contents.push(newTask);
             }
         }
