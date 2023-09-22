@@ -91,6 +91,23 @@ function addEventListeners(projectList){
         //Creates the task element and adds to the dom:
         const taskElement = document.createElement(`div`);
             taskElement.classList.add(`task`);
+
+            const projectContainer = document.createElement(`div`);
+                projectContainer.classList.add(`taskSectionContainer`);
+                taskElement.appendChild(projectContainer);
+            const projectLabel = document.createElement(`div`);
+                projectLabel.classList.add(`taskAttributeLabel`);
+                projectLabel.innerHTML = `Project:`
+                projectContainer.appendChild(projectLabel);
+
+
+                const projectValue = document.createElement(`div`);
+                projectValue.classList.add(`taskName`);
+                projectValue.innerHTML = projectDropDown.value;
+                projectContainer.appendChild(projectValue);
+
+
+
             const taskName = document.createElement(`div`);
                 taskName.classList.add(`taskName`);
                 taskName.innerHTML = taskNameInput.value;
