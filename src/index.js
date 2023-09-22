@@ -13,7 +13,7 @@ import buildPage from './homepage';
 import generateForms from './forms';
 
 
-import testFunction from './taskCards';
+// import testFunction from './taskCards';
 
 
 const projectManager = require(`./projectManager.js`);
@@ -31,7 +31,7 @@ generateForms();
 addEventListeners(projectList);
 
 
-testFunction(projectList);
+// testFunction(projectList);
 
 let project1 = new Project(`Misc`, `no`, []);
 projectList.push(project1);
