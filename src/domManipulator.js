@@ -129,9 +129,23 @@ function addEventListeners(projectList){
                     descriptionContainer.appendChild(taskDescription);
 
 
-            const taskUrgency = document.createElement(`div`);
+            const taskUrgency = document.createElement(`select`);
                 taskUrgency.classList.add(`taskUrgency`);
-                taskUrgency.innerHTML = urgencyDropDown.value;
+                let urgencyOption = '';
+                let urgency = [`HIGH`, `Mid`, `Low`];
+                for(let i = 0; i < urgency.length; i++){
+                    urgencyOption += '<option value="'+urgency[i] + '">' + urgency[i]+"</option>"
+                }
+                taskUrgency.innerHTML = urgencyOption;
+                // urgencyDropDown.selectedIndex = ;   need to figure out how to use input to apply selected to dropdown
+
+
+
+
+
+                // taskUrgency.innerHTML = urgencyDropDown.value;
+
+
                 taskElement.appendChild(taskUrgency);
              const taskStatus = document.createElement(`div`);
                 taskStatus.classList.add(`taskStatus`);
