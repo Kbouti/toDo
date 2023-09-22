@@ -13,6 +13,9 @@ import buildPage from './homepage';
 import generateForms from './forms';
 
 
+import testFunction from './taskCards';
+
+
 const projectManager = require(`./projectManager.js`);
 const Task = projectManager.Task;
 const Project = projectManager.Project;
@@ -26,6 +29,9 @@ const addEventListeners = domManipulator.addEventListeners;
 buildPage();
 generateForms();
 addEventListeners(projectList);
+
+
+testFunction(projectList);
 
 let project1 = new Project(`Misc`, `no`, []);
 projectList.push(project1);

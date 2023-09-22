@@ -55,6 +55,12 @@ function addEventListeners(projectList){
         const projectNameInput = document.getElementById(`projectNameInput`);
         const newProject = new Project(projectNameInput.value, `no`, []);
         projectList.push(newProject);
+
+
+
+        //the following code should be broken down into a separate and smaller chunks?
+
+
         const newElement = document.createElement(`div`);
             // newElement.setAttribute(`id`, `${projectNameInput.value}`);
             //removed id declaration to avoid poluting global scope
@@ -89,6 +95,7 @@ function addEventListeners(projectList){
 
 
         //Creates the task element and adds to the dom:
+        //This code should be simplified elesewhere and exported
         const taskElement = document.createElement(`div`);
             taskElement.classList.add(`task`);
 
