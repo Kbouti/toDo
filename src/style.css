@@ -155,9 +155,18 @@
     margin-top:10px;
     display:flex;
     flex-direction:column;
-    /* justify-content:center; */
-    
     width:100%;
+}
+
+#taskContainer{
+    width:90%;
+}
+
+.task {
+    border:3px solid var(--colorA);
+    border-radius:10px;
+    width: auto;
+    margin: 8px;
 }
 .project{
     /* background:white; */
