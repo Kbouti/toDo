@@ -75,7 +75,7 @@ function addEventListeners(projectList){
         event.preventDefault();
         const projectDropDown = document.getElementById(`projectDropDown`);
         const taskNameInput = document.getElementById(`taskNameInput`);
-        const taskDescriptionInput = document.getElementById(`taskNameInput`);
+        const taskDescriptionInput = document.getElementById(`taskDescriptionInput`);
         const urgencyDropDown = document.getElementById(`urgencyDropDown`);
         const statusDropDown = document.getElementById(`statusDropDown`);
 
@@ -95,12 +95,19 @@ function addEventListeners(projectList){
                 taskName.classList.add(`taskName`);
                 taskName.innerHTML = taskNameInput.value;
                 taskElement.appendChild(taskName);
+
+            const taskDescription = document.createElement(`div`);
+                taskDescription.classList.add(`taskDescription`);
+                taskDescription.innerHTML = taskDescriptionInput.value;
+                taskElement.appendChild(taskDescription);
+
+
             const taskUrgency = document.createElement(`div`);
-                taskUrgency.classList.add(`taskName`);
+                taskUrgency.classList.add(`taskUrgency`);
                 taskUrgency.innerHTML = urgencyDropDown.value;
                 taskElement.appendChild(taskUrgency);
              const taskStatus = document.createElement(`div`);
-                taskStatus.classList.add(`taskName`);
+                taskStatus.classList.add(`taskStatus`);
                 taskStatus.innerHTML = statusDropDown.value;
                 taskElement.appendChild(taskStatus);
         const taskContainer = document.getElementById(`taskContainer`);
