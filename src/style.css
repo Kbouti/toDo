@@ -190,6 +190,11 @@
     align-items: center;
 }
 
+.taskSectionContainer{
+    display:flex;
+    flex-direction:row;
+}
+
 
 #bodyTitle{
 }

@@ -95,23 +95,29 @@ function addEventListeners(projectList){
             const projectContainer = document.createElement(`div`);
                 projectContainer.classList.add(`taskSectionContainer`);
                 taskElement.appendChild(projectContainer);
-            const projectLabel = document.createElement(`div`);
-                projectLabel.classList.add(`taskAttributeLabel`);
-                projectLabel.innerHTML = `Project:`
-                projectContainer.appendChild(projectLabel);
-
-
+                const projectLabel = document.createElement(`div`);
+                    projectLabel.classList.add(`taskAttributeLabel`);
+                    projectLabel.innerHTML = `Project:`
+                    projectContainer.appendChild(projectLabel);
                 const projectValue = document.createElement(`div`);
-                projectValue.classList.add(`taskName`);
-                projectValue.innerHTML = projectDropDown.value;
-                projectContainer.appendChild(projectValue);
+                    projectValue.classList.add(`taskName`);
+                    projectValue.innerHTML = projectDropDown.value;
+                    projectContainer.appendChild(projectValue);
 
 
 
-            const taskName = document.createElement(`div`);
-                taskName.classList.add(`taskName`);
-                taskName.innerHTML = taskNameInput.value;
-                taskElement.appendChild(taskName);
+
+            const nameContainer = document.createElement(`div`);
+                nameContainer.classList.add(`taskSectionContainer`);
+                taskElement.appendChild(nameContainer);  
+                const nameLabel = document.createElement(`div`);
+                    nameLabel.classList.add(`taskAttributeLabel`);
+                    nameLabel.innerHTML = `Task Name:`
+                    nameContainer.appendChild(nameLabel);
+                const taskName = document.createElement(`div`);
+                    taskName.classList.add(`taskName`);
+                    taskName.innerHTML = taskNameInput.value;
+                    nameContainer.appendChild(taskName);
 
             const taskDescription = document.createElement(`div`);
                 taskDescription.classList.add(`taskDescription`);
