@@ -104,9 +104,6 @@ function addEventListeners(projectList){
                     projectValue.innerHTML = projectDropDown.value;
                     projectContainer.appendChild(projectValue);
 
-
-
-
             const nameContainer = document.createElement(`div`);
                 nameContainer.classList.add(`taskSectionContainer`);
                 taskElement.appendChild(nameContainer);  
@@ -119,10 +116,17 @@ function addEventListeners(projectList){
                     taskName.innerHTML = taskNameInput.value;
                     nameContainer.appendChild(taskName);
 
-            const taskDescription = document.createElement(`div`);
-                taskDescription.classList.add(`taskDescription`);
-                taskDescription.innerHTML = taskDescriptionInput.value;
-                taskElement.appendChild(taskDescription);
+            const descriptionContainer = document.createElement(`div`);
+                descriptionContainer.classList.add(`taskSectionContainer`);
+                taskElement.appendChild(descriptionContainer);  
+                const descriptionLabel = document.createElement(`div`);
+                    descriptionLabel.classList.add(`taskAttributeLabel`);
+                    descriptionLabel.innerHTML = `Task Description:`
+                    descriptionContainer.appendChild(descriptionLabel);
+                const taskDescription = document.createElement(`div`);
+                    taskDescription.classList.add(`taskDescription`);
+                    taskDescription.innerHTML = taskDescriptionInput.value;
+                    descriptionContainer.appendChild(taskDescription);
 
 
             const taskUrgency = document.createElement(`div`);
