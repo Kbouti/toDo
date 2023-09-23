@@ -242,6 +242,13 @@ function makeTaskCard(task, projectList){
                     taskUrgency.innerHTML = task.urgency;
                     urgencyContainer.appendChild(taskUrgency);
 
+                if (checkUrgency(task) ==  `HIGH`){
+                    taskUrgency.classList.add(`highUrgency`);
+
+                }
+
+
+
                     //check urgency
                     //apply appropriate class
     
@@ -264,4 +271,10 @@ function makeTaskCard(task, projectList){
         const taskContainer = document.getElementById(`taskContainer`);
         taskContainer.appendChild(taskElement);
         
+}
+
+
+function checkUrgency(task){
+    let urgency = task.urgency;
+    return urgency;
 }

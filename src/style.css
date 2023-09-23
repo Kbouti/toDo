@@ -180,6 +180,11 @@
     flex-grow:1;
 }
 
+.highUrgency{
+    color:red;
+    background-color:rgb(200, 252, 86) ;
+}
+
 
 .project{
     /* background:white; */
