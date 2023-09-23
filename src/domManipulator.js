@@ -244,14 +244,14 @@ function makeTaskCard(task, projectList){
 
                 if (checkUrgency(task) ==  `HIGH`){
                     taskUrgency.classList.add(`highUrgency`);
-
+                }
+                else if (checkUrgency(task) ==  `Mid`){
+                    taskUrgency.classList.add(`midUrgency`);
+                }
+                else if (checkUrgency(task) ==  `Low`){
+                    taskUrgency.classList.add(`lowUrgency`);
                 }
 
-
-
-                    //check urgency
-                    //apply appropriate class
-    
 
             const statusContainer = document.createElement(`div`);
                 statusContainer.classList.add(`taskSectionContainer`);
