@@ -167,7 +167,20 @@
     border-radius:10px;
     width: auto;
     margin: 8px;
+    display:flex;
+    flex-direction:row;
+
 }
+
+.taskCardLeft{
+    flex-grow:1;
+}
+
+.taskCardRight{
+    flex-grow:1;
+}
+
+
 .project{
     /* background:white; */
     width:85%;

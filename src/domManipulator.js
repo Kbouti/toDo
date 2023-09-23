@@ -184,9 +184,16 @@ function makeTaskCard(task, projectList){
             const taskElement = document.createElement(`div`);
             taskElement.classList.add(`task`);
 
+            const taskCardLeft = document.createElement(`div`);
+            const taskCardRight = document.createElement(`div`);
+            taskCardLeft.classList.add(`taskCardLeft`);
+            taskCardRight.classList.add(`taskCardRight`);
+            taskElement.appendChild(taskCardLeft);
+            taskElement.appendChild(taskCardRight);
+
             const projectContainer = document.createElement(`div`);
                 projectContainer.classList.add(`taskSectionContainer`);
-                taskElement.appendChild(projectContainer);
+                taskCardLeft.appendChild(projectContainer);
                 const projectLabel = document.createElement(`div`);
                     projectLabel.classList.add(`taskAttributeLabel`);
                     projectLabel.innerHTML = `Project:`
@@ -199,7 +206,7 @@ function makeTaskCard(task, projectList){
 
                 const nameContainer = document.createElement(`div`);
                     nameContainer.classList.add(`taskSectionContainer`);
-                    taskElement.appendChild(nameContainer);  
+                    taskCardLeft.appendChild(nameContainer);  
                 const nameLabel = document.createElement(`div`);
                     nameLabel.classList.add(`taskAttributeLabel`);
                     nameLabel.innerHTML = `Task Name:`
@@ -211,7 +218,7 @@ function makeTaskCard(task, projectList){
 
                 const descriptionContainer = document.createElement(`div`);
                     descriptionContainer.classList.add(`taskSectionContainer`);
-                    taskElement.appendChild(descriptionContainer);  
+                    taskCardRight.appendChild(descriptionContainer);  
                 const descriptionLabel = document.createElement(`div`);
                     descriptionLabel.classList.add(`taskAttributeLabel`);
                     descriptionLabel.innerHTML = `Task Description:`
