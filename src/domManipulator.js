@@ -204,9 +204,9 @@ function makeTaskCard(task, projectList){
                     projectContainer.appendChild(projectValue);
 
 
-                const nameContainer = document.createElement(`div`);
-                    nameContainer.classList.add(`taskSectionContainer`);
-                    taskCardLeft.appendChild(nameContainer);  
+            const nameContainer = document.createElement(`div`);
+                nameContainer.classList.add(`taskSectionContainer`);
+                taskCardLeft.appendChild(nameContainer);  
                 const nameLabel = document.createElement(`div`);
                     nameLabel.classList.add(`taskAttributeLabel`);
                     nameLabel.innerHTML = `Task Name:`
@@ -216,9 +216,9 @@ function makeTaskCard(task, projectList){
                     taskName.innerHTML = task.name;
                     nameContainer.appendChild(taskName);
 
-                const descriptionContainer = document.createElement(`div`);
-                    descriptionContainer.classList.add(`taskSectionContainer`);
-                    taskCardRight.appendChild(descriptionContainer);  
+            const descriptionContainer = document.createElement(`div`);
+                descriptionContainer.classList.add(`taskSectionContainer`);
+                taskCardRight.appendChild(descriptionContainer);  
                 const descriptionLabel = document.createElement(`div`);
                     descriptionLabel.classList.add(`taskAttributeLabel`);
                     descriptionLabel.innerHTML = `Task Description:`
@@ -228,16 +228,36 @@ function makeTaskCard(task, projectList){
                     taskDescription.innerHTML = task.description;
                     descriptionContainer.appendChild(taskDescription);
 
-                const taskUrgency = document.createElement(`select`);
+
+
+            const urgencyContainer = document.createElement(`div`);
+                urgencyContainer.classList.add(`taskSectionContainer`);
+                taskCardLeft.appendChild(urgencyContainer);  
+                const urgencyLabel = document.createElement(`div`);
+                    urgencyLabel.classList.add(`taskAttributeLabel`);
+                    urgencyLabel.innerHTML = `Urgency:`
+                    urgencyContainer.appendChild(urgencyLabel);
+                const taskUrgency = document.createElement(`div`);
                     taskUrgency.classList.add(`taskUrgency`);
-                    let urgencyOption = '';
-                    let urgency = [`HIGH`, `Mid`, `Low`];
-                    for(let i = 0; i < urgency.length; i++){
-                        urgencyOption += '<option value="'+urgency[i] + '">' + urgency[i]+"</option>"
-                    }
-                    taskUrgency.innerHTML = urgencyOption;
-                    // urgencyDropDown.selectedIndex = ;   need to figure out how to use input to apply selected to dropdown
+                    taskUrgency.innerHTML = task.urgency;
+                    urgencyContainer.appendChild(taskUrgency);
+
+                    //check urgency
+                    //apply appropriate class
     
+
+            const statusContainer = document.createElement(`div`);
+                statusContainer.classList.add(`taskSectionContainer`);
+                taskCardLeft.appendChild(statusContainer);
+                const statusLabel = document.createElement(`div`);
+                    statusLabel.classList.add(`taskAttributeLabel`);
+                    statusLabel.innerHTML = `Status`;
+                    statusContainer.appendChild(statusLabel);
+                const taskStatus = document.createElement(`div`);
+                    taskStatus.classList.add(`taskStatus`);
+                    taskStatus.innerHTML = task.status;
+                    statusContainer.appendChild(taskStatus);
+
     
 
 
