@@ -227,6 +227,12 @@ function makeTaskCard(task, projectList){
                     taskDescription.classList.add(`taskDescription`);
                     taskDescription.innerHTML = task.description;
                     descriptionContainer.appendChild(taskDescription);
+                    
+                    
+
+
+
+
 
 
 

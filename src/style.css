@@ -185,6 +185,11 @@
     background-color:rgb(200, 252, 86) ;
 }
 
+.taskDescription{
+    height:200px;
+    /* width:250px; */
+}
+
 .midUrgency{
     color:rgb(35, 82, 19);
     background-color:rgb(54, 248, 190) ;
