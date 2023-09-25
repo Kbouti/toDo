@@ -13,7 +13,9 @@ import buildPage from './homepage';
 import generateForms from './forms';
 
 
+import domTest1 from './domManipulator';
 
+domTest1();
 
 let projectList = [];
 let currentProject;
@@ -30,7 +32,7 @@ generateForms();
 
 
 
-addEventListeners(projectList);
+// addEventListeners(projectList);
 
 
 // testFunction(projectList);
