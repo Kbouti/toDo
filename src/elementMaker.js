@@ -11,7 +11,6 @@ function makeEl(array, type){
     const element = document.createElement(`${type}`);
     let id = array[0];
     element.setAttribute(`id`, `${id}`);
-    element.innerHTML = `something`;
     if (array.length > 1){
         for (let i = 1; i < array.length; i++ ){
             element.classList.add(`${array[i]}`)

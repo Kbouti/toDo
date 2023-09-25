@@ -13,21 +13,23 @@ import buildPage from './homepage';
 import generateForms from './forms';
 
 
-// import testFunction from './taskCards';
 
 
-const projectManager = require(`./projectManager.js`);
-const Task = projectManager.Task;
-const Project = projectManager.Project;
-const projectList = projectManager.projectList;
+let projectList = [];
+let currentProject;
+let currentTask;
 
-const domManipulator = require(`./domManipulator.js`)
-const toggleDisplay = domManipulator.toggleDisplay;
-const addEventListeners = domManipulator.addEventListeners;
 
+    //establish variables needed for eventlisteners and dom manipulation. 
+    //write functions in respective modules
+    //call functions with relevant variables in index.js
 
 buildPage();
 generateForms();
+
+
+
+
 addEventListeners(projectList);
 
 
