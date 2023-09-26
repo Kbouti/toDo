@@ -1,18 +1,23 @@
 
 
-export function domTest1() {
+function domTest1() {
     console.log(`dom Test1`);
 };
 
 
-export default function domTest2() {
+function domTest2() {
     console.log(`dom Test2`);
 };
 
-export function domTest3(){
+function domTest3(){
     console.log(`dom Test 3`)
 };
 
+export {
+    domTest1,
+    domTest2,
+    domTest3
+}
 
 //  What's going on here?? If I remove "default" from test function 2, or if I include "default" in the statement for test 1 or 3, the whole thing crashes. 
 //  As is, the site doesn't crash, but neither test 1 or 3 log their event in the console. What's going on with the default statement and more importantly what do I have to do to export multiple functions?

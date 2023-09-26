@@ -13,9 +13,7 @@ import buildPage from './homepage';
 import generateForms from './forms';
 
 
-import domTest1 from './domManipulator';
-import domTest2 from './domManipulator';
-import domTest3 from './domManipulator';
+import {domTest1, domTest2, domTest3} from './domManipulator';
 
 domTest1();
 domTest2();
