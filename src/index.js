@@ -14,8 +14,12 @@ import generateForms from './forms';
 
 
 import domTest1 from './domManipulator';
+import domTest2 from './domManipulator';
+import domTest3 from './domManipulator';
 
 domTest1();
+domTest2();
+domTest3();
 
 let projectList = [];
 let currentProject;
@@ -37,13 +41,13 @@ generateForms();
 
 // testFunction(projectList);
 
-let project1 = new Project(`Misc`, `no`, []);
-projectList.push(project1);
-const miscProject = document.createElement(`div`);
-    miscProject.classList.add(`project`);
-    miscProject.innerHTML = `Misc`;
-    projectContainer = document.getElementById(`projectContainer`);
-    projectContainer.appendChild(miscProject);
+// let project1 = new Project(`Misc`, `no`, []);
+// projectList.push(project1);
+// const miscProject = document.createElement(`div`);
+//     miscProject.classList.add(`project`);
+//     miscProject.innerHTML = `Misc`;
+//     projectContainer = document.getElementById(`projectContainer`);
+//     projectContainer.appendChild(miscProject);
 
 
 console.log(`index.js loaded`);
