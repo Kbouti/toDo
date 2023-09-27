@@ -14,6 +14,7 @@ import generateForms from './forms';
 
 
 import {domTest1, domTest2, domTest3} from './domManipulator';
+import {Project, Task} from './projectManager';
 
 domTest1();
 domTest2();
