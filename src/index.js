@@ -1,5 +1,6 @@
 // run "npm start" in terminal to watch project.
 // "control+c" to close, or kill terminal.
+console.log(`index.js loaded`);
 
 
 // In order to push changes to live site on github pages, run the following command:
@@ -34,13 +35,19 @@ let currentTask;
     //call functions with relevant variables in index.js
 
 buildPage();
+console.log(`buildPage has run`);
 taskForm();
+console.log(`taskForm has run`);
 projectForm();
-toggleDisplay();
+console.log(`projectForm has run`);
 displayProjectForm(),
+console.log(`displayProjectForm has run`);
 displayTaskForm(projectList),
+console.log(`displYTaskForm has run`);
 cancelButtons(),
-newProject(projectList),
+console.log(`tcancelButtons has run`);
+newProject(projectList);
+console.log(`newProject has run`);
 
 
 
@@ -58,7 +65,6 @@ newProject(projectList),
 //     projectContainer.appendChild(miscProject);
 
 
-console.log(`index.js loaded`);
 
 // const task1 = new Task(`Car`, `Roof Bike Rack`, `Mount fork clamp on roof rack. Need brackets to secure fork mount to roof rails`, `low`, `need parts`);
 
