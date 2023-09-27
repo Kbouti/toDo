@@ -22,12 +22,9 @@ import {
     newProject
 } from './domManipulator';
 
-import {Project, Task} from './projectManager';
+import {projectList, Project, Task, createMiscProject} from './projectManager';
 
 
-let projectList = [];
-let currentProject;
-let currentTask;
 
 
     //establish variables needed for eventlisteners and dom manipulation. 
@@ -48,7 +45,8 @@ cancelButtons(),
 console.log(`tcancelButtons has run`);
 newProject(projectList);
 console.log(`newProject has run`);
-
+createMiscProject();
+console.log(`Misc Project created`);
 
 
 // addEventListeners(projectList);

@@ -1,3 +1,6 @@
+let projectList = [];
+let currentProject;
+let currentTask;
 
 
 class Project {
@@ -31,8 +34,21 @@ class Task {
     }
 }
 
+function createMiscProject(){
+    let project1 = new Project(`Misc`, `no`, []);
+    projectList.push(project1);
+    const miscProject = document.createElement(`div`);
+    miscProject.classList.add(`project`);
+    miscProject.innerHTML = `Misc`;
+    projectContainer = document.getElementById(`projectContainer`);
+    projectContainer.appendChild(miscProject);
+    return;
+}
+
 
 export {
+    projectList,
     Project,
-    Task
+    Task,
+    createMiscProject
 }

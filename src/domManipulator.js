@@ -1,15 +1,3 @@
-// function domTest1() {
-// };
-// function domTest2() {
-// };
-// function domTest3(){
-// };
-// export {
-//     domTest1,
-//     domTest2,
-//     domTest3
-// }
-
 
 
 function toggleDisplay(id, standardDisplay){
