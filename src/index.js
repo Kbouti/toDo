@@ -10,15 +10,17 @@
 
 import './style.css';
 import buildPage from './homepage';
-import generateForms from './forms';
+import {taskForm, projectForm} from './forms';
 
 
-import {    toggleDisplay,
+import {
+    toggleDisplay,
     displayProjectForm,
     displayTaskForm,
     cancelButtons,
     newProject
 } from './domManipulator';
+
 import {Project, Task} from './projectManager';
 
 
@@ -32,7 +34,8 @@ let currentTask;
     //call functions with relevant variables in index.js
 
 buildPage();
-generateForms();
+taskForm();
+projectForm();
 toggleDisplay();
 displayProjectForm(),
 displayTaskForm(projectList),

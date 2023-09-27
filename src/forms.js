@@ -5,7 +5,7 @@ import createElement from './elementMaker.js';
 
 
 
-function generateForms(){
+
     function taskForm(){
         createElement([`taskFormDiv`, `formDiv`], `div`, ``, `content`);
             createElement([`taskFormTitle`, `title`], `div`, `Create New Task`, `taskFormDiv`);
@@ -26,7 +26,6 @@ function generateForms(){
                     taskNameInput.setAttribute(`required`, `true`);
                     taskNameInput.setAttribute(`name`, `taskName`);
                             
-
             createElement([`taskFormContainer3`, `formContainer`], `div`, ``, `taskForm`)
                 createElement([`taskDescriptionLabel`, `label`], `label`, `Task Description: `, `taskFormContainer3`);
                     const taskDescriptionLabel = document.getElementById(`taskDescriptionLabel`);                            
@@ -50,27 +49,21 @@ function generateForms(){
                     urgencyDropDown.innerHTML = urgencyOption;
                     urgencyDropDown.selectedIndex = 1;
 
-
-
-
-                    createElement([`taskFormContainer5`, `formContainer`], `div`, ``, `taskForm`)
-                    createElement([`taskStatusLabel`, `label`], `label`, `Status:`, `taskFormContainer5`);
-                        const taskStatusLabel = document.getElementById(`taskStatusLabel`);                            
-                        taskStatusLabel.setAttribute(`for`, `taskStatus`);
-                    createElement([`statusDropDown`], `select`, ``, `taskFormContainer5`);
-                        const statusDropDown = document.getElementById(`statusDropDown`);                            
-                        statusDropDown.setAttribute(`name`, `taskStatus`);
-                        let statusOption = '';
-                        let status = [`Not Started`, `In Progress`, `Parts On Order`, `Nearly Complete`, `Complete`];
-                        for(let i = 0; i < status.length; i++){
-                            statusOption += '<option value="'+status[i] + '">' + status[i]+"</option>"
-                        }
-                        statusDropDown.innerHTML = statusOption;
-                        statusDropDown.selectedIndex = 0;
+            createElement([`taskFormContainer5`, `formContainer`], `div`, ``, `taskForm`)
+                createElement([`taskStatusLabel`, `label`], `label`, `Status:`, `taskFormContainer5`);
+                    const taskStatusLabel = document.getElementById(`taskStatusLabel`);                            
+                    taskStatusLabel.setAttribute(`for`, `taskStatus`);
+                createElement([`statusDropDown`], `select`, ``, `taskFormContainer5`);
+                    const statusDropDown = document.getElementById(`statusDropDown`);                            
+                    statusDropDown.setAttribute(`name`, `taskStatus`);
+                    let statusOption = '';
+                    let status = [`Not Started`, `In Progress`, `Parts On Order`, `Nearly Complete`, `Complete`];
+                    for(let i = 0; i < status.length; i++){
+                        statusOption += '<option value="'+status[i] + '">' + status[i]+"</option>"
+                    }
+                    statusDropDown.innerHTML = statusOption;
+                    statusDropDown.selectedIndex = 0;
     
-
-
-
             createElement([`taskFormContainer-1`, `formContainer`], `div`, ``, `taskForm`)
                 createElement([`newTaskCancelButton`, `cancel`, `button`], `button`, `Cancel`, `taskFormContainer-1` )
                     const newTaskCancelButton = document.getElementById(`newTaskCancelButton`);
@@ -79,11 +72,12 @@ function generateForms(){
                 createElement([`newTaskSubmitButton`, `submit`, `button`], `button`, `Submit`, `taskFormContainer-1` )
                     const newTaskSubmitButton = document.getElementById(`newTaskSubmitButton`);
                     newTaskSubmitButton.setAttribute(`type`, `submit`);
-            
-
-
-
+        return;
     }
+
+
+
+
     function projectForm(){
         createElement([`projectFormDiv`, `formDiv`], `div`, ``, `content`);
             createElement([`projectFormTitle`, `title`], `div`, `Create New Project`, `projectFormDiv`);
@@ -109,19 +103,7 @@ function generateForms(){
 
     }
 
-
-    taskForm();
-    projectForm();
+export{
+    taskForm,
+    projectForm
 }
-
-    export default generateForms;
-
-    // export default function formsTest1(){
-    //     console.log(`forms test 1`);
-    // }
-
-
-    // module.exports = {
-    //    taskForm,
-    //    projectForm
-    // }
