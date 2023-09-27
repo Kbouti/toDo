@@ -35,7 +35,7 @@ buildPage();
 generateForms();
 toggleDisplay();
 displayProjectForm(),
-displayTaskForm(),
+displayTaskForm(projectList),
 cancelButtons(),
 newProject(projectList),
 
