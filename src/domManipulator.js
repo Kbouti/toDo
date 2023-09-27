@@ -1,99 +1,91 @@
-
-
-function domTest1() {
-    console.log(`dom Test1`);
-};
-
-
-function domTest2() {
-    console.log(`dom Test2`);
-};
-
-function domTest3(){
-    console.log(`dom Test 3`)
-};
-
-export {
-    domTest1,
-    domTest2,
-    domTest3
-}
-
-//  What's going on here?? If I remove "default" from test function 2, or if I include "default" in the statement for test 1 or 3, the whole thing crashes. 
-//  As is, the site doesn't crash, but neither test 1 or 3 log their event in the console. What's going on with the default statement and more importantly what do I have to do to export multiple functions?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function domManipulator(projectList){
-
-// function toggleDisplay(id, standardDisplay){
-//     const element = document.getElementById(id);
-//     const elementDisplayValue = window.getComputedStyle(element).getPropertyValue(`display`);
-//     if(elementDisplayValue == standardDisplay){
-//         element.style.display = 'none'
-//         return;
-//     }
-//     element.style.display = standardDisplay;
-//     return;
-
+// function domTest1() {
+// };
+// function domTest2() {
+// };
+// function domTest3(){
+// };
+// export {
+//     domTest1,
+//     domTest2,
+//     domTest3
 // }
 
 
-// function addEventListeners(projectList){
-//     const newProjectBtn = document.getElementById(`newProjectBtn`);
-//         newProjectBtn.addEventListener(`click`, function(){
-//         toggleDisplay(`projectFormDiv`, `flex`)
-//         })
 
-//     const newTaskBtn = document.getElementById(`newTaskBtn`);
-//         newTaskBtn.addEventListener(`click`, function(){
-// //populate dropdown menu with current projects:
-//         let option = ``;
-//         for(let i = 0; i < projectList.length; i++){
-//             option += `<option value=${projectList[i].name}>` + projectList[i].name+"</option>"
-//         }
-//         projectDropDown.innerHTML = option;
-//         toggleDisplay(`taskFormDiv`, `flex`)
-//     })
+function toggleDisplay(id, standardDisplay){
+    const element = document.getElementById(id);
+    const elementDisplayValue = window.getComputedStyle(element).getPropertyValue(`display`);
+    if(elementDisplayValue == standardDisplay){
+        element.style.display = 'none'
+        return;
+    }
+    element.style.display = standardDisplay;
+    return;
+}
 
 
-//     const newProjectCancelButton = document.getElementById(`newProjectCancelButton`);
-//     newProjectCancelButton.addEventListener(`click`, function(){
-//         this.form.reset();
-//         toggleDisplay(`projectFormDiv`, `flex`);
-//     })
-//     const newTaskCancelButton = document.getElementById(`newTaskCancelButton`);
-//     newTaskCancelButton.addEventListener(`click`, function(){
-//         this.form.reset();
-//         toggleDisplay(`taskFormDiv`, `flex`);
-//     })
+function displayProjectForm(){
+    const newProjectBtn = document.getElementById(`newProjectBtn`);
+        newProjectBtn.addEventListener(`click`, function(){
+        toggleDisplay(`projectFormDiv`, `flex`)
+        })
+        return;
+}
+
+function displayTaskForm(projectList){
+    const newTaskBtn = document.getElementById(`newTaskBtn`);
+        newTaskBtn.addEventListener(`click`, function(){
+//populate dropdown menu with current projects:
+        let option = ``;
+        for(let i = 0; i < projectList.length; i++){
+        option += `<option value=${projectList[i].name}>` + projectList[i].name+"</option>"
+        }
+        projectDropDown.innerHTML = option;
+        toggleDisplay(`taskFormDiv`, `flex`)
+        })
+        return;
+}
+
+function cancelButtons(){
+    const newProjectCancelButton = document.getElementById(`newProjectCancelButton`);
+    newProjectCancelButton.addEventListener(`click`, function(){
+        this.form.reset();
+        toggleDisplay(`projectFormDiv`, `flex`);
+    })
+    const newTaskCancelButton = document.getElementById(`newTaskCancelButton`);
+    newTaskCancelButton.addEventListener(`click`, function(){
+        this.form.reset();
+        toggleDisplay(`taskFormDiv`, `flex`);
+    })
+}
+
+
+
+function newProject(projectList){
+    const projectForm = document.getElementById(`projectForm`);
+    projectForm.addEventListener(`submit`, function(event){
+        event.preventDefault();
+        const projectNameInput = document.getElementById(`projectNameInput`);
+        const newProject = new Project(projectNameInput.value, `no`, []);
+        projectList.push(newProject);
+        return;
+})
+}
+
+
+export {
+    toggleDisplay,
+    displayProjectForm,
+    displayTaskForm,
+    cancelButtons,
+    newProject
+}
 
 
 
 
 
-//     const projectForm = document.getElementById(`projectForm`);
-//     projectForm.addEventListener(`submit`, function(event){
-//         event.preventDefault();
-//         const projectNameInput = document.getElementById(`projectNameInput`);
-//         const newProject = new Project(projectNameInput.value, `no`, []);
-//         projectList.push(newProject);
-
-//         //the following code should be broken down into a separate and smaller chunks?
+        //the following code should be broken down into a separate and smaller chunks?
 
 //         const newElement = document.createElement(`div`);
 //             // newElement.setAttribute(`id`, `${projectNameInput.value}`);
@@ -246,7 +238,4 @@ export {
 // }
 
 
-//  return;   
-// }
-
-// export default domManipulator;
+ 

@@ -13,12 +13,14 @@ import buildPage from './homepage';
 import generateForms from './forms';
 
 
-import {domTest1, domTest2, domTest3} from './domManipulator';
+import {    toggleDisplay,
+    displayProjectForm,
+    displayTaskForm,
+    cancelButtons,
+    newProject
+} from './domManipulator';
 import {Project, Task} from './projectManager';
 
-domTest1();
-domTest2();
-domTest3();
 
 let projectList = [];
 let currentProject;
@@ -31,7 +33,11 @@ let currentTask;
 
 buildPage();
 generateForms();
-
+toggleDisplay();
+displayProjectForm(),
+displayTaskForm(),
+cancelButtons(),
+newProject(projectList),
 
 
 
