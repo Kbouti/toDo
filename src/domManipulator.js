@@ -1,5 +1,5 @@
 import { Project, Task, makeTask, pushTaskToProject, makeProject, pushProjectToProjectList } from "./projectManager";
-import { makeTaskCard } from "./taskCards.js";
+import { makeTaskCard, makeTaskBar } from "./taskCards.js";
 
 
 function newProjectElement(project){

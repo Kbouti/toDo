@@ -11,8 +11,11 @@ console.log(`index.js loaded`);
 
 import './style.css';
 import buildPage from './homepage';
-import {taskForm, projectForm} from './forms';
 
+import {
+    taskForm,
+    projectForm
+} from './forms';
 
 import {
     toggleDisplay,
@@ -23,7 +26,12 @@ import {
     addListenerToProjectSubmit,
 } from './domManipulator';
 
-import {projectList, Project, Task, createMiscProject} from './projectManager';
+import {
+    projectList,
+    Project,
+    Task,
+    createMiscProject
+} from './projectManager';
 
 
 

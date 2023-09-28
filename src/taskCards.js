@@ -1,9 +1,9 @@
 import createElement from './elementMaker.js';
 
 function makeTaskBar(task, projectList){
-    const taskBar = document.createElement(`div`);
-        taskBar.classList.add(`taskBar`);
-
+    console.log('making a taskBar');
+    createElement([`${task.name}taskBar`, taskBar], `div`, ``, `taskContainer`);
+        createElement([``, ''])
 }
 
 
@@ -116,4 +116,7 @@ function checkUrgency(task){
 
 
 
-export {makeTaskCard}
+export {
+    makeTaskCard,
+    makeTaskBar
+}
