@@ -198,7 +198,15 @@
 .taskBar{
     display:flex;
     flex-direction:row;
+    justify-content: space-between;
 }
+
+.taskBarSubMenu{
+    display:flex;
+    flex-direction: row;
+}
+
+
 
 .highUrgency{
     color:red;
