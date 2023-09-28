@@ -88,13 +88,19 @@ function addListenerToTaskSubmit(){
     const taskForm = document.getElementById(`taskForm`);
     taskForm.addEventListener(`submit`, function(event){
         event.preventDefault();
+        //prevent default
 
         let newTask = makeTask();
+        //Make new task
         pushTaskToProject(newTask);
+        //Append new task to proper project in project list
 
+        taskForm.reset();
+        //Reset form
 
         toggleDisplay(`taskFormDiv`, `flex`);
-        taskForm.reset();
+        //Make form dissappear
+
     })
 
 
