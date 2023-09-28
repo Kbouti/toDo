@@ -92,6 +92,15 @@ function makeTaskCard(task, projectList){
 }
 
 
+
+
+
+
+//Should also make a task bar for at a glance details of all tasks
+
+
+
+
 function checkUrgency(task){
     let urgency = task.urgency;
     return urgency;

@@ -67,7 +67,16 @@ function pushTaskToProject(newTask){
     return;
 }
 
+function pushProjectToProjectList(project){
+    projectList.push(project);
 
+}
+
+function makeProject(projectList){
+    const projectNameInput = document.getElementById(`projectNameInput`);
+    const newProject = new Project(projectNameInput.value, `no`, []);
+    return newProject;
+}
 
 
 
@@ -78,5 +87,7 @@ export {
     Task,
     makeTask,
     pushTaskToProject,
+    makeProject,
+    pushProjectToProjectList,
     createMiscProject
 }

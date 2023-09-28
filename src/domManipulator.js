@@ -1,5 +1,20 @@
-import { Project, Task, makeTask, pushTaskToProject } from "./projectManager";
+import { Project, Task, makeTask, pushTaskToProject, makeProject, pushProjectToProjectList } from "./projectManager";
 import { makeTaskCard } from "./taskCards.js";
+
+
+function newProjectElement(project){
+    const newElement = document.createElement(`div`);
+        newElement.classList.add(`project`);
+        newElement.innerHTML = project.name;
+        projectContainer = document.getElementById(`projectContainer`);
+        projectContainer.appendChild(newElement);
+    const projectDeleteButton = document.createElement(`div`);
+        projectDeleteButton.classList.add(`projectDeleteButton`);
+        projectDeleteButton.innerHTML = "X";
+        newElement.appendChild(projectDeleteButton);
+    return;
+}
+
 
 function toggleDisplay(id, standardDisplay){
     const element = document.getElementById(id);
@@ -50,33 +65,30 @@ function cancelButtons(){
 
 
 
-function newProject(projectList){
+
+function addListenerToProjectSubmit(projectList){
     const projectForm = document.getElementById(`projectForm`);
     projectForm.addEventListener(`submit`, function(event){
         event.preventDefault();
-        const projectNameInput = document.getElementById(`projectNameInput`);
-        const newProject = new Project(projectNameInput.value, `no`, []);
-        projectList.push(newProject);
+        //Prevent default
 
-        const newElement = document.createElement(`div`);
-        // newElement.setAttribute(`id`, `${projectNameInput.value}`);
-        //removed id declaration to avoid poluting global scope
-        newElement.classList.add(`project`);
-        newElement.innerHTML = projectNameInput.value;
-        projectContainer = document.getElementById(`projectContainer`);
-        projectContainer.appendChild(newElement);
-        const projectDeleteButton = document.createElement(`div`);
-        projectDeleteButton.classList.add(`projectDeleteButton`);
-        projectDeleteButton.innerHTML = "X";
-        newElement.appendChild(projectDeleteButton);
-    toggleDisplay(`projectFormDiv`, `flex`);
-    projectForm.reset();
+        let newProject = makeProject(projectList);
+        //Make new project
 
-        return;
-})
+        pushProjectToProjectList(newProject);
+        //Push project to projectList
+
+        newProjectElement(newProject);
+        //Creates the dom element for the new project
+
+        projectForm.reset();
+        //Resets the form
+
+        toggleDisplay(`projectFormDiv`, `flex`);
+        //Dissapears the form
+    return;
+    })
 }
-
-
 
 
 function addListenerToTaskSubmit(projectList){
@@ -90,15 +102,15 @@ function addListenerToTaskSubmit(projectList){
         pushTaskToProject(newTask);
         //Append new task to proper project in project list
 
+        makeTaskCard(newTask, projectList)
+        //Creates Dom element
+
         taskForm.reset();
         //Reset form
 
         toggleDisplay(`taskFormDiv`, `flex`);
         //Make form dissappear
-
-        makeTaskCard(newTask, projectList)
-        //Creates Dom element
-
+        return;
     })
 
 }
@@ -108,18 +120,9 @@ export {
     displayProjectForm,
     displayTaskForm,
     cancelButtons,
-    newProject,
-    addListenerToTaskSubmit
+    addListenerToTaskSubmit,
+    addListenerToProjectSubmit
 }
-
-        //the following code should be broken down into a separate and smaller chunks?
-
-//         makeTaskCard(newTask, projectList);
-
-    
-// }
-
-
 
 
 

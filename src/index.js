@@ -19,8 +19,8 @@ import {
     displayProjectForm,
     displayTaskForm,
     cancelButtons,
-    newProject,
-    addListenerToTaskSubmit
+    addListenerToTaskSubmit,
+    addListenerToProjectSubmit,
 } from './domManipulator';
 
 import {projectList, Project, Task, createMiscProject} from './projectManager';
@@ -39,17 +39,18 @@ console.log(`taskForm has run`);
 projectForm();
 console.log(`projectForm has run`);
 displayProjectForm(),
-console.log(`displayProjectForm has run`);
+console.log(`display ProjectForm has run`);
 displayTaskForm(projectList),
-console.log(`displYTaskForm has run`);
+console.log(`display TaskForm has run`);
 cancelButtons(),
-console.log(`tcancelButtons has run`);
-newProject(projectList);
-console.log(`newProject has run`);
+console.log(`cancelButtons has run`);
 createMiscProject();
 console.log(`Misc Project created`);
 addListenerToTaskSubmit(projectList);
 console.log(`Listener added to new task submit`);
+addListenerToProjectSubmit(projectList);
+console.log(`Listener added to new project submit`);
+
 
 
 
