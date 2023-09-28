@@ -84,34 +84,49 @@ export {
     newProject
 }
 
+function addListenerToTaskSubmit(){
+    const taskForm = document.getElementById(`taskForm`);
+    taskForm.addEventListener(`submit`, function(event){
+        event.preventDefault();
 
+        let newTask = makeTask();
+        pushTaskToProject(newTask);
+
+
+        toggleDisplay(`taskFormDiv`, `flex`);
+        taskForm.reset();
+    })
+
+
+
+
+}
 
 
         //the following code should be broken down into a separate and smaller chunks?
+function makeTask(){
+        const projectDropDown = document.getElementById(`projectDropDown`);
+        const taskNameInput = document.getElementById(`taskNameInput`);
+        const taskDescriptionInput = document.getElementById(`taskDescriptionInput`);
+        const urgencyDropDown = document.getElementById(`urgencyDropDown`);
+        const statusDropDown = document.getElementById(`statusDropDown`);
 
+        const newTask = new Task(projectDropDown.value, taskNameInput.value, taskDescriptionInput.value, urgencyDropDown.value, statusDropDown.value);
 
-//     const taskForm = document.getElementById(`taskForm`);
-//     taskForm.addEventListener(`submit`, function(event){
-//         event.preventDefault();
-//         const projectDropDown = document.getElementById(`projectDropDown`);
-//         const taskNameInput = document.getElementById(`taskNameInput`);
-//         const taskDescriptionInput = document.getElementById(`taskDescriptionInput`);
-//         const urgencyDropDown = document.getElementById(`urgencyDropDown`);
-//         const statusDropDown = document.getElementById(`statusDropDown`);
+        return newTask;
+}
 
-//         const newTask = new Task(projectDropDown.value, taskNameInput.value, taskDescriptionInput.value, urgencyDropDown.value, statusDropDown.value);
-//         for (let i = 0; i < projectList.length;i++){
-//             if ( projectList[i].name == projectDropDown.value){
-//                     projectList[i].contents.push(newTask);
-//             }
-//         }
-//         //^Adds the task to the correct project
+function pushTaskToProject(newTask){
+        for (let i = 0; i < projectList.length;i++){
+            if ( projectList[i].name == projectDropDown.value){
+                    projectList[i].contents.push(newTask);
+            }
+        }
+        return;
+}
 
 //         makeTaskCard(newTask, projectList);
 
-//         toggleDisplay(`taskFormDiv`, `flex`);
-//         taskForm.reset();
-//     })
     
 // }
 

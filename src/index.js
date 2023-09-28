@@ -49,19 +49,6 @@ createMiscProject();
 console.log(`Misc Project created`);
 
 
-// addEventListeners(projectList);
-
-
-// testFunction(projectList);
-
-// let project1 = new Project(`Misc`, `no`, []);
-// projectList.push(project1);
-// const miscProject = document.createElement(`div`);
-//     miscProject.classList.add(`project`);
-//     miscProject.innerHTML = `Misc`;
-//     projectContainer = document.getElementById(`projectContainer`);
-//     projectContainer.appendChild(miscProject);
-
 
 
 // const task1 = new Task(`Car`, `Roof Bike Rack`, `Mount fork clamp on roof rack. Need brackets to secure fork mount to roof rails`, `low`, `need parts`);
