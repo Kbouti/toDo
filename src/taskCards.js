@@ -1,12 +1,20 @@
 import createElement from './elementMaker.js';
 
+function makeTaskBar(task, projectList){
+    const taskBar = document.createElement(`div`);
+        taskBar.classList.add(`taskBar`);
+
+}
+
+
+
 
 function makeTaskCard(task, projectList){
     console.log(projectList)
     console.log(task);
 
     const taskElement = document.createElement(`div`);
-        taskElement.classList.add(`task`);
+        taskElement.classList.add(`taskCard`);
 
         const taskCardLeft = document.createElement(`div`);
         const taskCardRight = document.createElement(`div`);

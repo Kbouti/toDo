@@ -162,7 +162,7 @@
     width:90%;
 }
 
-.task {
+.taskCard {
     border:3px solid var(--colorA);
     border-radius:10px;
     width: auto;
