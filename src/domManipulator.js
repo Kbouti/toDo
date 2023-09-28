@@ -1,4 +1,4 @@
-
+import { Project, Task } from "./projectManager";
 
 function toggleDisplay(id, standardDisplay){
     const element = document.getElementById(id);
@@ -56,6 +56,21 @@ function newProject(projectList){
         const projectNameInput = document.getElementById(`projectNameInput`);
         const newProject = new Project(projectNameInput.value, `no`, []);
         projectList.push(newProject);
+
+        const newElement = document.createElement(`div`);
+        // newElement.setAttribute(`id`, `${projectNameInput.value}`);
+        //removed id declaration to avoid poluting global scope
+        newElement.classList.add(`project`);
+        newElement.innerHTML = projectNameInput.value;
+        projectContainer = document.getElementById(`projectContainer`);
+        projectContainer.appendChild(newElement);
+        const projectDeleteButton = document.createElement(`div`);
+        projectDeleteButton.classList.add(`projectDeleteButton`);
+        projectDeleteButton.innerHTML = "X";
+        newElement.appendChild(projectDeleteButton);
+    toggleDisplay(`projectFormDiv`, `flex`);
+    projectForm.reset();
+
         return;
 })
 }
@@ -72,23 +87,8 @@ export {
 
 
 
-
         //the following code should be broken down into a separate and smaller chunks?
 
-//         const newElement = document.createElement(`div`);
-//             // newElement.setAttribute(`id`, `${projectNameInput.value}`);
-//             //removed id declaration to avoid poluting global scope
-//             newElement.classList.add(`project`);
-//             newElement.innerHTML = projectNameInput.value;
-//             projectContainer = document.getElementById(`projectContainer`);
-//             projectContainer.appendChild(newElement);
-//             const projectDeleteButton = document.createElement(`div`);
-//             projectDeleteButton.classList.add(`projectDeleteButton`);
-//             projectDeleteButton.innerHTML = "X";
-//             newElement.appendChild(projectDeleteButton);
-//         toggleDisplay(`projectFormDiv`, `flex`);
-//         projectForm.reset();
-//     })
 
 //     const taskForm = document.getElementById(`taskForm`);
 //     taskForm.addEventListener(`submit`, function(event){
