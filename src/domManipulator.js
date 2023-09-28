@@ -76,13 +76,7 @@ function newProject(projectList){
 }
 
 
-export {
-    toggleDisplay,
-    displayProjectForm,
-    displayTaskForm,
-    cancelButtons,
-    newProject
-}
+
 
 function addListenerToTaskSubmit(){
     const taskForm = document.getElementById(`taskForm`);
@@ -103,11 +97,16 @@ function addListenerToTaskSubmit(){
 
     })
 
-
-
-
 }
 
+export {
+    toggleDisplay,
+    displayProjectForm,
+    displayTaskForm,
+    cancelButtons,
+    newProject,
+    addListenerToTaskSubmit
+}
 
         //the following code should be broken down into a separate and smaller chunks?
 
