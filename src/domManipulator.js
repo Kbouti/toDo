@@ -102,7 +102,7 @@ function addListenerToTaskSubmit(projectList){
         pushTaskToProject(newTask);
         //Append new task to proper project in project list
 
-        makeTaskCard(newTask, projectList)
+        makeTaskBar(newTask, projectList)
         //Creates Dom element
 
         taskForm.reset();

@@ -9,8 +9,13 @@
 
 function makeEl(array, type){
     const element = document.createElement(`${type}`);
-    let id = array[0];
-    element.setAttribute(`id`, `${id}`);
+
+    if(array[0] !== ''){
+        let id = array[0];
+        element.setAttribute(`id`, `${id}`);
+    }
+//if empty string passed to first argument, do not assign id. 
+    
     if (array.length > 1){
         for (let i = 1; i < array.length; i++ ){
             element.classList.add(`${array[i]}`)

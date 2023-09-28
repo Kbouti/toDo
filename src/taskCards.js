@@ -2,8 +2,8 @@ import createElement from './elementMaker.js';
 
 function makeTaskBar(task, projectList){
     console.log('making a taskBar');
-    createElement([`${task.name}taskBar`, taskBar], `div`, ``, `taskContainer`);
-        createElement([``, ''])
+    createElement([`${task.name}taskBar`, `taskBar`], `div`, ``, `taskContainer`);
+    createElement([``, `taskBar`], `div`, `${task.name}`, `${task.name}taskBar`);
 }
 
 
