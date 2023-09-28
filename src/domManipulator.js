@@ -1,4 +1,4 @@
-import { Project, Task } from "./projectManager";
+import { Project, Task, makeTask, pushTaskToProject } from "./projectManager";
 
 function toggleDisplay(id, standardDisplay){
     const element = document.getElementById(id);
@@ -110,26 +110,6 @@ function addListenerToTaskSubmit(){
 
 
         //the following code should be broken down into a separate and smaller chunks?
-function makeTask(){
-        const projectDropDown = document.getElementById(`projectDropDown`);
-        const taskNameInput = document.getElementById(`taskNameInput`);
-        const taskDescriptionInput = document.getElementById(`taskDescriptionInput`);
-        const urgencyDropDown = document.getElementById(`urgencyDropDown`);
-        const statusDropDown = document.getElementById(`statusDropDown`);
-
-        const newTask = new Task(projectDropDown.value, taskNameInput.value, taskDescriptionInput.value, urgencyDropDown.value, statusDropDown.value);
-
-        return newTask;
-}
-
-function pushTaskToProject(newTask){
-        for (let i = 0; i < projectList.length;i++){
-            if ( projectList[i].name == projectDropDown.value){
-                    projectList[i].contents.push(newTask);
-            }
-        }
-        return;
-}
 
 //         makeTaskCard(newTask, projectList);
 

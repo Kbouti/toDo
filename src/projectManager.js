@@ -46,9 +46,37 @@ function createMiscProject(){
 }
 
 
+function makeTask(){
+    const projectDropDown = document.getElementById(`projectDropDown`);
+    const taskNameInput = document.getElementById(`taskNameInput`);
+    const taskDescriptionInput = document.getElementById(`taskDescriptionInput`);
+    const urgencyDropDown = document.getElementById(`urgencyDropDown`);
+    const statusDropDown = document.getElementById(`statusDropDown`);
+
+    const newTask = new Task(projectDropDown.value, taskNameInput.value, taskDescriptionInput.value, urgencyDropDown.value, statusDropDown.value);
+
+    return newTask;
+}
+
+function pushTaskToProject(newTask){
+    for (let i = 0; i < projectList.length;i++){
+        if ( projectList[i].name == projectDropDown.value){
+                projectList[i].contents.push(newTask);
+        }
+    }
+    return;
+}
+
+
+
+
+
+
 export {
     projectList,
     Project,
     Task,
+    makeTask,
+    pushTaskToProject,
     createMiscProject
 }
