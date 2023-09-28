@@ -1,5 +1,5 @@
 import { Project, Task, makeTask, pushTaskToProject } from "./projectManager";
-import { makeTaskCard } from "./taskCards";
+import { makeTaskCard } from "./taskCards.js";
 
 function toggleDisplay(id, standardDisplay){
     const element = document.getElementById(id);
