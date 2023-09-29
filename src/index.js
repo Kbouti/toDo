@@ -59,6 +59,8 @@ console.log(`Listener added to new task submit`);
 addListenerToProjectSubmit(projectList);
 console.log(`Listener added to new project submit`);
 
+console.log(`PAGE LOAD COMPLETE`)
+
 
 
 
