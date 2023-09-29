@@ -4,9 +4,10 @@ let currentTask;
 
 
 class Project {
-    constructor(name, canDelete, contents){
+    constructor(name, canDelete, isSelected, contents){
         this.name = name;
         this.canDelete = canDelete;
+        this.isSelected = isSelected;
         this.contents = contents;
     }
 
@@ -35,15 +36,13 @@ class Task {
 }
 
 function createMiscProject(){
-    let project1 = new Project(`Misc`, `no`, []);
+    let project1 = new Project(`Misc`, false, true, []);
     projectList.push(project1);
     const miscProject = document.createElement(`div`);
     miscProject.classList.add(`project`);
     miscProject.innerHTML = `Misc`;
     projectContainer = document.getElementById(`projectContainer`);
     projectContainer.appendChild(miscProject);
-
-    currentProject = project1.name;
 
     return;
 }
