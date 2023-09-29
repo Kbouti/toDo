@@ -1,4 +1,4 @@
-import { Project, Task, makeTask, pushTaskToProject, makeProject, pushProjectToProjectList } from "./projectManager";
+import { Project, Task, currentProject, currentTask, makeTask, pushTaskToProject, makeProject, pushProjectToProjectList } from "./projectManager";
 import { makeTaskCard, makeTaskBar } from "./taskCards.js";
 
 
@@ -73,6 +73,8 @@ function addListenerToProjectSubmit(projectList){
         //Prevent default
 
         let newProject = makeProject(projectList);
+        console.log(newProject.name);
+        currentProject = newProject.name;
         //Make new project
 
         pushProjectToProjectList(newProject);

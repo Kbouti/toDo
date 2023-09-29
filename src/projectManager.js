@@ -42,6 +42,9 @@ function createMiscProject(){
     miscProject.innerHTML = `Misc`;
     projectContainer = document.getElementById(`projectContainer`);
     projectContainer.appendChild(miscProject);
+
+    currentProject = project1.name;
+
     return;
 }
 
