@@ -40,6 +40,8 @@ function createMiscProject(){
     projectList.push(project1);
     const miscProject = document.createElement(`div`);
     miscProject.classList.add(`project`);
+    miscProject.classList.add(`isSelected`);
+
     miscProject.innerHTML = `Misc`;
     projectContainer = document.getElementById(`projectContainer`);
     projectContainer.appendChild(miscProject);
