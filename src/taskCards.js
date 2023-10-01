@@ -5,8 +5,8 @@ function makeTaskBar(task, projectList){
     createElement([`${task.name}taskBar`, `taskBar`], `div`, ``, `taskContainer`);
     createElement([``, `taskBarName`], `div`, `${task.name}`, `${task.name}taskBar`);
     createElement([`${task.name}subMenu`, `taskBarSubMenu`], `div`, ``, `${task.name}taskBar`);
-    createElement([``, `taskBarUrgency`], `div`, `${task.urgency}`, `${task.name}subMenu`);
-    createElement([``, `taskBarStatus`], `div`, `${task.status}`, `${task.name}subMenu`);
+    createElement([``, `taskBarUrgency`, `barWidget`], `div`, `${task.urgency}`, `${task.name}subMenu`);
+    createElement([``, `taskBarStatus`, `barWidget`], `div`, `${task.status}`, `${task.name}subMenu`);
 
 }
 

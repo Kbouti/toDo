@@ -229,6 +229,11 @@
     background-color:rgb(40, 177, 245) ;
 }
 
+.barWidget{
+    border:2px solid black;
+    margin:3px;
+}
+
 
 .project{
     /* background:white; */
