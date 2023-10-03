@@ -108,6 +108,20 @@ function makeTaskCard(task, projectList){
 
 
 
+function addUrgencyClass(task){
+    if (checkUrgency(task) ==  `HIGH`){
+        taskUrgency.classList.add(`highUrgency`);
+    }
+    else if (checkUrgency(task) ==  `Mid`){
+        taskUrgency.classList.add(`midUrgency`);
+    }
+    else if (checkUrgency(task) ==  `Low`){
+        taskUrgency.classList.add(`lowUrgency`);
+    }
+}
+
+
+
 //Should also make a task bar for at a glance details of all tasks
 
 

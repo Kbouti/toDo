@@ -7,6 +7,11 @@
 //  4. A string containing the id of the element you'd like to append the new element to. The main container is #content.
 
 
+//Deconstructing createElement function to split into element creation and appending to parent div. 
+
+
+
+
 function makeEl(array, type){
     const element = document.createElement(`${type}`);
 
@@ -23,20 +28,27 @@ function makeEl(array, type){
     }
     return element;
 }
+
 function populateEl(element, content){
     element.innerHTML = content;
     return element;
 }
-function placeEl(element, location){
+
+
+function createElement(array, type, content){
+    let element = makeEl(array, type);
+    populateEl(element, content);
+    return element;
+}
+
+function placeElement(element, location){
     const locationDiv = document.getElementById(`${location}`);
     locationDiv.appendChild(element);
     return;
 }
-function createElement(array, type, content, location){
-    let element = makeEl(array, type);
-    populateEl(element, content);
-    placeEl(element,location);
-}
 
 
-export default createElement;
+export {
+    createElement,
+    placeElement
+};
