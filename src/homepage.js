@@ -1,4 +1,4 @@
-import createElement from './elementMaker.js';
+import {createElement,  placeElement } from './elementMaker.js';
 
 
 //  Create element takes 4 arguments:
@@ -11,11 +11,23 @@ import createElement from './elementMaker.js';
 
 
 function buildPage(){
-    createElement([`header`], `div`, ``,`content`);
-        createElement([`title`], `div`, `To Do List`, `header`);
-    createElement([`body`], `div`, ``, `content`)
-    createElement([`sidebar`], `div`, ``, `body`);
-        createElement([`sidebarTitle`, `title`], `div`, `Projects`, `sidebar`);
+    let header = createElement([`header`], `div`, ``);
+        placeElement(header, `content`);
+        let title = createElement([`title`], `div`, `To Do List`);
+            placeElement(title, `header`);
+
+    let body = createElement([`body`], `div`, ``)
+        placeElement(body, `content`);
+
+
+
+
+    let sidebar = createElement([`sidebar`], `div`, ``)
+        placeElement(sidebar, `body`);
+
+        let sidebarTitle = createElement([`sidebarTitle`, `title`], `div`, `Projects`);
+            placeElement(sidebarTitle, `sidebar`);
+            
         createElement([`newProjectBtn`, `addBtn`], `div`, ``, `sidebar`);
             createElement([`addGraphic`, `material-symbols-outlined`], `span`, `add`, `newProjectBtn`);
             createElement([`addProject`, `btnText`], `span`, `New Project`, `newProjectBtn`);
