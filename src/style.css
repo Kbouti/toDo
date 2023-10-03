@@ -236,7 +236,7 @@
 }
 
 .barWidget{
-    border:2px solid black;
+    border:2px solid var(--colorE);
     margin:3px;
 }
 
