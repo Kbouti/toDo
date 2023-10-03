@@ -200,9 +200,11 @@
     display:flex;
     flex-direction:row;
     justify-content: space-between;
-    border:2px solid var(--colorE);
     margin:3px;
+    background-color:var(--colorC);
+    color:var(--colorD);
 }
+
 .taskBarName{
     margin-top:auto;
     margin-bottom:auto;
