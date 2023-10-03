@@ -1,3 +1,5 @@
+import { makeTaskBar } from "./taskCards";
+
 let projectList = [];
 let currentProject;
 let currentTask;
@@ -83,6 +85,13 @@ function makeProject(){
 }
 
 
+function tempTask(projectList){
+    const tempTask = new Task(`Misc`, `Example task`, `All the task notes you could ever want!`, `Mid`, `Not Started`)
+    pushTaskToProject(tempTask);
+    makeTaskBar(tempTask, projectList);
+    return;
+}
+
 
 
 export {
@@ -93,5 +102,6 @@ export {
     pushTaskToProject,
     makeProject,
     pushProjectToProjectList,
-    createMiscProject
+    createMiscProject,
+    tempTask
 }

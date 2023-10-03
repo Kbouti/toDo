@@ -30,7 +30,8 @@ import {
     projectList,
     Project,
     Task,
-    createMiscProject
+    createMiscProject,
+    tempTask
 } from './projectManager';
 
 
@@ -41,23 +42,35 @@ import {
     //call functions with relevant variables in index.js
 
 buildPage();
-console.log(`buildPage has run`);
+    console.log(`buildPage has run`);
+
 taskForm();
-console.log(`taskForm has run`);
+    console.log(`taskForm has run`);
+
 projectForm();
-console.log(`projectForm has run`);
+    console.log(`projectForm has run`);
+
 displayProjectForm(),
-console.log(`display ProjectForm has run`);
+    console.log(`display ProjectForm has run`);
+
 displayTaskForm(projectList),
-console.log(`display TaskForm has run`);
+    console.log(`display TaskForm has run`);
+
 cancelButtons(),
-console.log(`cancelButtons has run`);
+    console.log(`cancelButtons has run`);
+
 createMiscProject();
-console.log(`Misc Project created`);
+    console.log(`Misc Project created`);
+
+tempTask(projectList);
+    console.log(`temp taskBar loaded`);
+
 addListenerToTaskSubmit(projectList);
-console.log(`Listener added to new task submit`);
+    console.log(`Listener added to new task submit`);
+
 addListenerToProjectSubmit(projectList);
-console.log(`Listener added to new project submit`);
+    console.log(`Listener added to new project submit`);
+
 
 console.log(`PAGE LOAD COMPLETE`)
 
