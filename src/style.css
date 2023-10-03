@@ -200,9 +200,10 @@
     display:flex;
     flex-direction:row;
     justify-content: space-between;
-    margin:3px;
+    margin:.5rem;
     background-color:var(--colorC);
     color:var(--colorD);
+    height:3rem;
 }
 
 .taskBarName{
@@ -241,6 +242,8 @@
 .barWidget{
     border:2px solid var(--colorE);
     margin:3px;
+    padding:5px;
+    border-radius:15px;
 }
 
 
