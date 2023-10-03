@@ -76,7 +76,7 @@ function pushProjectToProjectList(project){
 
 }
 
-function makeProject(projectList){
+function makeProject(){
     const projectNameInput = document.getElementById(`projectNameInput`);
     const newProject = new Project(projectNameInput.value, false, true,  []);
     return newProject;
