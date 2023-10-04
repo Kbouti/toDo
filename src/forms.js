@@ -31,22 +31,17 @@ import {createElement, placeElement} from './elementMaker.js';
                     taskNameInput.setAttribute(`name`, `taskName`);                
             let taskFormContainer3 = createElement([`taskFormContainer3`, `formContainer`], `div`, ``);
                 placeElement(taskFormContainer3, `taskForm`);
-
                 let taskDescriptionLabel = createElement([`taskDescriptionLabel`, `label`], `label`, `Task Description: `);
                     placeElement(taskDescriptionLabel, `taskFormContainer3`);  
                     taskDescriptionLabel.setAttribute(`for`, `taskDescription`);
-
                 let taskDescriptionInput = createElement([`taskDescriptionInput`, `textInput`], `input`, ``, `taskFormContainer3`);
                     placeElement(taskDescriptionInput, `taskFormContainer3`);
                     taskDescriptionInput.setAttribute(`name`, `taskDescription`);
-    
             let taskFormContainer4 = createElement([`taskFormContainer4`, `formContainer`], `div`, ``);
                 placeElement(taskFormContainer4, `taskForm`);
-
                 let taskUrgencyLabel = createElement([`taskUrgencyLabel`, `label`], `label`, `Urgency:`);
                     placeElement(taskUrgencyLabel, `taskFormContainer4`);
                     taskUrgencyLabel.setAttribute(`for`, `taskUrgency`);
-
                 let urgencyDropDown = createElement([`urgencyDropDown`], `select`, ``);
                     placeElement(urgencyDropDown, `taskFormContainer4`);                            
                     urgencyDropDown.setAttribute(`name`, `taskUrgency`);
@@ -57,7 +52,6 @@ import {createElement, placeElement} from './elementMaker.js';
                     }
                     urgencyDropDown.innerHTML = urgencyOption;
                     urgencyDropDown.selectedIndex = 1;
-
             let taskFormContainer5 = createElement([`taskFormContainer5`, `formContainer`], `div`, ``);
                 placeElement(taskFormContainer5, `taskFrom`);
                 let taskStatusLabel = createElement([`taskStatusLabel`, `label`], `label`, `Status:`);
@@ -79,7 +73,6 @@ import {createElement, placeElement} from './elementMaker.js';
                 let newTaskCancelButton = createElement([`newTaskCancelButton`, `cancel`, `button`], `button`, `Cancel`);
                     placeElement(newTaskCancelButton, `taskFormContainer6`);
                     newTaskCancelButton.setAttribute(`type`, `reset`);
-
                 let newTaskSubmitButton = createElement([`newTaskSubmitButton`, `submit`, `button`], `button`, `Submit`);
                     placeElement(newTaskSubmitButton, `taskFormContainer6`);
                     newTaskSubmitButton.setAttribute(`type`, `submit`);
@@ -90,28 +83,33 @@ import {createElement, placeElement} from './elementMaker.js';
 
 
     function projectForm(){
-        createElement([`projectFormDiv`, `formDiv`], `div`, ``, `content`);
-            createElement([`projectFormTitle`, `title`], `div`, `Create New Project`, `projectFormDiv`);
-            createElement([`projectForm`, `form`], `form`, ``, `projectFormDiv`);
-                const projectForm = document.getElementById(`projectForm`);
+        let projectFormDiv = createElement([`projectFormDiv`, `formDiv`], `div`, ``);
+            placeElement(projectFormDiv, `content`);
+
+
+
+            let projectFormTitle = createElement([`projectFormTitle`, `title`], `div`, `Create New Project`);
+                placeElement(projectFormTitle, `projectFormDiv`);
+            let projectForm = createElement([`projectForm`, `form`], `form`, ``);
+                placeElement(projectForm, `projectFormDiv`);
                 projectForm.setAttribute(`autocomplete`, `off`);
-                createElement([`projectFormContainer1`, `formContainer`], `div`, ``, `projectForm`)
-                createElement([`projectNameLabel`, `label`], `label`, `Project Name: `, `projectFormContainer1`);
-                    const projectNameLabel = document.getElementById(`projectNameLabel`);
-                    projectNameLabel.setAttribute(`for`, `projectName`);
-                createElement([`projectNameInput`, `textInput`], `input`, ``, `projectFormContainer1`);
-                    const projectNameInput = document.getElementById(`projectNameInput`);
-                    projectNameInput.setAttribute(`required`, `true`);
-                    projectNameInput.setAttribute(`name`, `projectName`);
-                createElement([`projectFormContainer2`, `formContainer`], `div`, ``, `projectForm`)
-                createElement([`newProjectCancelButton`, `cancel`, `button`], `button`, `Cancel`, `projectFormContainer2` )
-                    const newProjectCancelButton = document.getElementById(`newProjectCancelButton`);
-                    newProjectCancelButton.setAttribute(`type`, `reset`);
-                createElement([`newProjectSubmitButton`, `submit`, `button`], `button`, `Submit`, `projectFormContainer2` )
-                    const newProjectSubmitButton = document.getElementById(`newProjectSubmitButton`);
-                    newProjectSubmitButton.setAttribute(`type`, `submit`);
-
-
+                let projectFormContainer1 = createElement([`projectFormContainer1`, `formContainer`], `div`, ``);
+                    placeElement(projectFormContainer1, `projectForm`);
+                    let projectNameLabel = createElement([`projectNameLabel`, `label`], `label`, `Project Name: `);
+                        placeElement(projectNameLabel, `projectFormContainer1`);
+                        projectNameLabel.setAttribute(`for`, `projectName`);
+                    let projectNameInput = createElement([`projectNameInput`, `textInput`], `input`, ``);
+                        placeElement(projectNameInput, `projectFormContainer1`);
+                        projectNameInput.setAttribute(`required`, `true`);
+                        projectNameInput.setAttribute(`name`, `projectName`);
+                let projectFormContainer2 = createElement([`projectFormContainer2`, `formContainer`], `div`, ``);
+                    placeElement(projectFormContainer2, `projectForm`);
+                    let newProjectCancelButton = createElement([`newProjectCancelButton`, `cancel`, `button`], `button`, `Cancel`);
+                        placeElement(newProjectCancelButton, `projectFormContainer2`);
+                        newProjectCancelButton.setAttribute(`type`, `reset`);
+                    let newProjectSubmitButton = createElement([`newProjectSubmitButton`, `submit`, `button`], `button`, `Submit`);
+                        placeElement(newProjectSubmitButton, `projectFormContainer2`);
+                        newProjectSubmitButton.setAttribute(`type`, `submit`);
     }
 
 export{
