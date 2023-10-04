@@ -42,7 +42,7 @@ function createElement(array, type, content){
 }
 
 function placeElement(element, location){
-    const locationDiv = document.getElementById(`${location}`);
+    let locationDiv = document.getElementById(`${location}`);
     locationDiv.appendChild(element);
     return;
 }

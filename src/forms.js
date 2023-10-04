@@ -7,8 +7,8 @@ import {createElement, placeElement} from './elementMaker.js';
 
 
     function taskForm(){
-        let formContainer = createElement([`taskFormDiv`, `formDiv`], `div`, ``);
-            placeElement(formContainer, `content`);
+        let taskFormDiv = createElement([`taskFormDiv`, `formDiv`], `div`, ``);
+            placeElement(taskFormDiv, `content`);
             let taskFormTitle = createElement([`taskFormTitle`, `title`], `div`, `Create New Task`);
                 placeElement(taskFormTitle, `taskFormDiv`);
                 let taskForm = createElement([`taskForm`, `form`], `form`, ``);
