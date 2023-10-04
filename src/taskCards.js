@@ -1,12 +1,18 @@
-import createElement from './elementMaker.js';
+import {createElement, placeElement} from './elementMaker.js';
 
 function makeTaskBar(task, projectList){
-    createElement([`${task.name}taskBar`, `taskBar`], `div`, ``, `taskContainer`);
-    createElement([``, `editButton`], `button`, `Edit`, `${task.name}taskBar`);
-    createElement([``, `taskBarName`], `div`, `${task.name}`, `${task.name}taskBar`);
-    createElement([`${task.name}subMenu`, `taskBarSubMenu`], `div`, ``, `${task.name}taskBar`);
-    createElement([``, `taskBarUrgency`, `barWidget`], `div`, `${task.urgency}`, `${task.name}subMenu`);
-    createElement([``, `taskBarStatus`, `barWidget`], `div`, `${task.status}`, `${task.name}subMenu`);
+    let taskBar = createElement([`${task.name}taskBar`, `taskBar`], `div`, ``);
+        placeElement(taskBar, `taskContainer`);
+    let editButton = createElement([``, `editButton`], `button`, `Edit`);
+        placeElement(editButton, `taskBar`);
+    let taskBarName = createElement([``, `taskBarName`], `div`, `${task.name}`);
+        placeElement(taskBarName, `taskBar`);
+    let subMenu = createElement([`${task.name}subMenu`, `taskBarSubMenu`], `div`, ``);
+        placeElement(subMenu, `taskBar`);
+    let taskBarUrgency = createElement([``, `taskBarUrgency`, `barWidget`], `div`, `${task.urgency}`);
+        placeElement(taskBarUrgency, `subMenu`);
+    let taskBarStatus = createElement([``, `taskBarStatus`, `barWidget`], `div`, `${task.status}`);
+        placeElement(taskBarStatus, `subMenu`);
 
 }
 
