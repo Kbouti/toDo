@@ -9,10 +9,10 @@ function makeTaskBar(task, projectList){
         placeElement(taskBarName, `${task.name}taskBar`);
     let subMenu = createElement([`${task.name}subMenu`, `taskBarSubMenu`], `div`, ``);
         placeElement(subMenu, `${task.name}taskBar`);
-    let taskBarUrgency = createElement([``, `taskBarUrgency`, `barWidget`], `div`, `${task.urgency}`);
+    let taskBarUrgency = createElement([``, `taskBarUrgency`, `barWidget`, `barUrgency`], `div`, `${task.urgency}`);
         placeElement(taskBarUrgency, `${task.name}subMenu`);
         addUrgencyClass(taskBarUrgency, task);
-    let taskBarStatus = createElement([``, `taskBarStatus`, `barWidget`], `div`, `${task.status}`);
+    let taskBarStatus = createElement([``, `taskBarStatus`, `barWidget`, `barStatus`], `div`, `${task.status}`);
         placeElement(taskBarStatus, `${task.name}subMenu`);
         addStatusClass(taskBarStatus, task);
 

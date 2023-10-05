@@ -199,17 +199,32 @@
 .taskBar{
     display:flex;
     flex-direction:row;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin:.5rem;
     background-color:var(--colorC);
     color:var(--colorD);
     height:3rem;
 }
 
+.editButton{
+    height:2rem;
+    width:3rem;
+    align-self: center;
+    background-color:var(--colorA);
+    color:white;
+
+    border:2px solid var(--colorE);
+    margin:auto;
+    padding:5px;
+    border-radius:15px;
+
+}
+
 .taskBarName{
     margin-top:auto;
     margin-bottom:auto;
     margin-left:3px;
+    flex-grow:1;
 }
 
 .taskBarSubMenu{
@@ -260,6 +275,17 @@
     margin:auto;
     padding:5px;
     border-radius:15px;
+    height:1.5rem;
+    display:flex;
+    justify-content:center;
+}
+
+.barUrgency{
+    width:2rem;
+}
+
+.barStatus{
+    width:6rem;
 }
 
 
