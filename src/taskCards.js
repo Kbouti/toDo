@@ -119,16 +119,16 @@ function checkUrgency(task){
 }
 function addUrgencyClass(element, task){
     if (checkUrgency(task) ==  `HIGH`){
-        element.classList.add(`highUrgency`);
-        element.classList.remove(`midUrgency`, `lowUrgency`);
+        element.classList.add(`urgencyHigh`);
+        element.classList.remove(`urgencyMid`, `urgencyLow`);
     }
     else if (checkUrgency(task) ==  `Mid`){
-        element.classList.add(`midUrgency`);
-        element.classList.remove(`highUrgency`, `lowUrgency`);
+        element.classList.add(`urgencyMid`);
+        element.classList.remove(`urgencyHigh`, `urgencyLow`);
     }
     else if (checkUrgency(task) ==  `Low`){
-        element.classList.add(`lowUrgency`);
-        element.classList.remove(`highUrgency`,`midUrgency`);
+        element.classList.add(`urgencyLow`);
+        element.classList.remove(`urgencyHigh`,`urgencyMid`);
     }
 }
 

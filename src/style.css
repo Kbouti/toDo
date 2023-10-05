@@ -227,13 +227,13 @@
 /* Task Status and Urgency classes */
 
 
-.lowUrgency{
+.urgencyLow{
     background-color:#72e56c;
 }
-.midUrgency{
+.urgencyMid{
     background-color:#cbce22;
 }
-.highUrgency{
+.urgencyHigh{
     background-color:#f55200;
 }
 .statusNotStarted{
