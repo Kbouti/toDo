@@ -240,18 +240,22 @@
 }
 
 .statusNotStarted{
-    background-color: aqua;
+    background-color: #00D1EC;
 }
 .statusInProgress{
+    background-color: #02b4cc;
 
 }
 .statusPartsOnOrder{
+    background-color: #0297ab;
 
 }
 .statusNearlyComplete{
+    background-color: #017281;
 
 }
 .statusComplete{
+    background-color: #01424a;
 
 }
 
