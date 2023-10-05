@@ -14,6 +14,7 @@ function makeTaskBar(task, projectList){
         addUrgencyClass(taskBarUrgency, task);
     let taskBarStatus = createElement([``, `taskBarStatus`, `barWidget`], `div`, `${task.status}`);
         placeElement(taskBarStatus, `${task.name}subMenu`);
+        addStatusClass(taskBarStatus, task);
 
 }
 
@@ -112,9 +113,10 @@ function makeTaskCard(task, projectList){
 
 
 
-
-
-
+function checkUrgency(task){
+    let urgency = task.urgency;
+    return urgency;
+}
 function addUrgencyClass(element, task){
     if (checkUrgency(task) ==  `HIGH`){
         element.classList.add(`highUrgency`);
@@ -126,21 +128,72 @@ function addUrgencyClass(element, task){
     }
     else if (checkUrgency(task) ==  `Low`){
         element.classList.add(`lowUrgency`);
-        element.classList.remove(`highUrgency`, `midUrgency`);
+        element.classList.remove(`highUrgency`,`midUrgency`);
+    }
+}
+
+function checkStatus(task){
+    let status = task.status;
+    return status;
+}
+function addStatusClass(element, task){
+    let status = checkStatus(task);
+    switch (status) {
+        case `Not Started`:
+            element.classList.add(`statusNotStarted`);
+            element.classList.remove(
+                `statusInProgress`,
+                `statusPartsOnOrder`,
+                `statusNearlyComplete`,
+                `statusComplete`
+            );
+        break;
+        case `In Progress`:
+            element.classList.add(`statusInProgress`);
+            element.classList.remove(
+                `statusNotStarted`,
+                `statusPartsOnOrder`,
+                `statusNearlyComplete`,
+                `statusComplete`
+            );
+        break;
+        case `Parts On Order`:
+            element.classList.add(`statusPartsOnOrder`);
+            element.classList.remove(
+                `statusNotStarted`,
+                `statusInProgress`,
+                `statusNearlyComplete`,
+                `statusComplete`
+            );
+        break;    
+        case `Nearly Complete`:
+            element.classList.add(`statusNearlyComplete`);
+            element.classList.remove(
+                `statusNotStarted`,
+                `statusInProgress`,
+                `statusPartsOnOrder`,
+                `statusComplete`
+            );
+        break;
+        
+        case `Complete`:
+            element.classList.add(`statusComplete`);
+            element.classList.remove(
+                `statusNotStarted`
+                `statusInProgress`,
+                `statusPartsOnOrder`,
+                `statusNearlyComplete`,
+            );
+        break;
+        default:
+            console.log(`Something weird happened, no task status added`);        
+
     }
 }
 
 
 
-//Should also make a task bar for at a glance details of all tasks
 
-
-
-
-function checkUrgency(task){
-    let urgency = task.urgency;
-    return urgency;
-}
 
 
 

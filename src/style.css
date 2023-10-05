@@ -239,6 +239,36 @@
     background-color:rgb(40, 177, 245) ;
 }
 
+.statusNotStarted{
+    background-color: aqua;
+}
+.statusInProgress{
+
+}
+.statusPartsOnOrder{
+
+}
+.statusNearlyComplete{
+
+}
+.statusComplete{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .barWidget{
     border:2px solid var(--colorE);
     margin:auto;

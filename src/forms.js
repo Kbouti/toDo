@@ -61,7 +61,13 @@ import {createElement, placeElement} from './elementMaker.js';
                     placeElement(statusDropDown, `taskFormContainer5`);
                     statusDropDown.setAttribute(`name`, `taskStatus`);
                     let statusOption = '';
-                    let status = [`Not Started`, `In Progress`, `Parts On Order`, `Nearly Complete`, `Complete`];
+                    let status = [
+                        `Not Started`,
+                        `In Progress`,
+                        `Parts On Order`,
+                        `Nearly Complete`,
+                        `Complete`
+                    ];
                     for(let i = 0; i < status.length; i++){
                         statusOption += '<option value="'+status[i] + '">' + status[i]+"</option>"
                     }
