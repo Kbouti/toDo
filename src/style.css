@@ -218,58 +218,40 @@
 }
 
 
-
-.highUrgency{
-    color:red;
-    background-color:rgb(200, 252, 86) ;
-}
-
 .taskDescription{
     height:200px;
     /* width:250px; */
 }
 
-.midUrgency{
-    color:rgb(35, 82, 19);
-    background-color:rgb(54, 248, 190) ;
-}
+
+/* Task Status and Urgency classes */
+
 
 .lowUrgency{
-    color:rgb(76, 0, 255);
-    background-color:rgb(40, 177, 245) ;
+    background-color:#72e56c;
 }
-
+.midUrgency{
+    background-color:#cbce22;
+}
+.highUrgency{
+    background-color:#f55200;
+}
 .statusNotStarted{
     background-color: #00D1EC;
 }
+
 .statusInProgress{
     background-color: #02b4cc;
-
 }
 .statusPartsOnOrder{
     background-color: #0297ab;
-
 }
 .statusNearlyComplete{
     background-color: #017281;
-
 }
 .statusComplete{
     background-color: #01424a;
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
