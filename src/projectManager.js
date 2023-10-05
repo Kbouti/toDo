@@ -81,8 +81,22 @@ function pushProjectToProjectList(project){
 function makeProject(){
     const projectNameInput = document.getElementById(`projectNameInput`);
     const newProject = new Project(projectNameInput.value, false, true,  []);
+    createTaskContainer(newProject);
+
     return newProject;
 }
+
+
+
+function createTaskContainer(project){
+    let newElement = document.createElement(`div`);
+    newElement.setAttribute(`id`, `${project.name}taskContainer`)
+    newElement.classList.add(`projectTaskList`);
+    let taskContainer = document.getElementById(`taskContainer`);
+    taskContainer.appendChild(newElement)
+    return
+}
+
 
 
 function tempTasks(projectList){
