@@ -4,15 +4,15 @@ function makeTaskBar(task, projectList){
     let taskBar = createElement([`${task.name}taskBar`, `taskBar`], `div`, ``);
         placeElement(taskBar, `taskContainer`);
     let editButton = createElement([``, `editButton`], `button`, `Edit`);
-        placeElement(editButton, `taskBar`);
+        placeElement(editButton, `${task.name}taskBar`);
     let taskBarName = createElement([``, `taskBarName`], `div`, `${task.name}`);
-        placeElement(taskBarName, `taskBar`);
+        placeElement(taskBarName, `${task.name}taskBar`);
     let subMenu = createElement([`${task.name}subMenu`, `taskBarSubMenu`], `div`, ``);
-        placeElement(subMenu, `taskBar`);
+        placeElement(subMenu, `${task.name}taskBar`);
     let taskBarUrgency = createElement([``, `taskBarUrgency`, `barWidget`], `div`, `${task.urgency}`);
-        placeElement(taskBarUrgency, `subMenu`);
+        placeElement(taskBarUrgency, `${task.name}subMenu`);
     let taskBarStatus = createElement([``, `taskBarStatus`, `barWidget`], `div`, `${task.status}`);
-        placeElement(taskBarStatus, `subMenu`);
+        placeElement(taskBarStatus, `${task.name}subMenu`);
 
 }
 
