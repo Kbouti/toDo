@@ -73,7 +73,6 @@ function addListenerToProjectSubmit(projectList){
         //Prevent default
 
         let newProject = makeProject(projectList);
-        console.log(newProject.name);
         currentProject = newProject.name;
         //Make new project
 
