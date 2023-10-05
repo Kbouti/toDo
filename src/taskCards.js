@@ -11,6 +11,7 @@ function makeTaskBar(task, projectList){
         placeElement(subMenu, `${task.name}taskBar`);
     let taskBarUrgency = createElement([``, `taskBarUrgency`, `barWidget`], `div`, `${task.urgency}`);
         placeElement(taskBarUrgency, `${task.name}subMenu`);
+        addUrgencyClass(taskBarUrgency, task);
     let taskBarStatus = createElement([``, `taskBarStatus`, `barWidget`], `div`, `${task.status}`);
         placeElement(taskBarStatus, `${task.name}subMenu`);
 
@@ -114,15 +115,18 @@ function makeTaskCard(task, projectList){
 
 
 
-function addUrgencyClass(task){
+function addUrgencyClass(element, task){
     if (checkUrgency(task) ==  `HIGH`){
-        taskUrgency.classList.add(`highUrgency`);
+        element.classList.add(`highUrgency`);
+        element.classList.remove(`midUrgency`, `lowUrgency`);
     }
     else if (checkUrgency(task) ==  `Mid`){
-        taskUrgency.classList.add(`midUrgency`);
+        element.classList.add(`midUrgency`);
+        element.classList.remove(`highUrgency`, `lowUrgency`);
     }
     else if (checkUrgency(task) ==  `Low`){
-        taskUrgency.classList.add(`lowUrgency`);
+        element.classList.add(`lowUrgency`);
+        element.classList.remove(`highUrgency`, `midUrgency`);
     }
 }
 
