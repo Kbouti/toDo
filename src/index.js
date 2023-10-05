@@ -31,7 +31,7 @@ import {
     Project,
     Task,
     createMiscProject,
-    tempTask
+    tempTasks
 } from './projectManager';
 
 
@@ -62,7 +62,7 @@ cancelButtons(),
 createMiscProject();
     console.log(`Misc Project created`);
 
-tempTask(projectList);
+tempTasks(projectList);
     console.log(`temp taskBar loaded`);
 
 addListenerToTaskSubmit(projectList);

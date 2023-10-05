@@ -85,10 +85,23 @@ function makeProject(){
 }
 
 
-function tempTask(projectList){
-    const tempTask = new Task(`Misc`, `Example task`, `All the task notes you could ever want!`, `Mid`, `Not Started`)
+function tempTasks(projectList){
+    const tempTask = new Task(`Misc`, `Example task`, `All the task notes you could ever want!`, `Low`, `Not Started`)
     pushTaskToProject(tempTask);
     makeTaskBar(tempTask, projectList);
+
+    const tempTask2 = new Task(`Misc`, `Another Task`, `All the task notes you could ever want!`, `Mid`, `In Progress`)
+    pushTaskToProject(tempTask2);
+    makeTaskBar(tempTask2, projectList);
+
+    const tempTask3 = new Task(`Misc`, `More fuckin shit to do`, `All the task notes you could ever want!`, `HIGH`, `Nearly Complete`)
+    pushTaskToProject(tempTask3);
+    makeTaskBar(tempTask3, projectList);
+
+
+
+
+
     return;
 }
 
@@ -103,5 +116,5 @@ export {
     makeProject,
     pushProjectToProjectList,
     createMiscProject,
-    tempTask
+    tempTasks
 }
