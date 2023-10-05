@@ -3,7 +3,7 @@ import {createElement, placeElement} from './elementMaker.js';
 function makeTaskBar(task, projectList){
     let taskBar = createElement([`${task.name}taskBar`, `taskBar`], `div`, ``);
         placeElement(taskBar, `taskContainer`);
-    let editButton = createElement([``, `editButton`], `button`, `Edit`);
+    let editButton = createElement([``, `editButton`, `barWidget`], `div`, `Edit`);
         placeElement(editButton, `${task.name}taskBar`);
     let taskBarName = createElement([``, `taskBarName`], `div`, `${task.name}`);
         placeElement(taskBarName, `${task.name}taskBar`);
