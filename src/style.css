@@ -1,6 +1,7 @@
 *{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin:0;
+    padding:0;
 
 }
 
@@ -148,7 +149,7 @@
     flex-direction:column;
     align-items:center;
     flex-grow:1;
-    min-width:500px;
+    /* min-width:500px; */
 }
 
 #projectContainer{
@@ -160,10 +161,11 @@
 
 
 #taskContainer{
-    width:90%;
+    width:100%;
     display:flex;
     flex-direction:column;
-
+    flex-grow:1;
+    /* min-width:500px; */
 }
 
 .taskCard {
@@ -200,11 +202,14 @@
     display:flex;
     flex-direction:row;
     justify-content: flex-start;
-    /* margin:.5rem; */
+    margin:.5rem .5rem 0 .5rem;
     background-color:var(--colorC);
     color:var(--colorD);
     height:3rem;
     align-items:center;
+
+    
+    
 }
 
 .editButton{
@@ -267,7 +272,7 @@
     display:flex;
     justify-content:center;
     align-items:center;
-
+    margin:5px 5px 5px 0px;
 }
 
 .barUrgency{
