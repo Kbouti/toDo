@@ -29,16 +29,16 @@ function toggleDisplay(id, standardDisplay){
 
 
 function displayProjectForm(){
-    const newProjectBtn = document.getElementById(`newProjectBtn`);
-        newProjectBtn.addEventListener(`click`, function(){
+    const newProjectButton = document.getElementById(`newProjectButton`);
+        newProjectButton.addEventListener(`click`, function(){
         toggleDisplay(`projectFormDiv`, `flex`)
         })
         return;
 }
 
 function displayTaskForm(projectList){
-    const newTaskBtn = document.getElementById(`newTaskBtn`);
-        newTaskBtn.addEventListener(`click`, function(){
+    const newTaskButton = document.getElementById(`newTaskButton`);
+        newTaskButton.addEventListener(`click`, function(){
 //populate dropdown menu with current projects:
         let option = ``;
         for(let i = 0; i < projectList.length; i++){
