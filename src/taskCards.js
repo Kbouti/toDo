@@ -1,6 +1,14 @@
 import {createElement, placeElement} from './elementMaker.js';
 
 function makeTaskBar(task, projectList){
+
+
+
+
+//add taskbar to appropriate projectTaskList and then toggle display between projects
+
+
+
     let taskBar = createElement([`${task.name}taskBar`, `taskBar`], `div`, ``);
         placeElement(taskBar, `taskContainer`);
     let editButton = createElement([``, `editButton`, `barWidget`], `div`, `Edit`);
