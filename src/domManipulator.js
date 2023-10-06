@@ -1,4 +1,4 @@
-import { Project, Task, currentProject, currentTask, makeTask, pushTaskToProject, makeProject, pushProjectToProjectList } from "./projectManager";
+import { Project, Task, currentProject, currentTask, makeTask, pushTaskToProject, makeProject, pushProjectToProjectList, updateSelected } from "./projectManager";
 import { makeTaskCard, makeTaskBar } from "./taskCards.js";
 
 
@@ -35,6 +35,27 @@ function displayProjectForm(){
         })
         return;
 }
+
+
+
+
+
+
+function toggleProjectDisplays(selectedName, projectList){
+    for (const project of projectList){
+        if(project.name == selectedName){
+            const selectedProject = document.getElementById(`${project.name}taskContainer`)
+            selectedProject.setAttribute(`display`, `flex`);
+        }
+        const inactiveProject = document.getElementById(`${project.name}taskContainer`)
+        inactiveProject.setAttribute(`display`, `none`);
+
+    }
+}
+
+
+
+
 
 function displayTaskForm(projectList){
     const newTaskButton = document.getElementById(`newTaskButton`);
@@ -92,6 +113,15 @@ function addListenerToProjectSubmit(projectList){
 }
 
 
+
+
+
+
+
+
+
+
+
 function addListenerToTaskSubmit(projectList){
     const taskForm = document.getElementById(`taskForm`);
     taskForm.addEventListener(`submit`, function(event){
@@ -102,6 +132,12 @@ function addListenerToTaskSubmit(projectList){
         //Make new task
         pushTaskToProject(newTask);
         //Append new task to proper project in project list
+
+        console.log(`new task's project is: ${newTask.project}`);
+        let selectedProject = newTask.project;
+
+        updateSelected(selectedProject, projectList);
+
 
         makeTaskBar(newTask, projectList)
         //Creates Dom element
@@ -122,7 +158,8 @@ export {
     displayTaskForm,
     cancelButtons,
     addListenerToTaskSubmit,
-    addListenerToProjectSubmit
+    addListenerToProjectSubmit,
+    toggleProjectDisplays
 }
 
 

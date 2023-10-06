@@ -88,6 +88,27 @@ function makeProject(){
 }
 
 
+function updateSelected(selectedProject, projectList){
+    for(const project of projectList){
+        if (selectedProject = project.name){
+            project.isSelected = true;
+        }
+        project.isSelected = false;
+    }
+}
+
+
+
+function findSelectedProject(projectList){
+    for (const project of projectList){
+        if(project.isSelected == true){
+            console.log(`project.name is: ${project.name}`)
+            return project.name;
+        }
+    }
+}
+
+
 
 function createTaskContainer(project){
     let newElement = document.createElement(`div`);
@@ -127,5 +148,7 @@ export {
     makeProject,
     pushProjectToProjectList,
     createMiscProject,
-    tempTasks
+    tempTasks,
+    updateSelected,
+    findSelectedProject
 }

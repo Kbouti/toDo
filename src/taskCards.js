@@ -1,34 +1,7 @@
 import {createElement, placeElement} from './elementMaker.js';
+import { findSelectedProject } from './projectManager.js';
 
-
-
-// ****************************************************************************************************************
-//the following should display the appropriate projectTaskList but has not yet been called and implemented:
-
-function findSelectedProject(projectList){
-    for (const project of projectList){
-        if(project.isSelected == true){
-            console.log(`project.name is: ${project.name}`)
-            return project.name;
-        }
-    }
-}
-
-function toggleProjectDisplays(selectedName, projectList){
-    for (const project of projectList){
-        if(project.name == selectedName){
-            const selectedProject = document.getElementById(`${project.name}taskContainer`)
-            selectedProject.setAttribute(`display`, `flex`);
-        }
-        const inactiveProject = document.getElementById(`${project.name}taskContainer`)
-        inactiveProject.setAttribute(`display`, `none`);
-
-    }
-}
-
-// ****************************************************************************************************************
-
-
+import { toggleProjectDisplays } from './domManipulator.js';
 
 
 
@@ -59,8 +32,8 @@ function makeTaskBar(task, projectList){
         addStatusClass(taskBarStatus, task);
 
 
-
-findSelectedProject(projectList);
+    const selected = findSelectedProject(projectList);
+    toggleProjectDisplays(selected, projectList);
 
 }
 
