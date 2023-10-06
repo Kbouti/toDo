@@ -47,6 +47,7 @@ function createMiscProject(){
     miscProject.innerHTML = `Misc`;
     projectContainer = document.getElementById(`projectContainer`);
     projectContainer.appendChild(miscProject);
+    createTaskContainer(project1);
 
     return;
 }
@@ -111,10 +112,6 @@ function tempTasks(projectList){
     const tempTask3 = new Task(`Misc`, `More fuckin shit to do`, `All the task notes you could ever want!`, `HIGH`, `Nearly Complete`)
     pushTaskToProject(tempTask3);
     makeTaskBar(tempTask3, projectList);
-
-
-
-
 
     return;
 }
