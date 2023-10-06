@@ -2,10 +2,39 @@ import {createElement, placeElement} from './elementMaker.js';
 
 
 
+// ****************************************************************************************************************
+//the following should display the appropriate projectTaskList but has not yet been called and implemented:
 
-//add taskbar to appropriate projectTaskList and then toggle display between projects
+function findSelectedProject(projectList){
+    for (const project of projectList){
+        if(project.isSelected == true){
+            console.log(`project.name is: ${project.name}`)
+            return project.name;
+        }
+    }
+}
 
-//make function that loads appropriate projectTaskList by looping through  projectList and finding the project with isSelected true
+function toggleProjectDisplays(selectedName, projectList){
+    for (const project of projectList){
+        if(project.name == selectedName){
+            const selectedProject = document.getElementById(`${project.name}taskContainer`)
+            selectedProject.setAttribute(`display`, `flex`);
+        }
+        const inactiveProject = document.getElementById(`${project.name}taskContainer`)
+        inactiveProject.setAttribute(`display`, `none`);
+
+    }
+}
+
+// ****************************************************************************************************************
+
+
+
+
+
+
+
+
 
 function makeTaskBar(task, projectList){
 
@@ -28,6 +57,10 @@ function makeTaskBar(task, projectList){
     let taskBarStatus = createElement([``, `taskBarStatus`, `barWidget`, `barStatus`], `div`, `${task.status}`);
         placeElement(taskBarStatus, `${task.name}subMenu`);
         addStatusClass(taskBarStatus, task);
+
+
+
+findSelectedProject(projectList);
 
 }
 
