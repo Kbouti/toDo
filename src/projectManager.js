@@ -90,7 +90,7 @@ function makeProject(){
 
 function updateSelected(selectedProject, projectList){
     for(const project of projectList){
-        if (selectedProject = project.name){
+        if (selectedProject == project.name){
             project.isSelected = true;
         }
         project.isSelected = false;

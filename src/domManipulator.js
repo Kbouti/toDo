@@ -61,7 +61,7 @@ function toggleProjectDisplays(selectedName){
 return;
 }
 
-
+//Still need to toggle project displays when a new task is created
 
 
 
@@ -149,9 +149,13 @@ function addListenerToTaskSubmit(projectList){
 
         updateSelected(selectedProject, projectList);
 
+        // toggleProjectDisplays(selectedProject)
+
 
         makeTaskBar(newTask, projectList)
         //Creates Dom element
+
+
 
         taskForm.reset();
         //Reset form
