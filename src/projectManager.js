@@ -109,6 +109,13 @@ function findSelectedProject(projectList){
 
 
 
+function logSelectedProject(projectList){
+    const selected = findSelectedProject(projectList);
+    console.log(`The selected project is: ${selected}`);
+    return;
+}
+
+
 function createTaskContainer(project){
     let newElement = document.createElement(`div`);
     newElement.setAttribute(`id`, `${project.name}taskContainer`)
@@ -149,5 +156,6 @@ export {
     createMiscProject,
     tempTasks,
     updateSelected,
-    findSelectedProject
+    findSelectedProject,
+    logSelectedProject
 }

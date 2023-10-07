@@ -1,4 +1,4 @@
-import { Project, Task, currentProject, currentTask, makeTask, pushTaskToProject, makeProject, pushProjectToProjectList, updateSelected } from "./projectManager";
+import { Project, Task, currentProject, currentTask, makeTask, pushTaskToProject, makeProject, pushProjectToProjectList, updateSelected, logSelectedProject } from "./projectManager";
 import { makeTaskCard, makeTaskBar } from "./taskCards.js";
 
 
@@ -119,6 +119,12 @@ function addListenerToProjectSubmit(projectList){
 
         toggleDisplay(`projectFormDiv`, `flex`);
         //Dissapears the form
+
+
+
+logSelectedProject(projectList);
+
+
     return;
     })
 }
@@ -162,6 +168,9 @@ function addListenerToTaskSubmit(projectList){
 
         toggleDisplay(`taskFormDiv`, `flex`);
         //Make form dissappear
+
+logSelectedProject(projectList);
+
         return;
     })
 
