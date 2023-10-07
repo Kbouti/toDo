@@ -115,6 +115,9 @@ function addListenerToProjectSubmit(projectList){
         projectForm.reset();
         //Resets the form
 
+console.log(currentProject);
+        updateSelected(currentProject, projectList);
+
         toggleProjectDisplays(currentProject, projectList);
 
         toggleDisplay(`projectFormDiv`, `flex`);

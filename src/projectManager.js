@@ -92,8 +92,12 @@ function updateSelected(selectedProject, projectList){
     for(const project of projectList){
         if (selectedProject == project.name){
             project.isSelected = true;
+            console.log(`project ${project.name}  is selected: ${project.isSelected}`)
         }
-        project.isSelected = false;
+        else if (selectedProject !== project.name){
+            project.isSelected = false;
+            console.log(`project ${project.name}  is selected: ${project.isSelected}`)
+            }
     }
 }
 
