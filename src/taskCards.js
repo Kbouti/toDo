@@ -32,9 +32,7 @@ function makeTaskBar(task, projectList){
 
     const selected = findSelectedProject(projectList);
 
-    console.log(`selected is: ${selected}`);
     toggleProjectDisplays(selected, projectList);
-    console.log(`taskBar made, project toggle complete`);
 }
 
 //Need limit on how many characters people can input for task name

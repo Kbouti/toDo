@@ -115,10 +115,7 @@ function addListenerToProjectSubmit(projectList){
         projectForm.reset();
         //Resets the form
 
-        console.log(`toggling project displays`);
-        console.log(currentProject);
         toggleProjectDisplays(currentProject, projectList);
-        console.log(`toggle complete`)
 
         toggleDisplay(`projectFormDiv`, `flex`);
         //Dissapears the form

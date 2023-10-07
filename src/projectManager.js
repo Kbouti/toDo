@@ -102,7 +102,6 @@ function updateSelected(selectedProject, projectList){
 function findSelectedProject(projectList){
     for (const project of projectList){
         if(project.isSelected == true){
-            console.log(`project.name is: ${project.name}`)
             return project.name;
         }
     }
