@@ -12,8 +12,6 @@ import { toggleProjectDisplays } from './domManipulator.js';
 function makeTaskBar(task, projectList){
 
     let project = task.project;
-    console.log(project);
-    console.log(projectList);
 
   
     let taskBar = createElement([`${task.name}taskBar`, `taskBar`], `div`, ``);
@@ -33,8 +31,10 @@ function makeTaskBar(task, projectList){
 
 
     const selected = findSelectedProject(projectList);
-    toggleProjectDisplays(selected, projectList);
 
+    console.log(`selected is: ${selected}`);
+    toggleProjectDisplays(selected, projectList);
+    console.log(`taskBar made, project toggle complete`);
 }
 
 //Need limit on how many characters people can input for task name

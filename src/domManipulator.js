@@ -40,18 +40,27 @@ function displayProjectForm(){
 
 
 
+function toggleProjectDisplays(selectedName){
+    const projectContainers = document.getElementsByClassName(`projectTaskList`);
+    const containersArray = Array.from(projectContainers).map(div => div.id);
 
-function toggleProjectDisplays(selectedName, projectList){
-    for (const project of projectList){
-        if(project.name == selectedName){
-            const selectedProject = document.getElementById(`${project.name}taskContainer`)
-            selectedProject.setAttribute(`display`, `flex`);
+    let targetId = `${selectedName}taskContainer`
+
+    for (let container of containersArray) {
+        if (container == targetId){
+            let selectedContainer = document.getElementById(container);
+                selectedContainer.classList.remove(`hidden`)
+            }
+
+        else if (container !== targetId){
+        let unselectedContainer = document.getElementById(container);
+        unselectedContainer.classList.add(`hidden`);
         }
-        const inactiveProject = document.getElementById(`${project.name}taskContainer`)
-        inactiveProject.setAttribute(`display`, `none`);
-
     }
+
+return;
 }
+
 
 
 
@@ -105,6 +114,11 @@ function addListenerToProjectSubmit(projectList){
 
         projectForm.reset();
         //Resets the form
+
+        console.log(`toggling project displays`);
+        console.log(currentProject);
+        toggleProjectDisplays(currentProject, projectList);
+        console.log(`toggle complete`)
 
         toggleDisplay(`projectFormDiv`, `flex`);
         //Dissapears the form
