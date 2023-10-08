@@ -1,4 +1,18 @@
-import { Project, Task, currentProject, currentTask, makeTask, pushTaskToProject, makeProject, pushProjectToProjectList, updateSelected, logSelectedProject } from "./projectManager";
+import {
+    Project,
+    Task,
+    currentProject,
+    currentTask,
+    makeTask,
+    pushTaskToProject,
+    makeProject,
+    pushProjectToProjectList,
+    updateSelected,
+    logSelectedProject,
+    findSelectedProject
+}
+from "./projectManager";
+
 import { makeTaskCard, makeTaskBar } from "./taskCards.js";
 
 
@@ -60,9 +74,6 @@ function toggleProjectDisplays(selectedName){
 
 return;
 }
-
-//Still need to toggle project displays when a new task is created
-
 
 
 
@@ -126,19 +137,9 @@ console.log(currentProject);
 
 
 logSelectedProject(projectList);
-
-
     return;
     })
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -173,11 +174,27 @@ function addListenerToTaskSubmit(projectList){
         //Make form dissappear
 
 logSelectedProject(projectList);
+        let currentProject = findSelectedProject(projectList);
+
+        console.log(`current project is ${currentProject}`);
 
         return;
     })
 
 }
+
+
+// *****************************************0*****************************************0*****************************************0
+
+
+// Make function to add isSelected class to sidebar project div
+
+// Apply listener to sidebar project divs to toggle selected project
+
+// Allow user to view/edit task contents
+
+
+
 
 export {
     toggleDisplay,
