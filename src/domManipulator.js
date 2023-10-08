@@ -163,14 +163,12 @@ function addListenerToTaskSubmit(projectList){
         let selectedProject = newTask.project;
 
         updateSelected(selectedProject, projectList);
-
         // toggleProjectDisplays(selectedProject)
 
-
-        makeTaskBar(newTask, projectList)
+        makeTaskBar(newTask, projectList);
         //Creates Dom element
 
-
+        updateProjectClasses(projectList);
 
         taskForm.reset();
         //Reset form
@@ -203,28 +201,18 @@ logSelectedProject(projectList);
 function updateProjectClasses(projectList){
     const projects = document.getElementsByClassName(`projectElement`);
     const projectsArray = Array.from(projects);
-
-
     for (let project of projectsArray){
-        console.log(`looping through projects in updateProjectClasses function -- project  = ${project}`)
-        console.log(project.innerText)
-
-
-
-        //currently project is referencing the DOM element, and has no connection to the actual project in projectList
-        
-        //Elements now have unique Id's with project name
-
-        
-
-
-
-        // if (project is selected){
-        //     apply selected class
-        // }
-
+        let elementLong = project.id;
+            let element = elementLong.slice(0, -14);
+        let selected = findSelectedProject(projectList);
+            if (element == selected){
+                project.classList.add(`isSelected`)
+            }
+            else if (element !== selected){
+                project.classList.remove(`isSelected`);
+            }
     }
-
+    return;
 }
 
 
