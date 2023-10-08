@@ -129,7 +129,6 @@ function addListenerToProjectSubmit(projectList){
         projectForm.reset();
         //Resets the form
 
-console.log(currentProject);
         updateSelected(currentProject, projectList);
 
         updateProjectClasses(projectList);
@@ -139,9 +138,6 @@ console.log(currentProject);
         toggleDisplay(`projectFormDiv`, `flex`);
         //Dissapears the form
 
-
-
-logSelectedProject(projectList);
     return;
     })
 }
@@ -159,11 +155,9 @@ function addListenerToTaskSubmit(projectList){
         pushTaskToProject(newTask);
         //Append new task to proper project in project list
 
-        console.log(`new task's project is: ${newTask.project}`);
         let selectedProject = newTask.project;
-
         updateSelected(selectedProject, projectList);
-        // toggleProjectDisplays(selectedProject)
+        // Update selected project to the project this task is being appended to
 
         makeTaskBar(newTask, projectList);
         //Creates Dom element
@@ -176,26 +170,9 @@ function addListenerToTaskSubmit(projectList){
         toggleDisplay(`taskFormDiv`, `flex`);
         //Make form dissappear
 
-logSelectedProject(projectList);
-        let currentProject = findSelectedProject(projectList);
-
-        console.log(`current project is ${currentProject}`);
-
         return;
     })
-
 }
-
-// *****************************************0*****************************************0*****************************************0
-
-
-// Make function to add isSelected class to sidebar project div
-
-// Apply listener to sidebar project divs to toggle selected project
-
-// Allow user to view/edit task contents
-
-
 
 
 function updateProjectClasses(projectList){
@@ -216,6 +193,15 @@ function updateProjectClasses(projectList){
 }
 
 
+// *****************************************0*****************************************0*****************************************0
+
+
+
+// Apply listener to sidebar project divs to toggle selected project
+
+// Allow user to view/edit task contents
+
+//Add date functionality
 
 
 

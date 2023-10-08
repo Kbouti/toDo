@@ -42,22 +42,12 @@ function createMiscProject(){
     let project1 = new Project(`Misc`, false, true, []);
     const miscProject = document.createElement(`div`);
     miscProject.classList.add(`projectElement`);
-
     miscProject.setAttribute(`id`, `MiscProjectElement`);
-
-    // miscProject.classList.add(`isSelected`);
-
     miscProject.innerHTML = `Misc`;
     projectContainer = document.getElementById(`projectContainer`);
     projectContainer.appendChild(miscProject);
 
-
-    
     pushProjectToProjectList(project1);
-    
-
-
-
     createTaskContainer(project1);
 
     return;
@@ -104,11 +94,9 @@ function updateSelected(selectedProject, projectList){
     for(const project of projectList){
         if (selectedProject == project.name){
             project.isSelected = true;
-            console.log(`project ${project.name}  is selected: ${project.isSelected}`)
         }
         else if (selectedProject !== project.name){
             project.isSelected = false;
-            console.log(`project ${project.name}  is selected: ${project.isSelected}`)
             }
     }
 }
