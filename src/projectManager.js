@@ -1,4 +1,5 @@
 import { makeTaskBar } from "./taskCards";
+import { updateProjectClasses } from "./domManipulator";
 
 let projectList = [];
 let currentProject;

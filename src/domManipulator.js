@@ -129,6 +129,8 @@ function addListenerToProjectSubmit(projectList){
 console.log(currentProject);
         updateSelected(currentProject, projectList);
 
+        updateProjectClasses(projectList);
+
         toggleProjectDisplays(currentProject, projectList);
 
         toggleDisplay(`projectFormDiv`, `flex`);
@@ -183,7 +185,6 @@ logSelectedProject(projectList);
 
 }
 
-
 // *****************************************0*****************************************0*****************************************0
 
 
@@ -196,6 +197,37 @@ logSelectedProject(projectList);
 
 
 
+function updateProjectClasses(projectList){
+    const projects = document.getElementsByClassName(`project`);
+    const projectsArray = Array.from(projects);
+
+
+    for (let project of projectsArray){
+        console.log(`looping through projects in updateProjectClasses function -- project  = ${project}`)
+        console.log(project.innerText)
+
+
+
+        //currently project is referencing the DOM element, and has no connection to the actual project in projectList
+        
+        //fixed that by accessing the element's innerText (or innerHTML) but the problem is that the close button is also included in the return
+
+        
+
+
+
+        // if (project is selected){
+        //     apply selected class
+        // }
+
+    }
+
+}
+
+
+
+
+
 export {
     toggleDisplay,
     displayProjectForm,
@@ -203,7 +235,8 @@ export {
     cancelButtons,
     addListenerToTaskSubmit,
     addListenerToProjectSubmit,
-    toggleProjectDisplays
+    toggleProjectDisplays,
+    updateProjectClasses
 }
 
 
