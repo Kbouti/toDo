@@ -17,8 +17,11 @@ import { makeTaskCard, makeTaskBar } from "./taskCards.js";
 
 
 function newProjectElement(project){
+
     const newElement = document.createElement(`div`);
-        newElement.classList.add(`project`);
+        newElement.classList.add(`projectElement`);
+
+        newElement.setAttribute(`id`, `${project.name}ProjectElement`)
         newElement.innerHTML = project.name;
         projectContainer = document.getElementById(`projectContainer`);
         projectContainer.appendChild(newElement);
@@ -198,7 +201,7 @@ logSelectedProject(projectList);
 
 
 function updateProjectClasses(projectList){
-    const projects = document.getElementsByClassName(`project`);
+    const projects = document.getElementsByClassName(`projectElement`);
     const projectsArray = Array.from(projects);
 
 
@@ -210,7 +213,7 @@ function updateProjectClasses(projectList){
 
         //currently project is referencing the DOM element, and has no connection to the actual project in projectList
         
-        //fixed that by accessing the element's innerText (or innerHTML) but the problem is that the close button is also included in the return
+        //Elements now have unique Id's with project name
 
         
 

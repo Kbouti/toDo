@@ -40,14 +40,24 @@ class Task {
 
 function createMiscProject(){
     let project1 = new Project(`Misc`, false, true, []);
-    projectList.push(project1);
     const miscProject = document.createElement(`div`);
-    miscProject.classList.add(`project`);
-    miscProject.classList.add(`isSelected`);
+    miscProject.classList.add(`projectElement`);
+
+    miscProject.setAttribute(`id`, `MiscProjectElement`);
+
+    // miscProject.classList.add(`isSelected`);
 
     miscProject.innerHTML = `Misc`;
     projectContainer = document.getElementById(`projectContainer`);
     projectContainer.appendChild(miscProject);
+
+
+    
+    pushProjectToProjectList(project1);
+    
+
+
+
     createTaskContainer(project1);
 
     return;
@@ -77,6 +87,7 @@ function pushTaskToProject(newTask){
 
 function pushProjectToProjectList(project){
     projectList.push(project);
+    updateProjectClasses(projectList);
 
 }
 

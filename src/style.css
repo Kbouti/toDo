@@ -290,7 +290,7 @@
 }
 
 
-.project{
+.projectElement{
     /* background:white; */
     width:85%;
     border:3px solid var(--colorA);
@@ -301,7 +301,7 @@
     justify-content:space-between;
 }
 
-.project.isSelected{
+.projectElement.isSelected{
         border-color: rgb(80, 239, 80);
 
 }
