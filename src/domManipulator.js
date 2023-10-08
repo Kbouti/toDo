@@ -29,6 +29,12 @@ function newProjectElement(project){
         projectDeleteButton.classList.add(`projectDeleteButton`);
         projectDeleteButton.innerHTML = "X";
         newElement.appendChild(projectDeleteButton);
+
+        newElement.addEventListener(`click`, function(){
+            //retrieve list of all project elements
+            //filter through list, if the project is this project, set is selected = true. Else, isSelected = false
+        })
+
     return;
 }
 
@@ -175,7 +181,14 @@ function addListenerToTaskSubmit(projectList){
 }
 
 
+// *****************************************0*****************************************0*****************************************0
+
+
+
 function updateProjectClasses(projectList){
+//This looks through the projectList and finds the one that isSelected, then applies the selected class and removes the selected class from all others
+
+
     const projects = document.getElementsByClassName(`projectElement`);
     const projectsArray = Array.from(projects);
     for (let project of projectsArray){
@@ -193,7 +206,32 @@ function updateProjectClasses(projectList){
 }
 
 
-// *****************************************0*****************************************0*****************************************0
+
+function changeSelectedProject(project, projectList){
+
+    //retrieve list of all project elements
+    //filter through list, if the project is this project, set is selected = true. Else, isSelected = false
+
+//need this to know which project you clicked, and make that selected and all others isSelected false
+
+
+
+    const projects = document.getElementsByClassName(`projectElement`);
+    const projectsArray = Array.from(projects);
+
+    for(let element of projectsArray){
+        if (element = project){
+
+        }
+    }
+
+
+
+
+}
+
+
+
 
 
 
