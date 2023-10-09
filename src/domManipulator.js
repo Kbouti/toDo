@@ -130,7 +130,7 @@ function addListenerToProjectSubmit(projectList){
         pushProjectToProjectList(newProject);
         //Push project to projectList
 
-        newProjectElement(newProject);
+        newProjectElement(newProject, projectList);
         //Creates the dom element for the new project
 
         projectForm.reset();
@@ -220,6 +220,7 @@ function getclickedProject(element){
 function selectProject(element, projectList){
     let selected = getclickedProject(element);
         console.log(`got selected`);
+        console.log(`selected is: ${selected}`)
     updateSelectedProject(selected, projectList);
         console.log(`updated selected`);
     updateProjectClasses(projectList);
@@ -230,8 +231,8 @@ function selectProject(element, projectList){
     return;
 }
 
-
-
+//whoah whoah big confusion between updateSelectedProject and selectProject functions
+// ************************************************************************************************************************************************
 
 
 

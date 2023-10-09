@@ -96,8 +96,19 @@ function makeProject(){
 }
 
 
+
+
+
+
+
+
+
+
+
 function updateSelectedProject(selectedProject, projectList){
-    for(const project of projectList){
+    console.log(`selected project is: ${selectedProject}`)
+    console.log(`projectList is: ${projectList}`)
+    for(let project of projectList){
         if (selectedProject == project.name){
             project.isSelected = true;
         }
@@ -106,6 +117,15 @@ function updateSelectedProject(selectedProject, projectList){
             }
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 
