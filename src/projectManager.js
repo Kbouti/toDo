@@ -13,7 +13,6 @@ class Project {
         this.isSelected = isSelected;
         this.contents = contents;
     }
-
     delete(){
         //to delete this project and all tasks it contains. Cannot be performed on the default "misc" project.
         if (this.canDelete = true){
@@ -44,18 +43,13 @@ function createMiscProject(projectList){
     miscProject.classList.add(`projectElement`);
     miscProject.setAttribute(`id`, `MiscProjectElement`);
     miscProject.innerHTML = `Misc`;
-
     miscProject.addEventListener(`click`, function(){
         selectProject(miscProject, projectList);
-
     })
-
     projectContainer = document.getElementById(`projectContainer`);
     projectContainer.appendChild(miscProject);
-
     pushProjectToProjectList(project1);
     createTaskContainer(project1);
-
     return;
 }
 
@@ -66,9 +60,7 @@ function makeTask(){
     const taskDescriptionInput = document.getElementById(`taskDescriptionInput`);
     const urgencyDropDown = document.getElementById(`urgencyDropDown`);
     const statusDropDown = document.getElementById(`statusDropDown`);
-
     const newTask = new Task(projectDropDown.value, taskNameInput.value, taskDescriptionInput.value, urgencyDropDown.value, statusDropDown.value);
-
     return newTask;
 }
 
@@ -84,26 +76,14 @@ function pushTaskToProject(newTask){
 function pushProjectToProjectList(project){
     projectList.push(project);
     updateProjectClasses(projectList);
-
 }
 
 function makeProject(){
     const projectNameInput = document.getElementById(`projectNameInput`);
     const newProject = new Project(projectNameInput.value, false, true,  []);
     createTaskContainer(newProject);
-
     return newProject;
 }
-
-
-
-
-
-
-
-
-
-
 
 function updateSelectedProject(selectedProject, projectList){
     console.log(`selected project is: ${selectedProject}`)
@@ -114,20 +94,9 @@ function updateSelectedProject(selectedProject, projectList){
         }
         else if (selectedProject !== project.name){
             project.isSelected = false;
-            }
+        }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 function findSelectedProject(projectList){
     for (const project of projectList){
@@ -137,21 +106,18 @@ function findSelectedProject(projectList){
     }
 }
 
-
-
 function logSelectedProject(projectList){
     const selected = findSelectedProject(projectList);
     console.log(`The selected project is: ${selected}`);
     return;
 }
 
-
 function createTaskContainer(project){
     let newElement = document.createElement(`div`);
-    newElement.setAttribute(`id`, `${project.name}taskContainer`)
-    newElement.classList.add(`projectTaskList`);
+        newElement.setAttribute(`id`, `${project.name}taskContainer`)
+        newElement.classList.add(`projectTaskList`);
     let taskContainer = document.getElementById(`taskContainer`);
-    taskContainer.appendChild(newElement)
+        taskContainer.appendChild(newElement)
     return
 }
 
@@ -159,17 +125,14 @@ function createTaskContainer(project){
 
 function tempTasks(projectList){
     const tempTask = new Task(`Misc`, `Example task`, `All the task notes you could ever want!`, `Low`, `Not Started`)
-    pushTaskToProject(tempTask);
-    makeTaskBar(tempTask, projectList);
-
+        pushTaskToProject(tempTask);
+        makeTaskBar(tempTask, projectList);
     const tempTask2 = new Task(`Misc`, `Another Task`, `All the task notes you could ever want!`, `Mid`, `In Progress`)
-    pushTaskToProject(tempTask2);
-    makeTaskBar(tempTask2, projectList);
-
+        pushTaskToProject(tempTask2);
+        makeTaskBar(tempTask2, projectList);
     const tempTask3 = new Task(`Misc`, `More fuckin shit to do`, `All the task notes you could ever want!`, `HIGH`, `Nearly Complete`)
-    pushTaskToProject(tempTask3);
-    makeTaskBar(tempTask3, projectList);
-
+        pushTaskToProject(tempTask3);
+        makeTaskBar(tempTask3, projectList);
     return;
 }
 

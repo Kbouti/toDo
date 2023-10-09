@@ -18,10 +18,8 @@ import { makeTaskCard, makeTaskBar } from "./taskCards.js";
 
 
 function newProjectElement(project, projectList){
-
     const newElement = document.createElement(`div`);
         newElement.classList.add(`projectElement`);
-
         newElement.setAttribute(`id`, `${project.name}ProjectElement`)
         newElement.innerHTML = project.name;
         projectContainer = document.getElementById(`projectContainer`);
@@ -30,12 +28,9 @@ function newProjectElement(project, projectList){
         projectDeleteButton.classList.add(`projectDeleteButton`);
         projectDeleteButton.innerHTML = "X";
         newElement.appendChild(projectDeleteButton);
-
         newElement.addEventListener(`click`, function(){
-
-          selectProject(newElement, projectList);
+            selectProject(newElement, projectList);
         })
-
     return;
 }
 
@@ -57,7 +52,7 @@ function displayProjectForm(){
         newProjectButton.addEventListener(`click`, function(){
         toggleDisplay(`projectFormDiv`, `flex`)
         })
-        return;
+    return;
 }
 
 
@@ -67,22 +62,18 @@ function displayProjectForm(){
 function toggleProjectDisplays(selectedName){
     const projectContainers = document.getElementsByClassName(`projectTaskList`);
     const containersArray = Array.from(projectContainers).map(div => div.id);
-
     let targetId = `${selectedName}taskContainer`
-
     for (let container of containersArray) {
         if (container == targetId){
             let selectedContainer = document.getElementById(container);
                 selectedContainer.classList.remove(`hidden`)
             }
-
         else if (container !== targetId){
         let unselectedContainer = document.getElementById(container);
         unselectedContainer.classList.add(`hidden`);
         }
     }
-
-return;
+    return;
 }
 
 
@@ -98,7 +89,7 @@ function displayTaskForm(projectList){
         projectDropDown.innerHTML = option;
         toggleDisplay(`taskFormDiv`, `flex`)
         })
-        return;
+    return;
 }
 
 function cancelButtons(){
@@ -182,9 +173,6 @@ function addListenerToTaskSubmit(projectList){
 }
 
 
-// *****************************************0*****************************************0*****************************************0
-
-
 
 function updateProjectClasses(projectList){
 //This looks through the projectList and finds the one that isSelected, then applies the selected class and removes the selected class from all others
@@ -206,45 +194,20 @@ function updateProjectClasses(projectList){
     return;
 }
 
-
-
-
 function getclickedProject(element){
     let id = element.id;
     let clickedProject = id.slice(0, -14);
-    console.log(clickedProject);
     return clickedProject;
 }
 
 
 function selectProject(element, projectList){
     let selected = getclickedProject(element);
-        console.log(`got selected`);
-        console.log(`selected is: ${selected}`)
     updateSelectedProject(selected, projectList);
-        console.log(`updated selected`);
     updateProjectClasses(projectList);
-        console.log(`updated class list`);
     toggleProjectDisplays(selected)
-        console.log(`projectTaskList display toggled`)
-
     return;
 }
-
-//whoah whoah big confusion between updateSelectedProject and selectProject functions
-// ************************************************************************************************************************************************
-
-
-
-
-
-
-//High level goals:
-// Apply listener to sidebar project divs to toggle selected project
-
-// Allow user to view/edit task contents
-
-//Add date functionality
 
 
 
@@ -261,6 +224,12 @@ export {
 }
 
 
+
+//High level goals:
+
+// Allow user to view/edit task contents
+
+//Add date functionality
 
 
  
