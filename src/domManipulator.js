@@ -163,7 +163,7 @@ function addListenerToTaskSubmit(projectList){
         //Append new task to proper project in project list
 
         let selectedProject = newTask.project;
-        updateSelected(selectedProject, projectList);
+        updateSelectedProject(selectedProject, projectList);
         // Update selected project to the project this task is being appended to
 
         makeTaskBar(newTask, projectList);
@@ -224,12 +224,11 @@ function selectProject(element, projectList){
         console.log(`updated selected`);
     updateProjectClasses(projectList);
         console.log(`updated class list`);
+    toggleProjectDisplays(selected)
+        console.log(`projectTaskList display toggled`)
 
     return;
 }
-
-
-//^^This is working. Each step is working. The problem is that it's not also toggling display on the task container. 
 
 
 
