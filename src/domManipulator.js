@@ -7,16 +7,17 @@ import {
     pushTaskToProject,
     makeProject,
     pushProjectToProjectList,
-    updateSelected,
+    updateSelectedProject,
     logSelectedProject,
-    findSelectedProject
+    findSelectedProject,
+    projectList
 }
 from "./projectManager";
 
 import { makeTaskCard, makeTaskBar } from "./taskCards.js";
 
 
-function newProjectElement(project){
+function newProjectElement(project, projectList){
 
     const newElement = document.createElement(`div`);
         newElement.classList.add(`projectElement`);
@@ -31,8 +32,8 @@ function newProjectElement(project){
         newElement.appendChild(projectDeleteButton);
 
         newElement.addEventListener(`click`, function(){
-            //retrieve list of all project elements
-            //filter through list, if the project is this project, set is selected = true. Else, isSelected = false
+
+          selectProject(newElement, projectList);
         })
 
     return;
@@ -135,7 +136,7 @@ function addListenerToProjectSubmit(projectList){
         projectForm.reset();
         //Resets the form
 
-        updateSelected(currentProject, projectList);
+        updateSelectedProject(currentProject, projectList);
 
         updateProjectClasses(projectList);
 
@@ -207,34 +208,38 @@ function updateProjectClasses(projectList){
 
 
 
-function changeSelectedProject(project, projectList){
 
-    //retrieve list of all project elements
-    //filter through list, if the project is this project, set is selected = true. Else, isSelected = false
-
-//need this to know which project you clicked, and make that selected and all others isSelected false
-
-
-
-    const projects = document.getElementsByClassName(`projectElement`);
-    const projectsArray = Array.from(projects);
-
-    for(let element of projectsArray){
-        if (element = project){
-
-        }
-    }
-
-
-
-
+function getclickedProject(element){
+    let id = element.id;
+    let clickedProject = id.slice(0, -14);
+    console.log(clickedProject);
+    return clickedProject;
 }
 
 
+function selectProject(element, projectList){
+    let selected = getclickedProject(element);
+        console.log(`got selected`);
+    updateSelectedProject(selected, projectList);
+        console.log(`updated selected`);
+    updateProjectClasses(projectList);
+        console.log(`updated class list`);
+
+    return;
+}
+
+
+//^^This is working. Each step is working. The problem is that it's not also toggling display on the task container. 
 
 
 
 
+
+
+
+
+
+//High level goals:
 // Apply listener to sidebar project divs to toggle selected project
 
 // Allow user to view/edit task contents
@@ -251,7 +256,8 @@ export {
     addListenerToTaskSubmit,
     addListenerToProjectSubmit,
     toggleProjectDisplays,
-    updateProjectClasses
+    updateProjectClasses,
+    selectProject
 }
 
 

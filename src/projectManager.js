@@ -1,5 +1,5 @@
 import { makeTaskBar } from "./taskCards";
-import { updateProjectClasses } from "./domManipulator";
+import { selectProject, updateProjectClasses } from "./domManipulator";
 
 let projectList = [];
 let currentProject;
@@ -38,12 +38,18 @@ class Task {
     }
 }
 
-function createMiscProject(){
+function createMiscProject(projectList){
     let project1 = new Project(`Misc`, false, true, []);
     const miscProject = document.createElement(`div`);
     miscProject.classList.add(`projectElement`);
     miscProject.setAttribute(`id`, `MiscProjectElement`);
     miscProject.innerHTML = `Misc`;
+
+    miscProject.addEventListener(`click`, function(){
+        selectProject(miscProject, projectList);
+
+    })
+
     projectContainer = document.getElementById(`projectContainer`);
     projectContainer.appendChild(miscProject);
 
@@ -90,7 +96,7 @@ function makeProject(){
 }
 
 
-function updateSelected(selectedProject, projectList){
+function updateSelectedProject(selectedProject, projectList){
     for(const project of projectList){
         if (selectedProject == project.name){
             project.isSelected = true;
@@ -159,7 +165,7 @@ export {
     pushProjectToProjectList,
     createMiscProject,
     tempTasks,
-    updateSelected,
+    updateSelectedProject,
     findSelectedProject,
     logSelectedProject
 }

@@ -24,6 +24,7 @@ import {
     cancelButtons,
     addListenerToTaskSubmit,
     addListenerToProjectSubmit,
+    selectProject
 } from './domManipulator';
 
 import {
@@ -59,7 +60,7 @@ displayTaskForm(projectList),
 cancelButtons(),
     console.log(`cancelButtons has run`);
 
-createMiscProject();
+createMiscProject(projectList);
     console.log(`Misc Project created`);
 
 tempTasks(projectList);
