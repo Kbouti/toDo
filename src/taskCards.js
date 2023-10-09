@@ -196,7 +196,7 @@ function addStatusClass(element, task){
         case `Complete`:
             element.classList.add(`statusComplete`);
             element.classList.remove(
-                `statusNotStarted`
+                `statusNotStarted`,
                 `statusInProgress`,
                 `statusPartsOnOrder`,
                 `statusNearlyComplete`,
