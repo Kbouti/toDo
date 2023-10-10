@@ -265,14 +265,6 @@
     background-color: #01424a;
 }
 
-.editButton{
-    background-color:var(--colorA);
-}
-
-.deleteButton{
-    background-color:red;
-
-}
 
 .barWidget{
     border:2px solid var(--colorE);

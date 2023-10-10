@@ -16,10 +16,10 @@ function makeTaskBar(task, projectList){
   
     let taskBar = createElement([`${task.name}taskBar`, `taskBar`], `div`, ``);
         placeElement(taskBar, `${project}taskContainer`);
-    let editButton = createElement([``, `editButton`, `barWidget`], `div`, `Edit`);
+    let editButton = createElement([``, `material-symbols-outlined`], `span`, `edit`);
         placeElement(editButton, `${task.name}taskBar`);
 
-    let deleteButton = createElement([``, `deleteButton`, `barWidget`], `div`, `Delete`);
+    let deleteButton = createElement([``, `material-symbols-outlined`], `span`, `delete`);
         placeElement(deleteButton, `${task.name}taskBar`);
 
     let taskBarName = createElement([``, `taskBarName`], `div`, `${task.name}`);
