@@ -18,18 +18,9 @@ function makeTaskBar(task, projectList){
         placeElement(taskBar, `${project}taskContainer`);
     let editButton = createElement([``, `material-symbols-outlined`], `span`, `edit`);
         placeElement(editButton, `${task.name}taskBar`);
-
         editButton.addEventListener(`click`, function(){
-
             console.log(task);
-
             taskCard(task);
-            //access relevant task in  project
-
-            // create/display task card for that task
-
-            //
-
 
         })
 
@@ -39,6 +30,16 @@ function makeTaskBar(task, projectList){
 
     let deleteButton = createElement([``, `material-symbols-outlined`], `span`, `delete`);
         placeElement(deleteButton, `${task.name}taskBar`);
+        deleteButton.addEventListener(`click`, function(){
+            console.log(`${task.name} task delete clicked`)
+
+            deleteTask(task);
+            //deleteTask logic not yet written
+        })
+
+
+
+
 
     let taskBarName = createElement([``, `taskBarName`], `div`, `${task.name}`);
         placeElement(taskBarName, `${task.name}taskBar`);
@@ -73,8 +74,17 @@ function taskCard(task) {
                     cardForm.appendChild(cardFormLeft);
                 let cardFormRight = createElement([``, `cardFormRight`, `formHalf`], `div`, ``);
                     cardForm.appendChild(cardFormRight);
-                    let cardNameInput = createElement([``, `cardNameInput`], `input`, `${task.name}`);
+
+                    let cardNameInput = createElement([``, `cardNameInput`], `input`, '');
+                        cardFormLeft.appendChild(cardNameInput);
+                        cardNameInput.value = task.name;
+
+                    let cardDescriptionInput = createElement([``, `cardDescriptionInput`], `input`, ``);
+                        cardFormRight.appendChild(cardDescriptionInput);
+                        cardDescriptionInput.value = task.description;
+
 }
+
 
 
 
@@ -91,95 +101,6 @@ function taskCard(task) {
 //Need limit on how many characters people can input for task name
 
 
-function makeTaskCard(task, projectList){
-    console.log(projectList)
-    console.log(task);
-
-    const taskElement = document.createElement(`div`);
-        taskElement.classList.add(`taskCard`);
-
-        const taskCardLeft = document.createElement(`div`);
-        const taskCardRight = document.createElement(`div`);
-            taskCardLeft.classList.add(`taskCardLeft`);
-            taskCardRight.classList.add(`taskCardRight`);
-            taskElement.appendChild(taskCardLeft);
-            taskElement.appendChild(taskCardRight);
-
-            const projectContainer = document.createElement(`div`);
-                projectContainer.classList.add(`taskSectionContainer`);
-                taskCardLeft.appendChild(projectContainer);
-                const projectLabel = document.createElement(`div`);
-                    projectLabel.classList.add(`taskAttributeLabel`);
-                    projectLabel.innerHTML = `Project: `
-                    projectContainer.appendChild(projectLabel);
-                const projectValue = document.createElement(`div`);
-                    projectValue.classList.add(`taskName`);
-                    projectValue.innerHTML = task.project;
-                    projectContainer.appendChild(projectValue);
-
-            const nameContainer = document.createElement(`div`);
-                nameContainer.classList.add(`taskSectionContainer`);
-                taskCardLeft.appendChild(nameContainer);  
-                const nameLabel = document.createElement(`div`);
-                    nameLabel.classList.add(`taskAttributeLabel`);
-                    nameLabel.innerHTML = `Task Name: `
-                    nameContainer.appendChild(nameLabel);
-                const taskName = document.createElement(`div`);
-                    taskName.classList.add(`taskName`);
-                    taskName.innerHTML = task.name;
-                    nameContainer.appendChild(taskName);
-
-            const descriptionContainer = document.createElement(`div`);
-                descriptionContainer.classList.add(`taskSectionContainer`);
-                taskCardRight.appendChild(descriptionContainer);  
-                const descriptionLabel = document.createElement(`div`);
-                    descriptionLabel.classList.add(`taskAttributeLabel`);
-                    descriptionLabel.innerHTML = `Task Description: `
-                    descriptionContainer.appendChild(descriptionLabel);
-                const taskDescription = document.createElement(`div`);
-                    taskDescription.classList.add(`taskDescription`);
-                    taskDescription.innerHTML = task.description;
-                    descriptionContainer.appendChild(taskDescription);
-
-            const urgencyContainer = document.createElement(`div`);
-                urgencyContainer.classList.add(`taskSectionContainer`);
-                taskCardLeft.appendChild(urgencyContainer);  
-                const urgencyLabel = document.createElement(`div`);
-                    urgencyLabel.classList.add(`taskAttributeLabel`);
-                    urgencyLabel.innerHTML = `Urgency: `
-                    urgencyContainer.appendChild(urgencyLabel);
-                const taskUrgency = document.createElement(`div`);
-                    taskUrgency.classList.add(`taskUrgency`);
-                    taskUrgency.innerHTML = task.urgency;
-                    urgencyContainer.appendChild(taskUrgency);
-
-                if (checkUrgency(task) ==  `HIGH`){
-                    taskUrgency.classList.add(`highUrgency`);
-                }
-                else if (checkUrgency(task) ==  `Mid`){
-                    taskUrgency.classList.add(`midUrgency`);
-                }
-                else if (checkUrgency(task) ==  `Low`){
-                    taskUrgency.classList.add(`lowUrgency`);
-                }
-
-            const statusContainer = document.createElement(`div`);
-                statusContainer.classList.add(`taskSectionContainer`);
-                taskCardLeft.appendChild(statusContainer);
-                const statusLabel = document.createElement(`div`);
-                    statusLabel.classList.add(`taskAttributeLabel`);
-                    statusLabel.innerHTML = `Status: `;
-                    statusContainer.appendChild(statusLabel);
-                const taskStatus = document.createElement(`div`);
-                    taskStatus.classList.add(`taskStatus`);
-                    taskStatus.innerHTML = task.status;
-                    statusContainer.appendChild(taskStatus);
-
-    const taskContainer = document.getElementById(`taskContainer`);
-        taskContainer.appendChild(taskElement);
-        
-    return;
-}
 
 
 
@@ -268,6 +189,5 @@ function addStatusClass(element, task){
 
 
 export {
-    makeTaskCard,
     makeTaskBar
 }
