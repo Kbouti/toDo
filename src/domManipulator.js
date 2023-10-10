@@ -163,7 +163,9 @@ function addListenerToTaskSubmit(projectList){
         updateProjectClasses(projectList);
 
         taskForm.reset();
-        //Reset form
+            let urgencyDropDown = document.getElementById(`urgencyDropDown`);
+                urgencyDropDown.selectedIndex = 1;
+        //Reset form AND return default urgency to mid
 
         toggleDisplay(`taskFormDiv`, `flex`);
         //Make form dissappear
