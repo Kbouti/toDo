@@ -19,6 +19,24 @@ function makeTaskBar(task, projectList){
     let editButton = createElement([``, `material-symbols-outlined`], `span`, `edit`);
         placeElement(editButton, `${task.name}taskBar`);
 
+        editButton.addEventListener(`click`, function(){
+
+            console.log(task);
+
+            taskCard(task);
+            //access relevant task in  project
+
+            // create/display task card for that task
+
+            //
+
+
+        })
+
+
+
+
+
     let deleteButton = createElement([``, `material-symbols-outlined`], `span`, `delete`);
         placeElement(deleteButton, `${task.name}taskBar`);
 
@@ -38,6 +56,37 @@ function makeTaskBar(task, projectList){
 
     toggleProjectDisplays(selected, projectList);
 }
+
+
+
+
+
+
+
+function taskCard(task) {
+    let content = document.getElementById(`content`);
+        let card = createElement(['', `taskCard`], `div`, ``);
+            content.appendChild(card);
+            let cardForm = createElement([``, `taskCardForm`], `form`, ``);
+                card.appendChild(cardForm);
+                let cardFormLeft = createElement([``, `cardFormLeft`, `formHalf`], `div`, ``);
+                    cardForm.appendChild(cardFormLeft);
+                let cardFormRight = createElement([``, `cardFormRight`, `formHalf`], `div`, ``);
+                    cardForm.appendChild(cardFormRight);
+                    let cardNameInput = createElement([``, `cardNameInput`], `input`, `${task.name}`);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Need limit on how many characters people can input for task name
 

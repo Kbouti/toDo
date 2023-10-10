@@ -175,30 +175,20 @@
 }
 
 .taskCard {
+    position:absolute;
+    width:80vw;
+    height:60vh;
+    background-color: white;
     border:3px solid var(--colorA);
     border-radius:10px;
-    width: auto;
-    margin: 8px;
     display:flex;
     flex-direction:row;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
 
 }
 
-.taskCardLeft{
-    flex-grow:1;
-}
-
-.taskCardRight{
-    flex-grow:1;
-    display:flex;
-    flex-direction:column;
-}
-
-.taskCardRight .taskSectionContainer{
-    display:flex;
-    flex-direction:column;
-
-}
 
 .taskDescription{
     border:2px solid black;
