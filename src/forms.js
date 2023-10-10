@@ -52,14 +52,6 @@ import {createElement, placeElement} from './elementMaker.js';
                     }
                     urgencyDropDown.innerHTML = urgencyOption;
                     urgencyDropDown.selectedIndex = 1;
-
-// ************************************************************************************************************************************
-// The urgency dropdown index 1 is only selected on the first call of the form. 
-// I think it's getting reset to index 0  (which is high, and not what I want) then the form gets reset. 
-
-
-
-
             let taskFormContainer5 = createElement([`taskFormContainer5`, `formContainer`], `div`, ``);
                 placeElement(taskFormContainer5, `taskForm`);
                 let taskStatusLabel = createElement([`taskStatusLabel`, `label`], `label`, `Status:`);

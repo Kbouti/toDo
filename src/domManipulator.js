@@ -87,6 +87,15 @@ function displayTaskForm(projectList){
         option += `<option value=${projectList[i].name}>` + projectList[i].name+"</option>"
         }
         projectDropDown.innerHTML = option;
+        let selected = findSelectedProject(projectList);
+            let index;
+            for (let i = 0;i < projectList.length; i++){
+                if (projectList[i].name == selected){
+                    index = i;
+                }
+            }
+        projectDropDown.selectedIndex = index;
+// ^Finds selected project and sets it as default 
         toggleDisplay(`taskFormDiv`, `flex`)
         })
     return;
