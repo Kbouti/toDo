@@ -190,8 +190,22 @@
 }
 
 .taskCardForm{
-
+    height: 100%;
+    width:100%;
+    display:flex;
+    flex-direction:row;
 }
+
+.cardFormLeft{
+    width:50%;
+    height:100%;
+}
+
+.cardFormRight{
+    width:50%;
+    height:100%;
+}
+
 
 
 .alertMessage{
@@ -223,7 +237,7 @@
     height:3rem;
     align-items:center;
 
-    
+
     
 }
 
