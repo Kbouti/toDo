@@ -101,13 +101,17 @@ import {createElement, placeElement} from './elementMaker.js';
                 projectForm.setAttribute(`autocomplete`, `off`);
                 let projectFormContainer1 = createElement([`projectFormContainer1`, `formContainer`], `div`, ``);
                     placeElement(projectFormContainer1, `projectForm`);
-                    let projectNameLabel = createElement([`projectNameLabel`, `label`], `label`, `Project Name: `);
-                        placeElement(projectNameLabel, `projectFormContainer1`);
-                        projectNameLabel.setAttribute(`for`, `projectName`);
+                    // let projectNameLabel = createElement([`projectNameLabel`, `label`], `label`, `Project Name: `);
+                    //     placeElement(projectNameLabel, `projectFormContainer1`);
+                    //     projectNameLabel.setAttribute(`for`, `projectName`);
                     let projectNameInput = createElement([`projectNameInput`, `textInput`], `input`, ``);
                         placeElement(projectNameInput, `projectFormContainer1`);
                         projectNameInput.setAttribute(`required`, `true`);
                         projectNameInput.setAttribute(`name`, `projectName`);
+                        projectNameInput.setAttribute(`placeholder`, `Project Name`);
+
+
+
                 let projectFormContainer2 = createElement([`projectFormContainer2`, `formContainer`], `div`, ``);
                     placeElement(projectFormContainer2, `projectForm`);
                     let newProjectCancelButton = createElement([`newProjectCancelButton`, `cancel`, `button`], `button`, `Cancel`);
