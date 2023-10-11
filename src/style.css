@@ -120,6 +120,10 @@
     width:50vw;
 }
 
+#projectForm{ 
+    align-items:center;
+}
+
 .formContainer {
     margin:3px;
 }
