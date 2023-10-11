@@ -52,6 +52,13 @@ function displayProjectForm(){
         newProjectButton.addEventListener(`click`, function(){
         toggleDisplay(`projectFormDiv`, `flex`)
         })
+
+
+
+
+        // Maybe I could also toggle a div that covers up the rest of the content section? Looks pretty busy with other junk in the background
+
+
     return;
 }
 
