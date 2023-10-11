@@ -4,7 +4,7 @@ console.log(`index.js loaded`);
 
 
 // In order to push changes to live site on github pages, run the following command:
-//git subtree push --prefix dist origin gh-pages
+// git subtree push --prefix dist origin gh-pages
 
 
 
