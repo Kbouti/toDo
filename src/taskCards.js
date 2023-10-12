@@ -83,6 +83,12 @@ function taskCard(task) {
                         cardFormRight.appendChild(cardDescriptionInput);
                         cardDescriptionInput.value = task.description;
 
+        let taskCardCancelButton = createElement([`taskEditCancel`, `taskCardButton`, `cancel`, `button`], `div`, `Cancel`);
+            cardFormLeft.appendChild(taskCardCancelButton);
+            taskCardCancelButton.addEventListener(`click`, function(){
+                content.removeChild(card);
+            })
+
 }
 
 
