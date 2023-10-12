@@ -66,7 +66,7 @@ function makeTask(){
 
 function pushTaskToProject(newTask){
     for (let i = 0; i < projectList.length;i++){
-        if ( projectList[i].name == projectDropDown.value){
+        if ( projectList[i].name == newTask.project){
                 projectList[i].contents.push(newTask);
         }
     }
@@ -126,6 +126,9 @@ function createTaskContainer(project){
 function tempTasks(projectList){
     const tempTask = new Task(`Misc`, `Example task`, `All the task notes you could ever want!`, `Low`, `Not Started`)
         pushTaskToProject(tempTask);
+        let projectName = tempTask.project;
+        let Project = projectList.find(obj => obj.name == projectName);
+        pushProjectToProjectList(Project);
         makeTaskBar(tempTask, projectList);
     return;
 }
