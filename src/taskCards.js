@@ -37,12 +37,10 @@ function makeTaskBar(task, projectList){
             console.log(userResponse);
             if (userResponse == true){
                 //delete task from projectList and remove dom element
+                deleteTask(task, projectList);
             }
-
-
-            deleteTask(task);
-            //deleteTask logic not yet written
         })
+
 
 
 
@@ -64,7 +62,6 @@ function makeTaskBar(task, projectList){
 
     toggleProjectDisplays(selected, projectList);
 }
-
 
 
 
@@ -109,9 +106,34 @@ function taskCard(task) {
 
 
 
+// ***************************************************************************************************************************************************************************
+
+function deleteTask(task, projectList){
+
+    let taskName = task.name;
+    let projectName = task.project;
+
+
+    let project = projectList.find(obj => obj.name = projectName);
+
+    console.log(project);
+    let projectContents = project.contents;
+    console.log(`project contents are ${projectContents}`);
+
+    //projectContents.find index of
+    //projectContents.splice(index, 0)
+
+
+    //NOT COMPLETE. This removes the dom element but doesn't take it out of the content of the project in projectList. 
+    //Noticing that this example task somehow isn't in the content? Need to see why that wasn't added
 
 
 
+    let taskContainer = document.getElementById(`${projectName}taskContainer`);
+    let taskBar = document.getElementById(`${taskName}taskBar`);
+    taskContainer.removeChild(taskBar);
+
+}
 
 
 
