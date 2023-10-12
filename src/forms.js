@@ -34,7 +34,7 @@ import {createElement, placeElement} from './elementMaker.js';
                 let taskDescriptionLabel = createElement([`taskDescriptionLabel`, `label`], `label`, `Task Description: `);
                     placeElement(taskDescriptionLabel, `taskFormContainer3`);  
                     taskDescriptionLabel.setAttribute(`for`, `taskDescription`);
-                let taskDescriptionInput = createElement([`taskDescriptionInput`, `textInput`], `input`, ``, `taskFormContainer3`);
+                let taskDescriptionInput = createElement([`taskDescriptionInput`, `textInput`], `textarea`, ``, `taskFormContainer3`);
                     placeElement(taskDescriptionInput, `taskFormContainer3`);
                     taskDescriptionInput.setAttribute(`name`, `taskDescription`);
             let taskFormContainer4 = createElement([`taskFormContainer4`, `formContainer`], `div`, ``);

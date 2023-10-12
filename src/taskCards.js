@@ -79,7 +79,7 @@ function taskCard(task) {
                         cardFormLeft.appendChild(cardNameInput);
                         cardNameInput.value = task.name;
 
-                    let cardDescriptionInput = createElement([``, `cardDescriptionInput`], `input`, ``);
+                    let cardDescriptionInput = createElement([``, `cardDescriptionInput`], `textarea`, ``);
                         cardFormRight.appendChild(cardDescriptionInput);
                         cardDescriptionInput.value = task.description;
 
