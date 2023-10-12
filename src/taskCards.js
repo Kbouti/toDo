@@ -33,6 +33,13 @@ function makeTaskBar(task, projectList){
         deleteButton.addEventListener(`click`, function(){
             console.log(`${task.name} task delete clicked`)
 
+            let userResponse = confirm(`Are you sure you want to delete this task?`)
+            console.log(userResponse);
+            if (userResponse == true){
+                //delete task from projectList and remove dom element
+            }
+
+
             deleteTask(task);
             //deleteTask logic not yet written
         })

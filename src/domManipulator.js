@@ -28,6 +28,18 @@ function newProjectElement(project, projectList){
         projectDeleteButton.classList.add(`projectDeleteButton`);
         projectDeleteButton.innerHTML = "X";
         newElement.appendChild(projectDeleteButton);
+
+        projectDeleteButton.addEventListener(`click`, function(){
+            console.log(`attempted to delete project: ${project.name}`);
+            let userResponse = confirm(`Deleting this project will also delete all the tasks within. Are you sure you want to continue?`)
+
+            if (userResponse == true){
+                //Remove project from projectList and remove element from DOM. 
+                
+            }
+        })
+
+
         newElement.addEventListener(`click`, function(){
             selectProject(newElement, projectList);
         })
