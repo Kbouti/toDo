@@ -113,15 +113,41 @@ function deleteTask(task, projectList){
     let taskName = task.name;
     let projectName = task.project;
 
-
     let project = projectList.find(obj => obj.name = projectName);
 
-    console.log(project);
-    let projectContents = project.contents;
-    console.log(`project contents are ${projectContents}`);
 
-    //projectContents.find index of
-    //projectContents.splice(index, 0)
+    let projectContents = project.contents;
+
+
+    let thisTask = projectContents.find(obj =>obj.name = taskName)
+    console.log(`thisTask:`);
+    console.log(thisTask);
+
+    console.log(`Start. Project contents are ${projectContents}`);
+    console.log(JSON.stringify(projectContents));
+
+
+    let index = toString.findIndex(thisTask);
+
+
+
+
+        for (let task of projectContents){
+            console.log(`this task is ${task}`);
+            console.log(JSON.stringify(task));
+         
+        }
+    //projectContents is a list of the tasks in the desired project
+    // let ourTask = projectContents.find(obj => obj.name == taskName);
+    // let index = projectContents.indexOf(ourTask);
+    // projectContents.splice(index, 0);
+    console.log(`End. Project contents are: ${projectContents}`)
+
+
+    //The reason this isn't working is that it's
+
+
+
 
 
     //NOT COMPLETE. This removes the dom element but doesn't take it out of the content of the project in projectList. 
