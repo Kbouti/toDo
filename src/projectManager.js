@@ -35,6 +35,12 @@ class Task {
     log(){
         console.log(this);
     }
+
+    delete(){
+        console.log(`Deleting task: ${this.name} from project: ${this.project}`)
+    }
+
+
 }
 
 function createMiscProject(projectList){

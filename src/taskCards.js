@@ -109,15 +109,14 @@ function taskCard(task) {
 // ***************************************************************************************************************************************************************************
 
 function deleteTask(task, projectList){
-
-    //unable to remove task from projectList. I'm thinking this needs to be added as a method attached to the object
-
-
+    task.delete();
+    //need to write method for deleting task in projectManager on Task constructor
 
     //NOT COMPLETE. This removes the dom element but doesn't take it out of the content of the project in projectList. 
     //Noticing that this example task somehow isn't in the content? Need to see why that wasn't added
 
-
+    let taskName = task.name;
+    let projectName = task.project;
 
     let taskContainer = document.getElementById(`${projectName}taskContainer`);
     let taskBar = document.getElementById(`${taskName}taskBar`);
