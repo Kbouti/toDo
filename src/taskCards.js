@@ -110,43 +110,7 @@ function taskCard(task) {
 
 function deleteTask(task, projectList){
 
-    let taskName = task.name;
-    let projectName = task.project;
-
-    let project = projectList.find(obj => obj.name = projectName);
-
-
-    let projectContents = project.contents;
-
-
-    let thisTask = projectContents.find(obj =>obj.name = taskName)
-    console.log(`thisTask:`);
-    console.log(thisTask);
-
-    console.log(`Start. Project contents are ${projectContents}`);
-    console.log(JSON.stringify(projectContents));
-
-
-    let index = toString.findIndex(thisTask);
-
-
-
-
-        for (let task of projectContents){
-            console.log(`this task is ${task}`);
-            console.log(JSON.stringify(task));
-         
-        }
-    //projectContents is a list of the tasks in the desired project
-    // let ourTask = projectContents.find(obj => obj.name == taskName);
-    // let index = projectContents.indexOf(ourTask);
-    // projectContents.splice(index, 0);
-    console.log(`End. Project contents are: ${projectContents}`)
-
-
-    //The reason this isn't working is that it's
-
-
+    //unable to remove task from projectList. I'm thinking this needs to be added as a method attached to the object
 
 
 
