@@ -37,7 +37,42 @@ class Task {
     }
 
     delete(){
-        console.log(`Deleting task: ${this.name} from project: ${this.project}`)
+        console.log(`Deleting task: ${this.name} from project: ${this.project}`);
+
+        for(let project of projectList){
+            if (project.name == this.project){
+                let contents = project.contents;
+                console.log(`1`)
+                console.log(contents);
+
+                for (let task of contents){
+                    if (task.name == this.name){
+
+                        let index = contents.indexOf(task)
+                        contents.splice(index, 0);
+                        console.log(`spliced index:`)
+                        console.log(contents);
+                    }
+                }
+            console.log(`3`)
+            console.log(contents);
+        }
+    }
+
+
+// Open projectList
+
+// Find relevant project
+
+//open that project's contents
+
+//find the relevant task
+
+//remove that task
+//update Project
+//update ProjectList
+
+
     }
 
 
@@ -75,8 +110,8 @@ function pushTaskToProject(newTask){
         if ( projectList[i].name == newTask.project){
                 projectList[i].contents.push(newTask);
         }
+        return;
     }
-    return;
 }
 
 function pushProjectToProjectList(project){
@@ -95,6 +130,7 @@ function updateSelectedProject(selectedProject, projectList){
     console.log(`selected project is: ${selectedProject}`)
     console.log(`projectList is: ${projectList}`)
     for(let project of projectList){
+        console.log(project);
         if (selectedProject == project.name){
             project.isSelected = true;
         }
