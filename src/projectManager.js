@@ -140,6 +140,17 @@ function updateSelectedProject(selectedProject, projectList){
     }
 }
 
+
+// Somehow the updateSelected function seems to be duplicating the Misc project?
+
+
+
+
+
+
+
+
+
 function findSelectedProject(projectList){
     for (const project of projectList){
         if(project.isSelected == true){

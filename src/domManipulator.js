@@ -177,7 +177,8 @@ function addListenerToTaskSubmit(projectList){
         //prevent default
 
         let newTask = makeTask();
-        //Make new task
+        //Make new task using the values of the form inputs
+
         pushTaskToProject(newTask);
         //Append new task to proper project in project list
 
