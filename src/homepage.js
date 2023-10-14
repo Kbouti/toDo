@@ -49,4 +49,4 @@ function buildPage(){
 
 
 
-export default buildPage;
+export {buildPage}

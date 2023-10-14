@@ -10,7 +10,7 @@ console.log(`index.js loaded`);
 
 
 import './style.css';
-import buildPage from './homepage';
+import {buildPage} from './homepage';
 
 import {
     taskForm,
@@ -74,6 +74,7 @@ addListenerToProjectSubmit(projectList);
 
 
 console.log(`PAGE LOAD COMPLETE`)
+console.log(projectList);
 
 
 
