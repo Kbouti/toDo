@@ -76,19 +76,21 @@ function taskCard(task) {
                 card.appendChild(cardForm);
                 let cardFormLeft = createElement([``, `cardFormLeft`, `formHalf`], `div`, ``);
                     cardForm.appendChild(cardFormLeft);
+                    let leftSideContainer = createElement([``, `leftSideContainer`], `div`, ``);
+                        cardFormLeft.appendChild(leftSideContainer);
                 let cardFormRight = createElement([``, `cardFormRight`, `formHalf`], `div`, ``);
                     cardForm.appendChild(cardFormRight);
 
                     let cardNameInput = createElement([``, `cardNameInput`], `input`, '');
-                        cardFormLeft.appendChild(cardNameInput);
+                        leftSideContainer.appendChild(cardNameInput);
                         cardNameInput.value = task.name;
 
 
                     let cardPrioritySelect = createElement([``, `cardPrioritySelect`], `select`, ``)
-                        cardFormLeft.appendChild(cardPrioritySelect);
+                        leftSideContainer.appendChild(cardPrioritySelect);
 
                     let cardUrgencySelect = createElement([``, `cardUrgencySelect`], `select`, ``)
-                        cardFormLeft.appendChild(cardUrgencySelect);
+                        leftSideContainer.appendChild(cardUrgencySelect);
 
 
 
@@ -97,7 +99,7 @@ function taskCard(task) {
                         cardDescriptionInput.value = task.description;
 
         let taskCardCancelButton = createElement([`taskEditCancel`, `taskCardButton`, `cancel`, `button`], `div`, `Cancel`);
-            cardFormLeft.appendChild(taskCardCancelButton);
+            leftSideContainer.appendChild(taskCardCancelButton);
             taskCardCancelButton.addEventListener(`click`, function(){
                 content.removeChild(card);
             })

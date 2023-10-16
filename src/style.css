@@ -156,7 +156,7 @@ select {
 
 .button{
     display:inline;
-    margin:16px;
+    /* margin:16px; */
     cursor:pointer;
 }
 
@@ -226,23 +226,21 @@ select {
     flex-direction:row;
 }
 
-
 .formHalf{
     display:flex;
     flex-direction:column;
-}
-
-
-.cardFormLeft{
-    width:50%;
-    height:100%;
-}
-
-.cardFormRight{
     width:50%;
     height:100%;
     justify-content: center;
     align-items:center;
+
+}
+
+.leftSideContainer {
+    height:90%;
+    width:90%;
+    display:flex;
+    flex-direction:column;
 }
 
 .cardDescriptionInput{
