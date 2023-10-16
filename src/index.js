@@ -1,6 +1,7 @@
 // run "npm start" in terminal to watch project.
 // "control+c" to close, or kill terminal.
 console.log(`index.js loaded`);
+console.log(projectList);
 
 
 // In order to push changes to live site on github pages, run the following command:
@@ -41,9 +42,12 @@ import {
     //establish variables needed for eventlisteners and dom manipulation. 
     //write functions in respective modules
     //call functions with relevant variables in index.js
+    console.log(projectList);
 
 buildPage();
     console.log(`buildPage has run`);
+
+    console.log(projectList);
 
 taskForm();
     console.log(`taskForm has run`);
