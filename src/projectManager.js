@@ -42,20 +42,12 @@ class Task {
         for(let project of projectList){
             if (project.name == this.project){
                 let contents = project.contents;
-                console.log(`1`)
-                console.log(contents);
-
                 for (let task of contents){
                     if (task.name == this.name){
-
                         let index = contents.indexOf(task)
                         contents.splice(index, 0);
-                        console.log(`spliced index:`)
-                        console.log(contents);
                     }
                 }
-            console.log(`3`)
-            console.log(contents);
         }
     }
 
@@ -79,17 +71,7 @@ class Task {
 }
 
 function createMiscProject(projectList){
-    console.log(`creating Misc project. Project list is:`);
-    console.log(projectList);
-    //what the hell? There are already 2 misc projects in projectList by the time this function runs????
-
-
-
     let project1 = new Project(`Misc`, false, true, []);
-
-                    let project2 = new Project(`butts`, false, true, []);
-
-
     const miscProject = document.createElement(`div`);
     miscProject.classList.add(`projectElement`);
     miscProject.setAttribute(`id`, `MiscProjectElement`);
@@ -100,10 +82,6 @@ function createMiscProject(projectList){
     projectContainer = document.getElementById(`projectContainer`);
     projectContainer.appendChild(miscProject);
     pushProjectToProjectList(project1);
-                    pushProjectToProjectList(project2);
-
-                    //project 2 (butts) gets pushed to projectList after the first misc project but before the second. So it seems that at this point, still only one project Misc has been created
-
     createTaskContainer(project1);
     return;
 }
@@ -141,10 +119,7 @@ function makeProject(){
 }
 
 function updateSelectedProject(selectedProject, projectList){
-    console.log(`selected project is: ${selectedProject}`)
-    console.log(`projectList is: ${projectList}`)
     for(let project of projectList){
-        console.log(project);
         if (selectedProject == project.name){
             project.isSelected = true;
         }
@@ -153,16 +128,6 @@ function updateSelectedProject(selectedProject, projectList){
         }
     }
 }
-
-
-// Somehow the updateSelected function seems to be duplicating the Misc project?
-//No, there are 2 misc projects already at this point
-
-
-
-
-
-
 
 
 
@@ -194,22 +159,6 @@ function createTaskContainer(project){
 function tempTasks(projectList){
     const tempTask = new Task(`Misc`, `Example task`, `All the task notes you could ever want!`, `Low`, `Not Started`)
         pushTaskToProject(tempTask);
-        let projectName = tempTask.project;
-        let Project = projectList.find(obj => obj.name == projectName);
-        pushProjectToProjectList(Project);
-
-
-        // ************************************************************************************************************************
-        //^line above is where our second Misc project is getting added. Figure out if/why we need it. 
-        // ************************************************************************************************************************
-
-
-
-
-
-
-
-
         makeTaskBar(tempTask, projectList);
     return;
 }
