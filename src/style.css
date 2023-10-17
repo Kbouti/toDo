@@ -262,12 +262,15 @@ select {
     justify-content:space-around;
     width: 100%;
     height:100%;
+    padding-bottom:12px;
 }
 
 #taskFormContainer6{
     display:flex;
     flex-direction:row;
-    /* margin-top:auto; */
+    justify-content:space-around;
+    margin-top:auto;
+    margin-bottom:auto;
 }
 
 .taskFormHalf{
@@ -276,7 +279,7 @@ select {
     height:100%;
     display:flex;
     flex-direction:column;
-    /* justify-content:space-between; */
+    justify-content:space-between;
 }
 
 .textInput{
