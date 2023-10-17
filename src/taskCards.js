@@ -78,31 +78,43 @@ function taskCard(task) {
                     cardForm.appendChild(cardFormLeft);
                     let leftSideContainer = createElement([``, `leftSideContainer`], `div`, ``);
                         cardFormLeft.appendChild(leftSideContainer);
+                        let cardNameInput = createElement([``, `cardNameInput`], `input`, '');
+                            leftSideContainer.appendChild(cardNameInput);
+                            cardNameInput.value = task.name;
+
+                        let cardPrioritySelect = createElement([``, `cardPrioritySelect`], `select`, ``)
+                            leftSideContainer.appendChild(cardPrioritySelect);
+
+                        let cardUrgencySelect = createElement([``, `cardUrgencySelect`], `select`, ``)
+                            leftSideContainer.appendChild(cardUrgencySelect);
+
+                        let cardFormButtonsContainer = createElement([``, `cardFormButtonsContainer`], `div`, ``);
+                            leftSideContainer.appendChild(cardFormButtonsContainer);
+                        
+                            let taskCardCancelButton = createElement([`taskEditCancel`, `taskCardButton`, `cancel`, `button`], `div`, `Cancel`);
+                                cardFormButtonsContainer.appendChild(taskCardCancelButton);
+                                taskCardCancelButton.addEventListener(`click`, function(){
+                                    content.removeChild(card);
+                                })
+
+                            let taskCardSubmitChangesButton = createElement([``, `taskCardSubmitChangesButton`, `submit`, `button`], `div`, `Save Changes`);
+                                cardFormButtonsContainer.append(taskCardSubmitChangesButton);
+                                taskCardSubmitChangesButton.addEventListener(`click`, function(){
+
+
+                                    //edit the contents of the task
+
+
+
+                                })
+                                
                 let cardFormRight = createElement([``, `cardFormRight`, `formHalf`], `div`, ``);
                     cardForm.appendChild(cardFormRight);
-
-                    let cardNameInput = createElement([``, `cardNameInput`], `input`, '');
-                        leftSideContainer.appendChild(cardNameInput);
-                        cardNameInput.value = task.name;
-
-
-                    let cardPrioritySelect = createElement([``, `cardPrioritySelect`], `select`, ``)
-                        leftSideContainer.appendChild(cardPrioritySelect);
-
-                    let cardUrgencySelect = createElement([``, `cardUrgencySelect`], `select`, ``)
-                        leftSideContainer.appendChild(cardUrgencySelect);
-
-
-
+    
                     let cardDescriptionInput = createElement([``, `cardDescriptionInput`], `textarea`, ``);
                         cardFormRight.appendChild(cardDescriptionInput);
                         cardDescriptionInput.value = task.description;
 
-        let taskCardCancelButton = createElement([`taskEditCancel`, `taskCardButton`, `cancel`, `button`], `div`, `Cancel`);
-            leftSideContainer.appendChild(taskCardCancelButton);
-            taskCardCancelButton.addEventListener(`click`, function(){
-                content.removeChild(card);
-            })
 
 }
 
