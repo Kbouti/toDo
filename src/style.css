@@ -132,6 +132,14 @@
     border:solid 3px white;
 }
 
+select{
+    cursor:pointer
+}
+
+.clickable {
+    cursor:pointer;
+}
+
 .formContainer {
     margin:3px;
 }

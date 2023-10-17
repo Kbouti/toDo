@@ -16,7 +16,7 @@ function makeTaskBar(task, projectList){
   
     let taskBar = createElement([`${task.name}taskBar`, `taskBar`], `div`, ``);
         placeElement(taskBar, `${project}taskContainer`);
-    let editButton = createElement([``, `material-symbols-outlined`], `span`, `edit`);
+    let editButton = createElement([``, `material-symbols-outlined`, `clickable`], `span`, `edit`);
         placeElement(editButton, `${task.name}taskBar`);
         editButton.addEventListener(`click`, function(){
             console.log(task);
@@ -24,7 +24,7 @@ function makeTaskBar(task, projectList){
 
         })
 
-    let deleteButton = createElement([``, `material-symbols-outlined`], `span`, `delete`);
+    let deleteButton = createElement([``, `material-symbols-outlined`, `clickable`], `span`, `delete`);
         placeElement(deleteButton, `${task.name}taskBar`);
         deleteButton.addEventListener(`click`, function(){
             console.log(`${task.name} task delete clicked`)

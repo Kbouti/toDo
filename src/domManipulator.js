@@ -16,19 +16,16 @@ from "./projectManager";
 
 import { makeTaskCard, makeTaskBar } from "./taskCards.js";
 
+import { createElement } from "./elementMaker";
+
 
 function newProjectElement(project, projectList){
-    const newElement = document.createElement(`div`);
-        newElement.classList.add(`projectElement`);
-        newElement.setAttribute(`id`, `${project.name}ProjectElement`)
-        newElement.innerHTML = project.name;
+    const newElement = createElement([`${project.name}ProjectElement`, `projectElement`, `clickable`], `div`, project.name)
         projectContainer = document.getElementById(`projectContainer`);
         projectContainer.appendChild(newElement);
-    const projectDeleteButton = document.createElement(`div`);
-        projectDeleteButton.classList.add(`projectDeleteButton`);
-        projectDeleteButton.innerHTML = "X";
-        newElement.appendChild(projectDeleteButton);
 
+    const projectDeleteButton = createElement([``, `projectDeleteButton`], `div`, `X`);
+        newElement.appendChild(projectDeleteButton);
         projectDeleteButton.addEventListener(`click`, function(){
             console.log(`attempted to delete project: ${project.name}`);
             let userResponse = confirm(`Deleting this project will also delete all the tasks within. Are you sure you want to continue?`)

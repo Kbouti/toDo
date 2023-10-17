@@ -1,5 +1,6 @@
 import { makeTaskBar } from "./taskCards";
 import { selectProject, updateProjectClasses } from "./domManipulator";
+import { createElement } from "./elementMaker";
 
 let projectList = [];
 let currentProject;
@@ -72,15 +73,12 @@ class Task {
 
 function createMiscProject(projectList){
     let project1 = new Project(`Misc`, false, true, []);
-    const miscProject = document.createElement(`div`);
-    miscProject.classList.add(`projectElement`);
-    miscProject.setAttribute(`id`, `MiscProjectElement`);
-    miscProject.innerHTML = `Misc`;
-    miscProject.addEventListener(`click`, function(){
-        selectProject(miscProject, projectList);
-    })
+    const miscProject = createElement([`MiscProjectElement`, `projectElement`, `clickable`], `div`, `Misc`);
+        miscProject.addEventListener(`click`, function(){
+            selectProject(miscProject, projectList);
+        })
     projectContainer = document.getElementById(`projectContainer`);
-    projectContainer.appendChild(miscProject);
+        projectContainer.appendChild(miscProject);
     pushProjectToProjectList(project1);
     createTaskContainer(project1);
     return;
