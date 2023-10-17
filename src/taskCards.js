@@ -24,10 +24,6 @@ function makeTaskBar(task, projectList){
 
         })
 
-
-
-
-
     let deleteButton = createElement([``, `material-symbols-outlined`], `span`, `delete`);
         placeElement(deleteButton, `${task.name}taskBar`);
         deleteButton.addEventListener(`click`, function(){
@@ -40,10 +36,6 @@ function makeTaskBar(task, projectList){
                 deleteTask(task, projectList);
             }
         })
-
-
-
-
 
 
     let taskBarName = createElement([``, `taskBarName`], `div`, `${task.name}`);
@@ -81,12 +73,18 @@ function taskCard(task) {
                         let cardNameInput = createElement([``, `cardNameInput`], `input`, '');
                             leftSideContainer.appendChild(cardNameInput);
                             cardNameInput.value = task.name;
-
-                        let cardPrioritySelect = createElement([``, `cardPrioritySelect`], `select`, ``)
-                            leftSideContainer.appendChild(cardPrioritySelect);
+                            cardNameInput.setAttribute(`name`, `taskName`);
+                            
 
                         let cardUrgencySelect = createElement([``, `cardUrgencySelect`], `select`, ``)
                             leftSideContainer.appendChild(cardUrgencySelect);
+                            cardUrgencySelect.setAttribute(`name`, `taskUrgency`)
+
+                            
+                        let cardStatusSelect = createElement([``, `cardStatusSelect`], `select`, ``)
+                            leftSideContainer.appendChild(cardStatusSelect);
+                            cardStatusSelect.setAttribute(`name`, `taskStatus`)
+
 
                         let cardFormButtonsContainer = createElement([``, `cardFormButtonsContainer`], `div`, ``);
                             leftSideContainer.appendChild(cardFormButtonsContainer);
@@ -107,7 +105,7 @@ function taskCard(task) {
 
 
                                 })
-                                
+
                 let cardFormRight = createElement([``, `cardFormRight`, `formHalf`], `div`, ``);
                     cardForm.appendChild(cardFormRight);
     
