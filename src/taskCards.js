@@ -85,8 +85,16 @@ function taskCard(task) {
                                 urgencyOption += '<option value="'+urgency[i] + '">' + urgency[i]+"</option>"
                             }
                             cardUrgencySelect.innerHTML = urgencyOption;
-                            //options are populated, but still need to set it to whatever the task urgency is
-
+                            //Populates dropdown options
+                                let taskUrgency = task.urgency;
+                                let urgencyIndex;
+                                for (let i = 0;i<urgency.length;i++){
+                                    if (urgency[i] == taskUrgency){
+                                        urgencyIndex = i;
+                                    }
+                                };
+                                cardUrgencySelect.selectedIndex = urgencyIndex;
+                            //Sets current urgency as selected
 
 
 
@@ -108,7 +116,16 @@ function taskCard(task) {
                                 statusOption += '<option value="'+status[i] + '">' + status[i]+"</option>"
                             }
                             cardStatusSelect.innerHTML = statusOption;
-                            //options are populated, but still need to set it to whatever the task status is
+                            //Populates dropdown options
+
+                                let taskStatus = task.status;
+                                let statusIndex;
+                                for (let i = 0;i < status.length;i++){
+                                    if (taskStatus == status[i]){
+                                        statusIndex = i;
+                                    };
+                                };
+                                cardStatusSelect.selectedIndex = statusIndex;
 
 
                         let cardFormButtonsContainer = createElement([``, `cardFormButtonsContainer`], `div`, ``);
