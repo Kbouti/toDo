@@ -42,33 +42,33 @@ class Task {
 
         for(let project of projectList){
             if (project.name == this.project){
+console.log(`project is: ${project}`);
                 let contents = project.contents;
-                for (let task of contents){
-                    if (task.name == this.name){
-                        let index = contents.indexOf(task)
-                        contents.splice(index, 0);
+
+
+// ******************************************************************************************************************
+// This is working to remove the dom element, but somehow the contents (array within project object that contains tasks) is showing as an empty array when it shouldn't be. 
+// I think something about the code below is having an unintended effect of clearing contents
+
+// It worked flawlessly when I created three projects in Misc folder, then deleted one by one. But then when I made a new project and added tasks, on first delete click project contents were empty. So I think the problem is that it's referencing the wrong project. 
+
+
+
+console.log(`contents:`);
+console.log(contents);
+                    for(let i = 0; i < contents.length; i++){
+console.log(`task name is ${contents[i].name}`);
+console.log(`task Name is ${this.name}`);
+
+                        if (contents[i].name == this.name){
+                            let index = i;
+                            contents.splice(index, 1);
+                            console.log(contents);
+                        }
                     }
-                }
+            }
         }
     }
-
-
-// Open projectList
-
-// Find relevant project
-
-//open that project's contents
-
-//find the relevant task
-
-//remove that task
-//update Project
-//update ProjectList
-
-
-    }
-
-
 }
 
 function createMiscProject(projectList){
