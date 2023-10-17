@@ -79,11 +79,36 @@ function taskCard(task) {
                         let cardUrgencySelect = createElement([``, `cardUrgencySelect`], `select`, ``)
                             leftSideContainer.appendChild(cardUrgencySelect);
                             cardUrgencySelect.setAttribute(`name`, `taskUrgency`)
+                            let urgencyOption = ``;
+                            let urgency = [`HIGH`, `Mid`, `Low`];
+                            for(let i = 0; i < urgency.length; i++){
+                                urgencyOption += '<option value="'+urgency[i] + '">' + urgency[i]+"</option>"
+                            }
+                            cardUrgencySelect.innerHTML = urgencyOption;
+                            //options are populated, but still need to set it to whatever the task urgency is
 
-                            
+
+
+
+
+
+
                         let cardStatusSelect = createElement([``, `cardStatusSelect`], `select`, ``)
                             leftSideContainer.appendChild(cardStatusSelect);
                             cardStatusSelect.setAttribute(`name`, `taskStatus`)
+                            let statusOption = '';
+                            let status = [
+                                `Not Started`,
+                                `In Progress`,
+                                `Parts On Order`,
+                                `Nearly Complete`,
+                                `Complete`
+                            ];
+                            for(let i = 0; i < status.length; i++){
+                                statusOption += '<option value="'+status[i] + '">' + status[i]+"</option>"
+                            }
+                            cardStatusSelect.innerHTML = statusOption;
+                            //options are populated, but still need to set it to whatever the task status is
 
 
                         let cardFormButtonsContainer = createElement([``, `cardFormButtonsContainer`], `div`, ``);
