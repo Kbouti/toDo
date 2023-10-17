@@ -144,7 +144,7 @@ function logSelectedProject(projectList){
 }
 
 function createTaskContainer(project){
-    let newElement = createElement([`${project.name}taskContainer`, `projectTaskList`], `div`, )
+    let newElement = createElement([`${project.name}taskContainer`, `projectTaskList`], `div`, ``)
     let taskContainer = document.getElementById(`taskContainer`);
         taskContainer.appendChild(newElement)
     return
