@@ -16,11 +16,15 @@ class Project {
     }
     delete(){
         //to delete this project and all tasks it contains. Cannot be performed on the default "misc" project.
-        if (this.canDelete = true){
+        if (this.canDelete == true){
+            for (let i = 0; i < projectList.length; i++){
+                if (projectList[i].name == this.name){
+                    let index = i;
+                    projectList.splice(index, 1)
+                }
+            }
+        // At this point the project has been removed from ProjectList. Next we need to remove remove all related dom elements and get a new currentProject    
         }
-    }
-    clearContents(){
-        //to remove all tasks from this project
     }
 }
 
@@ -42,12 +46,12 @@ class Task {
         for(let project of projectList){
             if (project.name == this.project){
                 let contents = project.contents;
-                    for(let i = 0; i < contents.length; i++){
-                        if (contents[i].name == this.name){
-                            let index = i;
-                            contents.splice(index, 1);
-                        }
+                for(let i = 0; i < contents.length; i++){
+                    if (contents[i].name == this.name){
+                        let index = i;
+                        contents.splice(index, 1);
                     }
+                }
             }
         }
     }

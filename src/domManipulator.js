@@ -28,11 +28,12 @@ function newProjectElement(project, projectList){
         newElement.appendChild(projectDeleteButton);
         projectDeleteButton.addEventListener(`click`, function(){
             console.log(`attempted to delete project: ${project.name}`);
-            let userResponse = confirm(`Deleting this project will also delete all the tasks within. Are you sure you want to continue?`)
-
+            let userResponse = confirm(`Deleting this project will also delete all the tasks within. Are you sure you want to continue?`);
+console.log(userResponse);
             if (userResponse == true){
+                console.log(`confirmed project delete`);
                 //Remove project from projectList and remove element from DOM. 
-                
+                project.delete();
             }
         })
 
