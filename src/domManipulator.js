@@ -33,7 +33,7 @@ console.log(userResponse);
             if (userResponse == true){
                 console.log(`confirmed project delete`);
                 //Remove project from projectList and remove element from DOM. 
-                project.delete();
+                project.delete(projectList);
             }
         })
 
@@ -206,13 +206,17 @@ function addListenerToTaskSubmit(projectList){
 function updateProjectClasses(projectList){
 //This looks through the projectList and finds the one that isSelected, then applies the selected class and removes the selected class from all others
 
-
     const projects = document.getElementsByClassName(`projectElement`);
     const projectsArray = Array.from(projects);
     for (let project of projectsArray){
         let elementLong = project.id;
             let element = elementLong.slice(0, -14);
         let selected = findSelectedProject(projectList);
+console.log(selected);
+//somehow it's not finding the Misc project as the selected project
+// (because findSelectedProject isn't working)
+
+
             if (element == selected){
                 project.classList.add(`isSelected`)
             }

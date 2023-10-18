@@ -1,5 +1,5 @@
 import { makeTaskBar } from "./taskCards";
-import { selectProject, updateProjectClasses } from "./domManipulator";
+import { selectProject, toggleProjectDisplays, updateProjectClasses } from "./domManipulator";
 import { createElement } from "./elementMaker";
 
 let projectList = [];
@@ -14,7 +14,7 @@ class Project {
         this.isSelected = isSelected;
         this.contents = contents;
     }
-    delete(){
+    delete(projectList){
         //to delete this project and all tasks it contains. Cannot be performed on the default "misc" project.
 
 
@@ -40,17 +40,14 @@ console.log(`confirmed canDelete`);
                     let thisProject = document.getElementById(`${projectName}ProjectElement`);
                     projectContainer.removeChild(thisProject);
 
-                    console.log(`ending dom manipulation`);
+console.log(`Selecting Misc element`);
 
-                    // updateSelectedProject(`Misc`, projectList);
-                    // console.log(`updated selected project`);
-        
-        
-        
+logSelectedProject(projectList);
+
+console.log(`done.`);
+   
                 }
             }
-
-        // At this point the project has been removed from ProjectList. Next we need to remove remove all related dom elements and get a new currentProject    
         }
     }
 }
@@ -142,13 +139,36 @@ function updateSelectedProject(selectedProject, projectList){
 
 
 
+
+
+
+
+
+
+// ********************************************************************************************************************
+// this isn't working when called in projectDelete:
+
 function findSelectedProject(projectList){
     for (const project of projectList){
-        if(project.isSelected == true){
-            return project.name;
+
+        let isSelected = project.isSelected
+        console.log(`project ${project.name} is selected: ${isSelected}`)
+        if(isSelected == true){
+            let selected = project.name;
+            return selected;
         }
+        
     }
 }
+
+
+
+
+
+
+
+
+
 
 function logSelectedProject(projectList){
     const selected = findSelectedProject(projectList);
