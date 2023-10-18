@@ -29,11 +29,27 @@ function newProjectElement(project, projectList){
         projectDeleteButton.addEventListener(`click`, function(){
             console.log(`attempted to delete project: ${project.name}`);
             let userResponse = confirm(`Deleting this project will also delete all the tasks within. Are you sure you want to continue?`);
-console.log(userResponse);
             if (userResponse == true){
                 console.log(`confirmed project delete`);
                 //Remove project from projectList and remove element from DOM. 
                 project.delete(projectList);
+                console.log(`project deleted`);
+
+
+                // insert function to select Misc project and update dom accordingly
+                selectMisc(projectList);
+
+
+
+                // updateProjectClasses(projectList);
+                // ^^This function is running after selectMisc even though I'm not calling it.
+                // What the heck? Why is this getting called?
+
+
+
+            }
+            else {
+                return;
             }
         })
 
@@ -43,6 +59,48 @@ console.log(userResponse);
         })
     return;
 }
+
+
+
+
+
+
+
+function selectMisc(projectList){
+
+    console.log(`selectMisc function running`)
+    let MiscProjectElement = document.getElementById(`MiscProjectElement`);
+    MiscProjectElement.classList.add(`isSelected`);
+
+    for (let i =0; i<projectList.length; i++){
+        if (projectList[i].name == `Misc`){
+            console.log(`found Misc`);
+
+            console.log(`${projectList[i].name}.isSelected: ${projectList[i].isSelected}`)
+
+            let miscProject = projectList[i];
+            miscProject.isSelected = true;
+            console.log(miscProject.isSelected);
+            // Ok, at this point we have changed Misc.is selected to true. 
+            // The problem seems to be that this isn't reflected when projectList is called in the function: findSelectedProject. It is also somehow calling the updateProjectClasses function without being called
+
+            console.log(`${projectList[i].name}.isSelected: ${projectList[i].isSelected}`)
+            break;
+        }
+    }
+
+    console.log(`selectMisc function STOP`)
+    return projectList;
+}
+
+
+
+
+
+
+
+
+
 
 
 function toggleDisplay(id, standardDisplay){
@@ -62,13 +120,6 @@ function displayProjectForm(){
         newProjectButton.addEventListener(`click`, function(){
         toggleDisplay(`projectFormDiv`, `flex`)
         })
-
-
-
-
-        // Maybe I could also toggle a div that covers up the rest of the content section? Looks pretty busy with other junk in the background
-
-
     return;
 }
 
@@ -205,7 +256,7 @@ function addListenerToTaskSubmit(projectList){
 
 function updateProjectClasses(projectList){
 //This looks through the projectList and finds the one that isSelected, then applies the selected class and removes the selected class from all others
-
+console.log(`updateProjectClasses running`)
     const projects = document.getElementsByClassName(`projectElement`);
     const projectsArray = Array.from(projects);
     for (let project of projectsArray){
@@ -224,6 +275,7 @@ console.log(selected);
                 project.classList.remove(`isSelected`);
             }
     }
+    console.log(`updateProjectClasses stop`)
     return;
 }
 

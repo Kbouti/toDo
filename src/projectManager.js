@@ -40,11 +40,8 @@ console.log(`confirmed canDelete`);
                     let thisProject = document.getElementById(`${projectName}ProjectElement`);
                     projectContainer.removeChild(thisProject);
 
-console.log(`Selecting Misc element`);
 
-logSelectedProject(projectList);
-
-console.log(`done.`);
+console.log(`project deleted from projectList and related elements removed from dom.`);
    
                 }
             }
@@ -146,9 +143,14 @@ function updateSelectedProject(selectedProject, projectList){
 
 
 // ********************************************************************************************************************
-// this isn't working when called in projectDelete:
+// IS this running twice when new project created? and could that be part of the problem
+
+
+
+// after selectMisc runs Misc should be selected, but according to this it isn't
 
 function findSelectedProject(projectList){
+    console.log(`findSelectedProject running`);
     for (const project of projectList){
 
         let isSelected = project.isSelected
@@ -156,11 +158,10 @@ function findSelectedProject(projectList){
         if(isSelected == true){
             let selected = project.name;
             return selected;
-        }
-        
     }
 }
-
+console.log(`findSelectedProject STOP`);
+}
 
 
 
