@@ -39,31 +39,13 @@ class Task {
 
     delete(){
         console.log(`Deleting task: ${this.name} from project: ${this.project}`);
-
         for(let project of projectList){
             if (project.name == this.project){
-console.log(`project is: ${project}`);
                 let contents = project.contents;
-
-
-// ******************************************************************************************************************
-// This is working to remove the dom element, but somehow the contents (array within project object that contains tasks) is showing as an empty array when it shouldn't be. 
-// I think something about the code below is having an unintended effect of clearing contents
-
-// It worked flawlessly when I created three projects in Misc folder, then deleted one by one. But then when I made a new project and added tasks, on first delete click project contents were empty. So I think the problem is that it's referencing the wrong project. 
-
-
-
-console.log(`contents:`);
-console.log(contents);
                     for(let i = 0; i < contents.length; i++){
-console.log(`task name is ${contents[i].name}`);
-console.log(`task Name is ${this.name}`);
-
                         if (contents[i].name == this.name){
                             let index = i;
                             contents.splice(index, 1);
-                            console.log(contents);
                         }
                     }
             }
@@ -100,8 +82,8 @@ function pushTaskToProject(newTask){
         if ( projectList[i].name == newTask.project){
                 projectList[i].contents.push(newTask);
         }
-        return;
     }
+    return;
 }
 
 function pushProjectToProjectList(project){
