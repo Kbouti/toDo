@@ -16,13 +16,40 @@ class Project {
     }
     delete(){
         //to delete this project and all tasks it contains. Cannot be performed on the default "misc" project.
-        if (this.canDelete == true){
+
+
+console.log(`delete function called`);
+
+        if (this.canDelete = true){
+            //I'm a little confused why this works with single equal sign but not double.....
+
+console.log(`confirmed canDelete`);
             for (let i = 0; i < projectList.length; i++){
                 if (projectList[i].name == this.name){
                     let index = i;
                     projectList.splice(index, 1)
+
+                    console.log(`beginning dom manipulation`);
+            
+                    let projectName = this.name;
+                    let projectTaskContainer = document.getElementById(`${projectName}taskContainer`);
+                    let taskContainer = document.getElementById(`taskContainer`);
+                    taskContainer.removeChild(projectTaskContainer);
+        
+                    let projectContainer = document.getElementById(`projectContainer`);
+                    let thisProject = document.getElementById(`${projectName}ProjectElement`);
+                    projectContainer.removeChild(thisProject);
+
+                    console.log(`ending dom manipulation`);
+
+                    // updateSelectedProject(`Misc`, projectList);
+                    // console.log(`updated selected project`);
+        
+        
+        
                 }
             }
+
         // At this point the project has been removed from ProjectList. Next we need to remove remove all related dom elements and get a new currentProject    
         }
     }
