@@ -61,7 +61,12 @@ function makeTaskBar(task, projectList){
 
 
 
-function taskCard(task) {
+function taskCard(task, projectList) {
+
+    let taskBar = document.getElementById(`${task.name}taskBar`)
+    let taskContainer = document.getElementById(`${task.project}taskContainer`)
+
+
     let content = document.getElementById(`content`);
         let card = createElement(['', `taskCard`], `div`, ``);
             content.appendChild(card);
@@ -76,7 +81,6 @@ function taskCard(task) {
                             cardNameInput.value = task.name;
                             cardNameInput.setAttribute(`name`, `taskName`);
                             
-
                         let cardUrgencySelect = createElement([``, `cardUrgencySelect`], `select`, ``)
                             leftSideContainer.appendChild(cardUrgencySelect);
                             cardUrgencySelect.setAttribute(`name`, `taskUrgency`)
@@ -87,6 +91,7 @@ function taskCard(task) {
                             }
                             cardUrgencySelect.innerHTML = urgencyOption;
                             //Populates dropdown options
+
                                 let taskUrgency = task.urgency;
                                 let urgencyIndex;
                                 for (let i = 0;i<urgency.length;i++){
@@ -96,11 +101,6 @@ function taskCard(task) {
                                 };
                                 cardUrgencySelect.selectedIndex = urgencyIndex;
                             //Sets current urgency as selected
-
-
-
-
-
 
                         let cardStatusSelect = createElement([``, `cardStatusSelect`], `select`, ``)
                             leftSideContainer.appendChild(cardStatusSelect);
@@ -128,7 +128,6 @@ function taskCard(task) {
                                 };
                                 cardStatusSelect.selectedIndex = statusIndex;
 
-
                         let cardFormButtonsContainer = createElement([``, `cardFormButtonsContainer`], `div`, ``);
                             leftSideContainer.appendChild(cardFormButtonsContainer);
                         
@@ -141,51 +140,32 @@ function taskCard(task) {
                             let taskCardSubmitChangesButton = createElement([``, `taskCardSubmitChangesButton`, `submit`, `button`], `div`, `Save Changes`);
                                 taskCardSubmitChangesButton.setAttribute(`type`, 'submit');
                                 cardFormButtonsContainer.append(taskCardSubmitChangesButton);
-                                taskCardSubmitChangesButton.addEventListener(`click`, function(event){
-                                    
+                                taskCardSubmitChangesButton.addEventListener(`click`, function(event){          
                                     event.preventDefault();
-                                    console.log(`change Task form submitted`)
-        
                                     let userResponse = confirm(`Are you sure you want to edit the contents of this task?`);
-                                    console.log(`user response: ${userResponse}`);
+                                        if (userResponse == false){
+                                            content.removeChild(card);
+                                        }
+                                        else {
+                                            // Assign new values to task properties
+                                            let newName = cardNameInput.value;
+                                                task.name = newName;
+                                            let newDescription = cardDescriptionInput.value;
+                                                task.description = newDescription;
+                                            let newUrgency = cardUrgencySelect.value;
+                                                task.urgency = newUrgency;
+                                            let newStatus = cardStatusSelect.value;
+                                                task.status = newStatus;
 
+                                            //Remove the task edit card
+                                            content.removeChild(card);
 
-                                    if (userResponse == false){
-                                        content.removeChild(card);
-                                    }
-                                    else {
-                                        let newName = cardNameInput.value;
-                                            task.name = newName;
-                                        let newDescription = cardDescriptionInput.value;
-                                            task.description = newDescription;
-                                        let newUrgency = cardUrgencySelect.value;
-                                            task.urgency = newUrgency;
-                                        let newStatus = cardStatusSelect.value;
-                                            task.status = newStatus;
-                                        // ^Assigns new values to task properties
+                                            //remove old taskbar
+                                            taskContainer.removeChild(taskBar);
 
-                                        content.removeChild(card);
-                                        //Remove the task edit card
-
-
-
-                                        //remove old taskbar
-
-
-
-                                        //make new taskbar(task)
-
-
-
-
-
-
-                                        // updateTask(task);
-                            
-                                        //edit the contents of the task
-
-
-                                    }
+                                            //make new taskbar(task)
+                                            makeTaskBar(task, projectList);
+                                        }
                                 })
 
                 let cardFormRight = createElement([``, `cardFormRight`, `formHalf`], `div`, ``);
@@ -197,28 +177,6 @@ function taskCard(task) {
 
 
 }
-
-
-// ****************************************************************************************
-// Next step is add event listener to cardForm  that will edit the existing task. 
-// Should we have a confirm message for saving changes? yeah prolly
-
-
-
-
-// function updateTask(task){
-//     console.log(`update task function called for task:`)
-//     console.log(task);
-
-//         let cardNameInput = document.getElementsByClassName(`cardNameInput`);
-//         let newName = cardNameInput.value;
-//         console.log(newName);
-
-
-
-// }
-
-
 
 
 
