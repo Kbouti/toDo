@@ -19,17 +19,13 @@ function makeTaskBar(task, projectList){
     let editButton = createElement([``, `material-symbols-outlined`, `clickable`], `span`, `edit`);
         placeElement(editButton, `${task.name}taskBar`);
         editButton.addEventListener(`click`, function(){
-            console.log(`edit button clicked for task:`);
-            console.log(task.name)
-            taskCard(task);
+            taskCard(task, projectList);
 
         })
 
     let deleteButton = createElement([``, `material-symbols-outlined`, `clickable`], `span`, `delete`);
         placeElement(deleteButton, `${task.name}taskBar`);
         deleteButton.addEventListener(`click`, function(){
-            console.log(`${task.name} task delete clicked`)
-
             let userResponse = confirm(`Are you sure you want to delete this task?`)
             console.log(userResponse);
             if (userResponse == true){
