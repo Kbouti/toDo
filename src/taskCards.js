@@ -145,12 +145,21 @@ function taskCard(task) {
                                     
                                     event.preventDefault();
                                     console.log(`change Task form submitted`)
-                                    updateTask(task);
-                        
-                                    //edit the contents of the task
+        
+                                    let userResponse = confirm(`Are you sure you want to edit the contents of this task?`);
+                                    console.log(`user response: ${userResponse}`);
 
 
+                                    if (userResponse == false){
+                                        content.removeChild(card);
+                                    }
+                                    else {
+                                        updateTask(task);
+                            
+                                        //edit the contents of the task
 
+
+                                    }
                                 })
 
                 let cardFormRight = createElement([``, `cardFormRight`, `formHalf`], `div`, ``);
