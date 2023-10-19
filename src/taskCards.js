@@ -124,6 +124,17 @@ function taskCard(task, projectList) {
                                 };
                                 cardStatusSelect.selectedIndex = statusIndex;
 
+
+
+                        let cardDueDate = createElement([``, `cardDueDate`], `input`, ``);
+                            cardDueDate.setAttribute(`type`, `date`);    
+                            cardDueDate.value = task.dueDate;
+                            leftSideContainer.appendChild(cardDueDate);
+
+
+
+
+
                         let cardFormButtonsContainer = createElement([``, `cardFormButtonsContainer`], `div`, ``);
                             leftSideContainer.appendChild(cardFormButtonsContainer);
                         
@@ -152,6 +163,8 @@ function taskCard(task, projectList) {
                                                 task.urgency = newUrgency;
                                             let newStatus = cardStatusSelect.value;
                                                 task.status = newStatus;
+                                            let newDueDate = cardDueDate.value;
+                                                task.dueDate = newDueDate;
 
                                             //Remove the task edit card
                                             content.removeChild(card);
