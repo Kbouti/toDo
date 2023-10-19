@@ -36,12 +36,13 @@ class Project {
 
 
 class Task {
-    constructor(project, name, description, urgency, status){
+    constructor(project, name, description, urgency, status, dueDate){
         this.project = project;
         this.name = name;
         this.description = description;
         this.urgency = urgency;
         this.status = status;
+        this.dueDate = dueDate;
     }
     log(){
         console.log(this);
@@ -83,7 +84,8 @@ function makeTask(){
     const taskDescriptionInput = document.getElementById(`taskDescriptionInput`);
     const urgencyDropDown = document.getElementById(`urgencyDropDown`);
     const statusDropDown = document.getElementById(`statusDropDown`);
-    const newTask = new Task(projectDropDown.value, taskNameInput.value, taskDescriptionInput.value, urgencyDropDown.value, statusDropDown.value);
+    const dueDateInput = document.getElementById(`dueDateInput`);
+    const newTask = new Task(projectDropDown.value, taskNameInput.value, taskDescriptionInput.value, urgencyDropDown.value, statusDropDown.value, dueDateInput.value);
     return newTask;
 }
 

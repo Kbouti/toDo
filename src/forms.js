@@ -32,8 +32,7 @@ import {createElement, placeElement} from './elementMaker.js';
                 let taskNameInput = createElement([`taskNameInput`, `textInput`], `input`, ``);
                     placeElement(taskNameInput, `taskFormRight`);
                     taskNameInput.setAttribute(`required`, `true`);
-                    taskNameInput.setAttribute(`name`, `taskName`);                
-
+                    taskNameInput.setAttribute(`name`, `taskName`);
                 let taskDescriptionLabel = createElement([`taskDescriptionLabel`, `label`], `label`, `Task Description: `);
                     placeElement(taskDescriptionLabel, `taskFormRight`);  
                     taskDescriptionLabel.setAttribute(`for`, `taskDescription`);
@@ -76,14 +75,20 @@ import {createElement, placeElement} from './elementMaker.js';
                     }
                     statusDropDown.innerHTML = statusOption;
                     statusDropDown.selectedIndex = 0;
-    
             let taskFormContainer6 = createElement([`taskFormContainer6`, `formContainer`], `div`, ``);
                 placeElement(taskFormContainer6, `taskFormLeft`);
+                let dueDateLabel = createElement([`taskDueDateLabel`, `label`], `label`, `Due Date:`);
+                    placeElement(dueDateLabel, `taskFormContainer6`);
+                let dueDateInput = createElement([`dueDateInput`],'input', ``);
+                    dueDateInput.setAttribute(`type`, `date`);
+                    placeElement(dueDateInput, `taskFormContainer6`);                    
+            let taskFormContainer7 = createElement([`taskFormContainer7`, `formContainer`], `div`, ``);
+                placeElement(taskFormContainer7, `taskFormLeft`);
                 let newTaskCancelButton = createElement([`newTaskCancelButton`, `cancel`, `button`], `button`, `Cancel`);
-                    placeElement(newTaskCancelButton, `taskFormContainer6`);
+                    placeElement(newTaskCancelButton, `taskFormContainer7`);
                     newTaskCancelButton.setAttribute(`type`, `reset`);
                 let newTaskSubmitButton = createElement([`newTaskSubmitButton`, `submit`, `button`], `button`, `Submit`);
-                    placeElement(newTaskSubmitButton, `taskFormContainer6`);
+                    placeElement(newTaskSubmitButton, `taskFormContainer7`);
                     newTaskSubmitButton.setAttribute(`type`, `submit`);
         return;
     }
