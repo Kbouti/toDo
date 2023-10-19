@@ -23,83 +23,44 @@ function newProjectElement(project, projectList){
     const newElement = createElement([`${project.name}ProjectElement`, `projectElement`, `clickable`], `div`, project.name)
         projectContainer = document.getElementById(`projectContainer`);
         projectContainer.appendChild(newElement);
-
     const projectDeleteButton = createElement([``, `projectDeleteButton`], `div`, `X`);
         newElement.appendChild(projectDeleteButton);
-        projectDeleteButton.addEventListener(`click`, function(){
-            console.log(`attempted to delete project: ${project.name}`);
+        projectDeleteButton.addEventListener(`click`, function(e){
+            e.stopPropagation();
+            // ^Stops the triggering of outer element event listener
             let userResponse = confirm(`Deleting this project will also delete all the tasks within. Are you sure you want to continue?`);
             if (userResponse == true){
-                console.log(`confirmed project delete`);
-                //Remove project from projectList and remove element from DOM. 
                 project.delete(projectList);
-                console.log(`project deleted`);
-
-
-                // insert function to select Misc project and update dom accordingly
+                // ^Removes project from projectList and remove element from DOM. 
                 selectMisc(projectList);
-
-
-
-                // updateProjectClasses(projectList);
-                // ^^This function is running after selectMisc even though I'm not calling it.
-                // What the heck? Why is this getting called?
-
-
-
+                // ^Applies isSelected attribute to Misc project, applies selected class and unhides Misc taskContainer
             }
-            else {
-                return;
-            }
+            return;
         })
-
-
-        newElement.addEventListener(`click`, function(){
-            selectProject(newElement, projectList);
-        })
+    newElement.addEventListener(`click`, function(){
+        selectProject(newElement, projectList);
+    })
     return;
 }
 
 
-
-
-
-
-
 function selectMisc(projectList){
-
-    console.log(`selectMisc function running`)
-    let MiscProjectElement = document.getElementById(`MiscProjectElement`);
-    MiscProjectElement.classList.add(`isSelected`);
-
     for (let i =0; i<projectList.length; i++){
         if (projectList[i].name == `Misc`){
-            console.log(`found Misc`);
-
-            console.log(`${projectList[i].name}.isSelected: ${projectList[i].isSelected}`)
-
             let miscProject = projectList[i];
             miscProject.isSelected = true;
-            console.log(miscProject.isSelected);
-            // Ok, at this point we have changed Misc.is selected to true. 
-            // The problem seems to be that this isn't reflected when projectList is called in the function: findSelectedProject. It is also somehow calling the updateProjectClasses function without being called
-
-            console.log(`${projectList[i].name}.isSelected: ${projectList[i].isSelected}`)
-            break;
         }
     }
+    //applies isSelected property to Misc task in projectList
 
-    console.log(`selectMisc function STOP`)
-    return projectList;
+    let MiscProjectElement = document.getElementById(`MiscProjectElement`);
+        MiscProjectElement.classList.add(`isSelected`);
+        // Applies selected class to project
+
+    let MisctaskContainer = document.getElementById(`MisctaskContainer`);
+        MisctaskContainer.classList.remove(`hidden`);
+        //unhides the relevant task container
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -112,8 +73,9 @@ function toggleDisplay(id, standardDisplay){
     }
     element.style.display = standardDisplay;
     return;
-}
+// Do I need this function? I thought we were hiding using a hidden class
 
+}
 
 function displayProjectForm(){
     const newProjectButton = document.getElementById(`newProjectButton`);
@@ -122,10 +84,6 @@ function displayProjectForm(){
         })
     return;
 }
-
-
-
-
 
 function toggleProjectDisplays(selectedName){
     const projectContainers = document.getElementsByClassName(`projectTaskList`);
@@ -143,8 +101,6 @@ function toggleProjectDisplays(selectedName){
     }
     return;
 }
-
-
 
 function displayTaskForm(projectList){
     const newTaskButton = document.getElementById(`newTaskButton`);
@@ -181,9 +137,6 @@ function cancelButtons(){
         toggleDisplay(`taskFormDiv`, `flex`);
     })
 }
-
-
-
 
 function addListenerToProjectSubmit(projectList){
     const projectForm = document.getElementById(`projectForm`);
@@ -256,18 +209,12 @@ function addListenerToTaskSubmit(projectList){
 
 function updateProjectClasses(projectList){
 //This looks through the projectList and finds the one that isSelected, then applies the selected class and removes the selected class from all others
-console.log(`updateProjectClasses running`)
     const projects = document.getElementsByClassName(`projectElement`);
     const projectsArray = Array.from(projects);
     for (let project of projectsArray){
         let elementLong = project.id;
             let element = elementLong.slice(0, -14);
         let selected = findSelectedProject(projectList);
-console.log(selected);
-//somehow it's not finding the Misc project as the selected project
-// (because findSelectedProject isn't working)
-
-
             if (element == selected){
                 project.classList.add(`isSelected`)
             }
@@ -275,7 +222,6 @@ console.log(selected);
                 project.classList.remove(`isSelected`);
             }
     }
-    console.log(`updateProjectClasses stop`)
     return;
 }
 

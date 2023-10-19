@@ -15,34 +15,19 @@ class Project {
         this.contents = contents;
     }
     delete(projectList){
-        //to delete this project and all tasks it contains. Cannot be performed on the default "misc" project.
-
-
-console.log(`delete function called`);
-
         if (this.canDelete = true){
             //I'm a little confused why this works with single equal sign but not double.....
-
-console.log(`confirmed canDelete`);
             for (let i = 0; i < projectList.length; i++){
                 if (projectList[i].name == this.name){
                     let index = i;
                     projectList.splice(index, 1)
-
-                    console.log(`beginning dom manipulation`);
-            
                     let projectName = this.name;
                     let projectTaskContainer = document.getElementById(`${projectName}taskContainer`);
                     let taskContainer = document.getElementById(`taskContainer`);
-                    taskContainer.removeChild(projectTaskContainer);
-        
+                        taskContainer.removeChild(projectTaskContainer);
                     let projectContainer = document.getElementById(`projectContainer`);
                     let thisProject = document.getElementById(`${projectName}ProjectElement`);
-                    projectContainer.removeChild(thisProject);
-
-
-console.log(`project deleted from projectList and related elements removed from dom.`);
-   
+                        projectContainer.removeChild(thisProject);
                 }
             }
         }
@@ -136,40 +121,15 @@ function updateSelectedProject(selectedProject, projectList){
 
 
 
-
-
-
-
-
-
-// ********************************************************************************************************************
-// IS this running twice when new project created? and could that be part of the problem
-
-
-
-// after selectMisc runs Misc should be selected, but according to this it isn't
-
 function findSelectedProject(projectList){
-    console.log(`findSelectedProject running`);
     for (const project of projectList){
-
         let isSelected = project.isSelected
-        console.log(`project ${project.name} is selected: ${isSelected}`)
         if(isSelected == true){
             let selected = project.name;
             return selected;
     }
 }
-console.log(`findSelectedProject STOP`);
 }
-
-
-
-
-
-
-
-
 
 function logSelectedProject(projectList){
     const selected = findSelectedProject(projectList);
@@ -183,8 +143,6 @@ function createTaskContainer(project){
         taskContainer.appendChild(newElement)
     return
 }
-
-
 
 function tempTasks(projectList){
     const tempTask = new Task(`Misc`, `Example task`, `All the task notes you could ever want!`, `Low`, `Not Started`)
