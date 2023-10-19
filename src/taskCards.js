@@ -19,7 +19,8 @@ function makeTaskBar(task, projectList){
     let editButton = createElement([``, `material-symbols-outlined`, `clickable`], `span`, `edit`);
         placeElement(editButton, `${task.name}taskBar`);
         editButton.addEventListener(`click`, function(){
-            console.log(task);
+            console.log(`edit button clicked for task:`);
+            console.log(task.name)
             taskCard(task);
 
         })
@@ -138,10 +139,14 @@ function taskCard(task) {
                                 })
 
                             let taskCardSubmitChangesButton = createElement([``, `taskCardSubmitChangesButton`, `submit`, `button`], `div`, `Save Changes`);
+                                taskCardSubmitChangesButton.setAttribute(`type`, 'submit');
                                 cardFormButtonsContainer.append(taskCardSubmitChangesButton);
-                                taskCardSubmitChangesButton.addEventListener(`click`, function(){
-
-
+                                taskCardSubmitChangesButton.addEventListener(`click`, function(event){
+                                    
+                                    event.preventDefault();
+                                    console.log(`change Task form submitted`)
+                                    updateTask(task);
+                        
                                     //edit the contents of the task
 
 
@@ -159,23 +164,36 @@ function taskCard(task) {
 }
 
 
+// ****************************************************************************************
+// Next step is add event listener to cardForm  that will edit the existing task. 
+// Should we have a confirm message for saving changes? yeah prolly
 
-// ***************************************************************************************************************************************************************************
+function updateTask(task){
+    console.log(`update task function called for task:`)
+    console.log(task);
+
+
+
+
+}
+
+
+
+
+
+
+
 
 function deleteTask(task, projectList){
     task.delete();
-    //need to write method for deleting task in projectManager on Task constructor
-
-    //NOT COMPLETE. This removes the dom element but doesn't take it out of the content of the project in projectList. 
-    //Noticing that this example task somehow isn't in the content? Need to see why that wasn't added
-
+// ^This deletes the task from the projectList
+// The rest deletes the dom element 
     let taskName = task.name;
     let projectName = task.project;
 
     let taskContainer = document.getElementById(`${projectName}taskContainer`);
     let taskBar = document.getElementById(`${taskName}taskBar`);
     taskContainer.removeChild(taskBar);
-
 }
 
 
