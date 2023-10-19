@@ -154,7 +154,33 @@ function taskCard(task) {
                                         content.removeChild(card);
                                     }
                                     else {
-                                        updateTask(task);
+                                        let newName = cardNameInput.value;
+                                            task.name = newName;
+                                        let newDescription = cardDescriptionInput.value;
+                                            task.description = newDescription;
+                                        let newUrgency = cardUrgencySelect.value;
+                                            task.urgency = newUrgency;
+                                        let newStatus = cardStatusSelect.value;
+                                            task.status = newStatus;
+                                        // ^Assigns new values to task properties
+
+                                        content.removeChild(card);
+                                        //Remove the task edit card
+
+
+
+                                        //remove old taskbar
+
+
+
+                                        //make new taskbar(task)
+
+
+
+
+
+
+                                        // updateTask(task);
                             
                                         //edit the contents of the task
 
@@ -177,14 +203,20 @@ function taskCard(task) {
 // Next step is add event listener to cardForm  that will edit the existing task. 
 // Should we have a confirm message for saving changes? yeah prolly
 
-function updateTask(task){
-    console.log(`update task function called for task:`)
-    console.log(task);
 
 
 
+// function updateTask(task){
+//     console.log(`update task function called for task:`)
+//     console.log(task);
 
-}
+//         let cardNameInput = document.getElementsByClassName(`cardNameInput`);
+//         let newName = cardNameInput.value;
+//         console.log(newName);
+
+
+
+// }
 
 
 
