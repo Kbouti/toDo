@@ -40,7 +40,7 @@ import {
 
 
 
-// if local storage exists, log stored value:
+// if local storage exists, get stored value:
     if (checkLocalStorage()){
         getLocalStorage();
     }

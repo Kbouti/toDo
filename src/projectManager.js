@@ -8,7 +8,10 @@ let projectList = [];
 
 
 
+// I'm trying to save ProjectList in local storage so when the page loads I can load the user's tasks and projects. 
 
+// ProjectList is an array of objects. Each object represents a project, which is a folder that can contain many tasks. 
+// Local storage only handles strings. So My struggle seems to be to stringify each object (which in itself contains objects), then stringify the entire array, then translate that back into the array of objects format I'll need to rebuild the page. 
 
 
 function saveToLocalStorage(projectList){
@@ -18,13 +21,25 @@ function saveToLocalStorage(projectList){
 
 console.log(`projectList: ${projectList}`);
 // this logs just the basic project list before it's been altered. It's coming out as 2 object object things
+console.log(`projectList.length: ${projectList.length}`)
+let formattedProjectList = [];
+for (let i = 0;i<projectList.length; i++){
+    console.log(projectList[i]);;
+//attempting to loop through the array of objects, stringify each object, then stringify the array
 
-//IT"S BECAUSE PROJECTLIST ISN'T AN OBJECT, IT'S AN ARRAY OF OBJECTS
+    let stringd = JSON.stringify(projectList[i]);
 
 
-let stringified = JSON.stringify(projectList)
+    formattedProjectList.push(stringd)
+}
+console.log(`formatted projectList: ${formattedProjectList}`);
 
-    localStorage.setItem(`projectlist`, stringified);
+
+
+
+let stringified = JSON.stringify(formattedProjectList)
+
+    localStorage.setItem(`projectlist`, formattedProjectList);
 
     console.log(localStorage);
 
@@ -36,11 +51,10 @@ let stringified = JSON.stringify(projectList)
 
 function checkLocalStorage(){
     // This should run at pageLoad. If no local storage exists, load standard page without saved info. 
-    // If local storage exists,  we'll need to build dom elements accordingly
+    // If local storage exists,  we'll need to build dom elements according to existing projectList
 console.log(`checking for local storage`);
 
-    // let localStorage = localStorage;
-    console.log(localStorage);
+console.log(localStorage);
 
 
 if (localStorage !== null){
@@ -57,15 +71,17 @@ function getLocalStorage(){
     console.log(`getting De-Stringed projectList from local Storage`);
 
     console.log(localStorage);
+// it seems like this^ value is being logged as an array containing a single element that is the projectList array
+// What I want is an array where each index is a project object
+// So it seems like I need to somehow break this down into smaller chunks? But 
 
 
     let projectDeStringed = JSON.parse(localStorage.getItem(`projectList`));
-
-
+    
 
     console.log(projectDeStringed);
+    //this is null, but I want it to be an array with objects
 }
-
 
 
 
