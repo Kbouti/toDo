@@ -10,7 +10,9 @@ import {
     updateSelectedProject,
     logSelectedProject,
     findSelectedProject,
-    projectList
+    projectList,
+    saveToLocalStorage,
+    checkLocalStorage
 }
 from "./projectManager";
 
@@ -35,6 +37,19 @@ function newProjectElement(project, projectList){
                 selectMisc(projectList);
                 // ^Applies isSelected attribute to Misc project, applies selected class and unhides Misc taskContainer
             }
+
+
+
+
+
+
+            saveToLocalStorage(projectList);
+
+
+
+
+
+
             return;
         })
     newElement.addEventListener(`click`, function(){
@@ -102,6 +117,19 @@ function toggleProjectDisplays(selectedName){
     return;
 }
 
+
+
+
+
+
+
+
+
+
+
+// ***************************************************************************************
+// The following is the first instance of projectList
+
 function displayTaskForm(projectList){
     const newTaskButton = document.getElementById(`newTaskButton`);
         newTaskButton.addEventListener(`click`, function(){
@@ -166,6 +194,23 @@ function addListenerToProjectSubmit(projectList){
         toggleDisplay(`projectFormDiv`, `flex`);
         //Dissapears the form
 
+
+
+
+
+
+
+
+
+
+        saveToLocalStorage(projectList);
+
+
+
+
+
+
+
     return;
     })
 }
@@ -200,6 +245,24 @@ function addListenerToTaskSubmit(projectList){
 
         toggleDisplay(`taskFormDiv`, `flex`);
         //Make form dissappear
+
+
+
+
+
+
+
+
+        saveToLocalStorage(projectList);
+
+
+
+
+
+
+
+
+
 
         return;
     })
@@ -237,6 +300,29 @@ function selectProject(element, projectList){
     updateSelectedProject(selected, projectList);
     updateProjectClasses(projectList);
     toggleProjectDisplays(selected)
+
+
+
+
+
+
+
+
+
+
+
+
+
+    saveToLocalStorage(projectList);
+
+
+
+
+
+
+
+    
+
     return;
 }
 
@@ -255,12 +341,8 @@ export {
 }
 
 
-
-//High level goals:
-
-// Allow user to view/edit task contents
-
-//Add date functionality
+// figure out local storage
+// https://www.youtube.com/watch?v=fYTTUBa-lPc
 
 
  

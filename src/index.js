@@ -32,10 +32,18 @@ import {
     Project,
     Task,
     createMiscProject,
-    tempTasks
+    tempTasks,
+    saveToLocalStorage,
+    checkLocalStorage,
+    getLocalStorage
 } from './projectManager';
 
 
+
+// if local storage exists, log stored value:
+    if (checkLocalStorage()){
+        getLocalStorage();
+    }
 
 
 

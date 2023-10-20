@@ -1,5 +1,5 @@
 import {createElement, placeElement} from './elementMaker.js';
-import { findSelectedProject } from './projectManager.js';
+import { findSelectedProject, saveToLocalStorage} from './projectManager.js';
 
 import { toggleProjectDisplays } from './domManipulator.js';
 
@@ -174,6 +174,23 @@ function taskCard(task, projectList) {
 
                                             //make new taskbar(task)
                                             makeTaskBar(task, projectList);
+
+
+
+
+
+
+
+
+                                            saveToLocalStorage(projectList);
+
+
+
+
+
+
+
+
                                         }
                                 })
 
@@ -194,6 +211,24 @@ function taskCard(task, projectList) {
 
 function deleteTask(task, projectList){
     task.delete();
+
+
+
+
+
+
+
+
+
+
+    saveToLocalStorage(projectList);
+
+
+
+
+
+
+    
 // ^This deletes the task from the projectList
 // The rest deletes the dom element 
     let taskName = task.name;

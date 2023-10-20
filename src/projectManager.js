@@ -3,8 +3,82 @@ import { selectProject, toggleProjectDisplays, updateProjectClasses } from "./do
 import { createElement } from "./elementMaker";
 
 let projectList = [];
-let currentProject;
-let currentTask;
+
+
+
+
+
+
+
+
+function saveToLocalStorage(projectList){
+    // save projectList to local storage
+    // We want this to run every time we edit projectList
+    console.log(`save to local storage activated`);
+
+console.log(`projectList: ${projectList}`);
+// this logs just the basic project list before it's been altered. It's coming out as 2 object object things
+
+//IT"S BECAUSE PROJECTLIST ISN'T AN OBJECT, IT'S AN ARRAY OF OBJECTS
+
+
+let stringified = JSON.stringify(projectList)
+
+    localStorage.setItem(`projectlist`, stringified);
+
+    console.log(localStorage);
+
+    console.log(`save to local storage complete`);
+}
+
+
+
+
+function checkLocalStorage(){
+    // This should run at pageLoad. If no local storage exists, load standard page without saved info. 
+    // If local storage exists,  we'll need to build dom elements accordingly
+console.log(`checking for local storage`);
+
+    // let localStorage = localStorage;
+    console.log(localStorage);
+
+
+if (localStorage !== null){
+    console.log(`storage found`);
+    return true;
+}
+return false;
+}
+
+
+
+function getLocalStorage(){
+
+    console.log(`getting De-Stringed projectList from local Storage`);
+
+    console.log(localStorage);
+
+
+    let projectDeStringed = JSON.parse(localStorage.getItem(`projectList`));
+
+
+
+    console.log(projectDeStringed);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class Project {
@@ -167,5 +241,8 @@ export {
     tempTasks,
     updateSelectedProject,
     findSelectedProject,
-    logSelectedProject
+    logSelectedProject,
+    saveToLocalStorage,
+    checkLocalStorage,
+    getLocalStorage
 }
