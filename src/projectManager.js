@@ -39,7 +39,7 @@ console.log(`formatted projectList: ${formattedProjectList}`);
 
 let stringified = JSON.stringify(formattedProjectList)
 
-    localStorage.setItem(`projectlist`, formattedProjectList);
+    localStorage.setItem(`projectList`, stringified);
 
     console.log(localStorage);
 
@@ -195,7 +195,7 @@ function pushProjectToProjectList(project){
 
 function makeProject(){
     const projectNameInput = document.getElementById(`projectNameInput`);
-    const newProject = new Project(projectNameInput.value, false, true,  []);
+    const newProject = new Project(projectNameInput.value, true, true,  []);
     createTaskContainer(newProject);
     return newProject;
 }
