@@ -73,16 +73,26 @@ function getLocalStorage(){
     console.log(localStorage);
 // it seems like this^ value is being logged as an array containing a single element that is the projectList array
 // What I want is an array where each index is a project object
-// So it seems like I need to somehow break this down into smaller chunks? But 
+// So it seems like I need to somehow break this down into smaller chunks? 
 
 
     let projectDeStringed = JSON.parse(localStorage.getItem(`projectList`));
     
+console.log(projectDeStringed);
+console.log(`Trying to get the length of ^that^ object breaks the whole site. even though the console says it's an array with a given length`)
+    // console.log(`project DeStringed length: ${projectDeStringed.length}`)
 
-    console.log(projectDeStringed);
-    //this is null, but I want it to be an array with objects
+// let projectListDeStringed = [];
+
+//     for (let i = 0; i<projectDeStringed.length;i++){
+//         let variation = JSON.parse(projectDeStringed[i]);
+//         projectListDeStringed.push(variation);
+//     }
+
+
+//     console.log(`projectListDeStringed: ${projectListDeStringed}`);
+    //
 }
-
 
 
 
