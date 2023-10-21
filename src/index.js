@@ -11,7 +11,7 @@ console.log(`index.js loaded`);
 
 import './style.css';
 import {buildPage} from './homepage';
-
+import { createElement } from './elementMaker';
 import {
     taskForm,
     projectForm
@@ -37,6 +37,7 @@ import {
     checkLocalStorage,
     getLocalStorage
 } from './projectManager';
+import { makeTaskBar } from './taskCards';
 
 
 
@@ -74,7 +75,50 @@ cancelButtons(),
 
 
 
-//This is where Misc and temp tasks would get added, but instead we'll need to add tasks based on our retrieved projectList. 
+// Create Misc project Dom element (This can't be deleted by user)
+const miscProject = createElement([`MiscProjectElement`, `projectElement`, `clickable`], `div`, `Misc`);
+miscProject.addEventListener(`click`, function(){
+    selectProject(miscProject, projectList);
+})
+projectContainer = document.getElementById(`projectContainer`);
+projectContainer.appendChild(miscProject);
+
+// Create Misc project task container:
+let MisctaskContainer = createElement([`MisctaskContainer`, `projectTaskList`], `div`, ``);
+let taskContainer = document.getElementById(`taskContainer`);
+    taskContainer.appendChild(MisctaskContainer)
+
+//Next we'll need to search through our retrieved projectList and see if there are any tasks in the Misc project, then create dom elements for them. 
+
+
+
+console.log(retrievedProjectList)
+
+for (let i = 0; i < retrievedProjectList.length; i++){
+
+    console.log(retrievedProjectList[i].name)
+    if(retrievedProjectList[i].name == `Misc`){
+        console.log(`found Misc project`);
+        let MiscContents = retrievedProjectList[i].contents;
+        console.log(MiscContents);
+        for (let f = 0; f < MiscContents.length; f++){
+            makeTaskBar(MiscContents[f], retrievedProjectList);
+        }
+    }
+}
+
+
+
+for (let i = 1; i<retrievedProjectList.length;i++){
+    let projectName = retrievedProjectList[i].name;
+    
+}
+
+
+// Then, we'll search the list for all remaining projects, and make dom elements and task containers for those, and then dom elements for the tasks. 
+
+
+
 
 
 
