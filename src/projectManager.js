@@ -17,85 +17,56 @@ let projectList = [];
 function saveToLocalStorage(projectList){
     // save projectList to local storage
     // We want this to run every time we edit projectList
-    console.log(`save to local storage activated`);
+console.log(`save to local storage activated`);
 
-console.log(`projectList: ${projectList}`);
-// this logs just the basic project list before it's been altered. It's coming out as 2 object object things
-console.log(`projectList.length: ${projectList.length}`)
-let formattedProjectList = [];
-for (let i = 0;i<projectList.length; i++){
-    console.log(projectList[i]);;
-//attempting to loop through the array of objects, stringify each object, then stringify the array
+console.log(`clearing existing storage`)
+localStorage.clear();
+//clearing local storage so I don't somehow end up with duplicate projects on there. I think I might have been getting that in the last attempt
 
-    let stringd = JSON.stringify(projectList[i]);
+let stringified = stringifyArray(projectList);
 
+localStorage.setItem(`projectList`, stringified);
 
-    formattedProjectList.push(stringd)
-}
-console.log(`formatted projectList: ${formattedProjectList}`);
-
-
-
-
-let stringified = JSON.stringify(formattedProjectList)
-
-    localStorage.setItem(`projectList`, stringified);
-
-    console.log(localStorage);
-
-    console.log(`save to local storage complete`);
 }
 
+function stringifyArray(array){
+console.log(`stringify function activated`);
+    let arrayOfStrings = []
+    for (let i = 0; i<array.length; i++){
+        let stringProject = JSON.stringify(array[i]);
+        arrayOfStrings.push(stringProject);
+    }
+let stringifiedArray = JSON.stringify(arrayOfStrings);
+return stringifiedArray;
+}
 
 
 
 function checkLocalStorage(){
-    // This should run at pageLoad. If no local storage exists, load standard page without saved info. 
-    // If local storage exists,  we'll need to build dom elements according to existing projectList
-console.log(`checking for local storage`);
-
-console.log(localStorage);
-
-
-if (localStorage !== null){
-    console.log(`storage found`);
-    return true;
-}
-return false;
+    console.log(`checking for local storage`);
+        if (localStorage.length == 0){
+            console.log(`local Storage not found`);
+            return false
+        }
+        else {
+            console.log(`local storage found`);
+            return true
+        }
 }
 
 
 
 function getLocalStorage(){
-
-    console.log(`getting De-Stringed projectList from local Storage`);
-
-    console.log(localStorage);
-// it seems like this^ value is being logged as an array containing a single element that is the projectList array
-// What I want is an array where each index is a project object
-// So it seems like I need to somehow break this down into smaller chunks? 
-
-
-    let projectDeStringed = JSON.parse(localStorage.getItem(`projectList`));
-    
-console.log(projectDeStringed);
-console.log(`Trying to get the length of ^that^ object breaks the whole site. even though the console says it's an array with a given length`)
-    console.log(`project DeStringed length: ${projectDeStringed.length}`)
-
-let projectListDeStringed = [];
-
-    for (let i = 0; i<projectDeStringed.length;i++){
-        let variation = JSON.parse(projectDeStringed[i]);
-        projectListDeStringed.push(variation);
-        console.log(variation)
+    console.log(`get local storage activated`);
+    let rawStorageValue = localStorage.getItem(`projectList`);
+    let parsedRaw = JSON.parse(rawStorageValue);
+    let formattedProjectList = [];
+    for (let i = 0; i < parsedRaw.length;i++){
+        let parsed = JSON.parse(parsedRaw[i]);
+        formattedProjectList.push(parsed);
     }
-
-
-    console.log(`projectListDeStringed: ${projectListDeStringed}`);
-    //
-
-    projectList = projectListDeStringed;
-    return projectList;
+    // console.log(`formatted projectList: ${formattedProjectList}`);
+    return formattedProjectList;
 }
 
 

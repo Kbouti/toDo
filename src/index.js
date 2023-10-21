@@ -40,15 +40,19 @@ import {
 
 
 
-// if local storage exists, get stored value:
-//     if (checkLocalStorage()){
-//         getLocalStorage();
 
-//         console.log(projectList);
-//     }
 
-// console.log(`recovered projectList is:`);
-// console.log(projectList);
+
+if(checkLocalStorage()){
+    let retrievedProjectList = getLocalStorage()
+    console.log(`Local storage has been found and projectList retrieved. retrieved list is: ${retrievedProjectList}`)
+}
+// At this point we are checking to see if there is an existing project list, and if there is, we retrieve it and log it. 
+// The next step is to build dom elements based on the retrieved projectList.
+
+
+
+
 
 
 
