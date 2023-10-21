@@ -46,14 +46,59 @@ import {
 if(checkLocalStorage()){
     let retrievedProjectList = getLocalStorage()
     console.log(`Local storage has been found and projectList retrieved. retrieved list is: ${retrievedProjectList}`)
-}
 // At this point we are checking to see if there is an existing project list, and if there is, we retrieve it and log it. 
 // The next step is to build dom elements based on the retrieved projectList.
 
 
+console.log(`building page with retrieved projectList`);
+
+buildPage();
+    console.log(`buildPage has run`);
+
+taskForm();
+    console.log(`taskForm has run`);
+
+projectForm();
+    console.log(`projectForm has run`);
+
+displayProjectForm(),
+    console.log(`display ProjectForm has run`);
+
+displayTaskForm(retrievedProjectList),
+    console.log(`display TaskForm has run`);
+
+cancelButtons(),
+    console.log(`cancelButtons has run`);
 
 
 
+
+
+//This is where Misc and temp tasks would get added, but instead we'll need to add tasks based on our retrieved projectList. 
+
+
+
+
+
+
+addListenerToTaskSubmit(retrievedProjectList);
+    console.log(`Listener added to new task submit`);
+
+addListenerToProjectSubmit(retrievedProjectList);
+    console.log(`Listener added to new project submit`);
+
+
+console.log(`RETRIEVED LIST PAGE LOAD COMPLETE`)
+
+
+
+}
+else {
+
+
+
+
+console.log(`No local Storage found, building new page.`)
 
 
 buildPage();
@@ -87,11 +132,7 @@ addListenerToProjectSubmit(projectList);
     console.log(`Listener added to new project submit`);
 
 
-console.log(`PAGE LOAD COMPLETE`)
-
-
-
-
-
+console.log(`FRESH PAGE LOAD COMPLETE`)
+}
 
 
