@@ -41,9 +41,14 @@ import {
 
 
 // if local storage exists, get stored value:
-    if (checkLocalStorage()){
-        getLocalStorage();
-    }
+//     if (checkLocalStorage()){
+//         getLocalStorage();
+
+//         console.log(projectList);
+//     }
+
+// console.log(`recovered projectList is:`);
+// console.log(projectList);
 
 
 

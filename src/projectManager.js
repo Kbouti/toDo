@@ -80,22 +80,23 @@ function getLocalStorage(){
     
 console.log(projectDeStringed);
 console.log(`Trying to get the length of ^that^ object breaks the whole site. even though the console says it's an array with a given length`)
-    // console.log(`project DeStringed length: ${projectDeStringed.length}`)
+    console.log(`project DeStringed length: ${projectDeStringed.length}`)
 
-// let projectListDeStringed = [];
+let projectListDeStringed = [];
 
-//     for (let i = 0; i<projectDeStringed.length;i++){
-//         let variation = JSON.parse(projectDeStringed[i]);
-//         projectListDeStringed.push(variation);
-//     }
+    for (let i = 0; i<projectDeStringed.length;i++){
+        let variation = JSON.parse(projectDeStringed[i]);
+        projectListDeStringed.push(variation);
+        console.log(variation)
+    }
 
 
-//     console.log(`projectListDeStringed: ${projectListDeStringed}`);
+    console.log(`projectListDeStringed: ${projectListDeStringed}`);
     //
+
+    projectList = projectListDeStringed;
+    return projectList;
 }
-
-
-
 
 
 
