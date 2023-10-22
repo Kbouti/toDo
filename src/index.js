@@ -117,24 +117,27 @@ for (let i = 1; i<retrievedProjectList.length;i++){
     // Get project Object
 
     newProjectElement(project, retrievedProjectList);
-
+        console.log(`created a project element`);
     let projectElement = document.getElementById(`${project.name}ProjectElement`)
     //Create project element
         projectElement.addEventListener(`click`, function(){
+
+            console.log(`select project event listener added to that project element`)
             selectProject(projectElement, retrievedProjectList);
         })
 
     let projectName = project.name;
+
     let projectTaskContainer = createElement([`${projectName}taskContainer`, `projectTaskList`], `div`, ``);
-    
     let taskContainer = document.getElementById(`taskContainer`);
         taskContainer.appendChild(projectTaskContainer);
 
 
 
 // ******************************************************************************************
-// I'm pretty sure it works at this point, the only thing it doesn't do is update the isSelected class of the proper project Element
-
+// It seems like it isn't updating the saved project list when tasks are added to a reloaded page. 
+// The tasks that are created under the first page load live on, but nothing made after that
+// *********************************************************************************************************
 
 
 

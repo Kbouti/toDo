@@ -15,6 +15,8 @@ function makeTaskBar(task, projectList){
 
   
     let taskBar = createElement([`${task.name}taskBar`, `taskBar`], `div`, ``);
+
+        console.log(`attempting to place a task Bar`);
         placeElement(taskBar, `${project}taskContainer`);
     let editButton = createElement([``, `material-symbols-outlined`, `clickable`], `span`, `edit`);
         placeElement(editButton, `${task.name}taskBar`);
@@ -228,7 +230,7 @@ function deleteTask(task, projectList){
 
 
 
-    
+
 // ^This deletes the task from the projectList
 // The rest deletes the dom element 
     let taskName = task.name;
