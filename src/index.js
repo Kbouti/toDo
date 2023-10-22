@@ -25,7 +25,8 @@ import {
     addListenerToTaskSubmit,
     addListenerToProjectSubmit,
     selectProject,
-    newProjectElement
+    newProjectElement,
+    updateProjectClasses
 } from './domManipulator';
 
 import {
@@ -148,14 +149,11 @@ for (let i = 1; i<retrievedProjectList.length;i++){
         makeTaskBar(task, retrievedProjectList)
     }
 
+
+updateProjectClasses(retrievedProjectList);
+
+
 }
-
-
-// Then, we'll search the list for all remaining projects, and make dom elements and task containers for those, and then dom elements for the tasks. 
-
-
-
-
 
 
 
