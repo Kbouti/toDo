@@ -211,9 +211,9 @@ console.log(`RETRIEVED LIST PAGE LOAD COMPLETE`)
 
 
 // I'm noticing that sometimes the misc project div doesn't have isSelected class at page load, so manually adding that here:
-let MiscProjectElement = document.getElementById(`MiscProjectElement`);
-MiscProjectElement.classList.add(`isSelected`);
-
+// let MiscProjectElement = document.getElementById(`MiscProjectElement`);
+// MiscProjectElement.classList.add(`isSelected`);
+// this is no good -- if there is another project that is selected it will still apply the class to Misc, we don't want that. 
 
 
 
