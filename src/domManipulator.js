@@ -172,11 +172,15 @@ function addListenerToProjectSubmit(projectList){
         event.preventDefault();
         //Prevent default
 
-        let newProject = makeProject(projectList);
+
+
+
+        // i removed projectList here because I don't think we need it:
+        let newProject = makeProject();
         currentProject = newProject.name;
         //Make new project
 
-        pushProjectToProjectList(newProject);
+        pushProjectToProjectList(newProject, projectList);
         //Push project to projectList
 
         newProjectElement(newProject, projectList);
@@ -226,7 +230,7 @@ function addListenerToTaskSubmit(projectList){
         let newTask = makeTask();
         //Make new task using the values of the form inputs
 
-        pushTaskToProject(newTask);
+        pushTaskToProject(newTask, projectList);
         //Append new task to proper project in project list
 
         let selectedProject = newTask.project;

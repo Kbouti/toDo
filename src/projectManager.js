@@ -7,13 +7,6 @@ let projectList = [];
 
 
 
-
-// I'm trying to save ProjectList in local storage so when the page loads I can load the user's tasks and projects. 
-
-// ProjectList is an array of objects. Each object represents a project, which is a folder that can contain many tasks. 
-// Local storage only handles strings. So My struggle seems to be to stringify each object (which in itself contains objects), then stringify the entire array, then translate that back into the array of objects format I'll need to rebuild the page. 
-
-
 function saveToLocalStorage(projectList){
     // save projectList to local storage
     // We want this to run every time we edit projectList
@@ -144,7 +137,7 @@ function createMiscProject(projectList){
         })
     projectContainer = document.getElementById(`projectContainer`);
         projectContainer.appendChild(miscProject);
-    pushProjectToProjectList(project1);
+    pushProjectToProjectList(project1, projectList);
     createTaskContainer(project1);
     return;
 }
@@ -161,7 +154,7 @@ function makeTask(){
     return newTask;
 }
 
-function pushTaskToProject(newTask){
+function pushTaskToProject(newTask, projectList){
     for (let i = 0; i < projectList.length;i++){
         if ( projectList[i].name == newTask.project){
                 projectList[i].contents.push(newTask);
@@ -170,10 +163,13 @@ function pushTaskToProject(newTask){
     return;
 }
 
-function pushProjectToProjectList(project){
+function pushProjectToProjectList(project, projectList){
     projectList.push(project);
     updateProjectClasses(projectList);
 }
+
+
+
 
 function makeProject(){
     const projectNameInput = document.getElementById(`projectNameInput`);
@@ -220,7 +216,7 @@ function createTaskContainer(project){
 
 function tempTasks(projectList){
     const tempTask = new Task(`Misc`, `Example task`, `All the task notes you could ever want!`, `Low`, `Not Started`)
-        pushTaskToProject(tempTask);
+        pushTaskToProject(tempTask, projectList);
         makeTaskBar(tempTask, projectList);
     return;
 }

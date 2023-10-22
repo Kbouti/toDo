@@ -135,8 +135,7 @@ for (let i = 1; i<retrievedProjectList.length;i++){
 
 
 // ******************************************************************************************
-// It seems like it isn't updating the saved project list when tasks are added to a reloaded page. 
-// The tasks that are created under the first page load live on, but nothing made after that
+// OK I think I got it now except for that My delete method has been removed by the stringification and parsing process. That's the next thing to fix, otherwise I think it's done. 
 // *********************************************************************************************************
 
 
