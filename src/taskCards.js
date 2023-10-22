@@ -216,7 +216,7 @@ function taskCard(task, projectList) {
 
 
 function deleteTask(task, projectList){
-    task.delete();
+    task.delete(projectList);
     saveToLocalStorage(projectList);
 
 // ^This deletes the task from the projectList

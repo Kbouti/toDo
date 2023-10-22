@@ -73,10 +73,6 @@ displayTaskForm(retrievedProjectList),
 cancelButtons(),
     console.log(`cancelButtons has run`);
 
-
-
-
-
 // Create Misc project Dom element (This can't be deleted by user)
 const miscProject = createElement([`MiscProjectElement`, `projectElement`, `clickable`], `div`, `Misc`);
 miscProject.addEventListener(`click`, function(){
@@ -90,130 +86,101 @@ let MisctaskContainer = createElement([`MisctaskContainer`, `projectTaskList`], 
 let taskContainer = document.getElementById(`taskContainer`);
     taskContainer.appendChild(MisctaskContainer)
 
-//Next we'll need to search through our retrieved projectList and see if there are any tasks in the Misc project, then create dom elements for them. 
-
-
 for (let i = 0; i < retrievedProjectList.length; i++){
-
-
-
-
-// ************************************************************************************************
-// Here I am attempting to assign the delete method to each project object.
-retrievedProjectList[i].delete = function(projectList){
-    if (this.canDelete = true){
-        //I'm a little confused why this works with single equal sign but not double.....
-        for (let i = 0; i < projectList.length; i++){
-            if (projectList[i].name == this.name){
-                let index = i;
-                projectList.splice(index, 1)
-                let projectName = this.name;
-                let projectTaskContainer = document.getElementById(`${projectName}taskContainer`);
-                let taskContainer = document.getElementById(`taskContainer`);
-                    taskContainer.removeChild(projectTaskContainer);
-                let projectContainer = document.getElementById(`projectContainer`);
-                let thisProject = document.getElementById(`${projectName}ProjectElement`);
-                    projectContainer.removeChild(thisProject);
+        retrievedProjectList[i].delete = function(projectList){
+            if (this.canDelete = true){
+                //I'm a little confused why this works with single equal sign but not double.....
+                for (let i = 0; i < projectList.length; i++){
+                    if (projectList[i].name == this.name){
+                        let index = i;
+                        projectList.splice(index, 1)
+                        let projectName = this.name;
+                        let projectTaskContainer = document.getElementById(`${projectName}taskContainer`);
+                        let taskContainer = document.getElementById(`taskContainer`);
+                            taskContainer.removeChild(projectTaskContainer);
+                        let projectContainer = document.getElementById(`projectContainer`);
+                        let thisProject = document.getElementById(`${projectName}ProjectElement`);
+                            projectContainer.removeChild(thisProject);
+                    }
+                }
             }
         }
-    }
-
-}
 
 
 
 
-    console.log(retrievedProjectList[i].name)
-    if(retrievedProjectList[i].name == `Misc`){
-        console.log(`found Misc project`);
-        let MiscContents = retrievedProjectList[i].contents;
-        console.log(MiscContents);
-        for (let f = 0; f < MiscContents.length; f++){
-            console.log(`making taskbar`)
-            makeTaskBar(MiscContents[f], retrievedProjectList);
+            console.log(retrievedProjectList[i].name)
+            if(retrievedProjectList[i].name == `Misc`){
+                console.log(`found Misc project`);
+                let MiscContents = retrievedProjectList[i].contents;
+                console.log(MiscContents);
+                for (let f = 0; f < MiscContents.length; f++){
+                    console.log(`making taskbar`)
+                    makeTaskBar(MiscContents[f], retrievedProjectList);
 
 
-// Here we're attempting to assign the delete method to every task in Misc project
-            MiscContents[f].delete = function(retrievedProjectList){
-                console.log(`Deleting task: ${this.name} from project: ${this.project}`);
-                for(let project of retrievedProjectList){
-                    if (project.name == this.project){
-                        let contents = project.contents;
-                        for(let i = 0; i < contents.length; i++){
-                            if (contents[i].name == this.name){
-                                let index = i;
-                                contents.splice(index, 1);
+        // Here we're attempting to assign the delete method to every task in Misc project
+
+
+console.log(MiscContents[f]);
+
+                    MiscContents[f].delete = function(retrievedProjectList){
+                        console.log(`Deleting task: ${this.name} from project: ${this.project}`);
+                        for(let project of retrievedProjectList){
+                            if (project.name == this.project){
+                                let contents = project.contents;
+                                for(let i = 0; i < contents.length; i++){
+                                    if (contents[i].name == this.name){
+                                        let index = i;
+                                        contents.splice(index, 1);
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
-        }
-    }
-
-
 }
 
 
 // for every project that isn't Misc:
 for (let i = 1; i<retrievedProjectList.length;i++){
-
     let project = retrievedProjectList[i];
     // Get project Object
+    let contents = project.contents;
 
+for(i = 0; i<contents.length;i++){
+console.log(contents[i]);
+    contents[i].delete = function(){
+        for(let project of retrievedProjectList){
+            if (project.name == this.project){
+                let contents = project.contents;
+                for(let i = 0; i < contents.length; i++){
+                    if (contents[i].name == this.name){
+                        let index = i;
+                        contents.splice(index, 1);
+                    }
+                }
+            }
+        }
+    }
+}
     newProjectElement(project, retrievedProjectList);
         console.log(`created a project element`);
     let projectElement = document.getElementById(`${project.name}ProjectElement`)
     //Create project element
         projectElement.addEventListener(`click`, function(){
-
-            console.log(`select project event listener added to that project element`)
+console.log(`select project event listener added to that project element`)
             selectProject(projectElement, retrievedProjectList);
         })
-
     let projectName = project.name;
-
     let projectTaskContainer = createElement([`${projectName}taskContainer`, `projectTaskList`], `div`, ``);
     let taskContainer = document.getElementById(`taskContainer`);
         taskContainer.appendChild(projectTaskContainer);
-
-
-
-// ******************************************************************************************
-// I seem to have successfully assigned delete to project, but not task. What's the difference??
-// *********************************************************************************************************
-
-
-
     let projectContents = project.contents;
-
-    console.log(`projectContents: ${projectContents}`)
-
+console.log(`projectContents: ${projectContents}`)
     for (let f = 0; f<projectContents.length;f++){
         let task = projectContents[f];
-
-
-
-// task.delete() = function(retrievedProjectList){
-//     for(let project of retrievedProjectList){
-//         if (project.name == this.project){
-//             let contents = project.contents;
-//             for(let i = 0; i < contents.length; i++){
-//                 if (contents[i].name == this.name){
-//                     let index = i;
-//                     contents.splice(index, 1);
-//                 }
-//             }
-//         }
-//     }
-
-
-// }
-
-
-
-
-
         console.log(`making taskbar for ${task.name}`);
         makeTaskBar(task, retrievedProjectList)
     }
@@ -236,6 +203,17 @@ addListenerToProjectSubmit(retrievedProjectList);
 
 
 console.log(`RETRIEVED LIST PAGE LOAD COMPLETE`)
+
+
+
+
+
+
+
+// I'm noticing that sometimes the misc project div doesn't have isSelected class at page load, so manually adding that here:
+let MiscProjectElement = document.getElementById(`MiscProjectElement`);
+MiscProjectElement.classList.add(`isSelected`);
+
 
 
 
