@@ -211,25 +211,13 @@ function taskCard(task, projectList) {
 
 
 
+// ********************************************************************************************************************
+// I think we can rewrite the following function without using the delete method. This should solve the problem?
+
+
 function deleteTask(task, projectList){
     task.delete();
-
-
-
-
-
-
-
-
-
-
     saveToLocalStorage(projectList);
-
-
-
-
-
-
 
 // ^This deletes the task from the projectList
 // The rest deletes the dom element 

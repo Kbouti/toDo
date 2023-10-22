@@ -32,24 +32,27 @@ function newProjectElement(project, projectList){
             // ^Stops the triggering of outer element event listener
             let userResponse = confirm(`Deleting this project will also delete all the tasks within. Are you sure you want to continue?`);
             if (userResponse == true){
+
+
+
+
+
+// object.delete = function(){
+
+// }
+
+
+// *********************************************************************************               
+// I either need torewrite the delete function as a standard function, or find a way to re-establish the method
+
                 project.delete(projectList);
                 // ^Removes project from projectList and remove element from DOM. 
                 selectMisc(projectList);
                 // ^Applies isSelected attribute to Misc project, applies selected class and unhides Misc taskContainer
             }
 
-
-
-
-
-
             saveToLocalStorage(projectList);
-
-
-
-
-
-
+            
             return;
         })
     newElement.addEventListener(`click`, function(){

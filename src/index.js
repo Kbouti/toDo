@@ -95,6 +95,34 @@ let taskContainer = document.getElementById(`taskContainer`);
 
 for (let i = 0; i < retrievedProjectList.length; i++){
 
+
+
+
+// ************************************************************************************************
+// Here I am attempting to assign the delete method to each project object.
+retrievedProjectList[i].delete = function(projectList){
+    if (this.canDelete = true){
+        //I'm a little confused why this works with single equal sign but not double.....
+        for (let i = 0; i < projectList.length; i++){
+            if (projectList[i].name == this.name){
+                let index = i;
+                projectList.splice(index, 1)
+                let projectName = this.name;
+                let projectTaskContainer = document.getElementById(`${projectName}taskContainer`);
+                let taskContainer = document.getElementById(`taskContainer`);
+                    taskContainer.removeChild(projectTaskContainer);
+                let projectContainer = document.getElementById(`projectContainer`);
+                let thisProject = document.getElementById(`${projectName}ProjectElement`);
+                    projectContainer.removeChild(thisProject);
+            }
+        }
+    }
+
+}
+
+
+
+
     console.log(retrievedProjectList[i].name)
     if(retrievedProjectList[i].name == `Misc`){
         console.log(`found Misc project`);
@@ -103,6 +131,23 @@ for (let i = 0; i < retrievedProjectList.length; i++){
         for (let f = 0; f < MiscContents.length; f++){
             console.log(`making taskbar`)
             makeTaskBar(MiscContents[f], retrievedProjectList);
+
+
+// Here we're attempting to assign the delete method to every task in Misc project
+            MiscContents[f].delete = function(retrievedProjectList){
+                console.log(`Deleting task: ${this.name} from project: ${this.project}`);
+                for(let project of retrievedProjectList){
+                    if (project.name == this.project){
+                        let contents = project.contents;
+                        for(let i = 0; i < contents.length; i++){
+                            if (contents[i].name == this.name){
+                                let index = i;
+                                contents.splice(index, 1);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -135,9 +180,8 @@ for (let i = 1; i<retrievedProjectList.length;i++){
 
 
 // ******************************************************************************************
-// OK I think I got it now except for that My delete method has been removed by the stringification and parsing process. That's the next thing to fix, otherwise I think it's done. 
+// I seem to have successfully assigned delete to project, but not task. What's the difference??
 // *********************************************************************************************************
-
 
 
 
@@ -147,6 +191,29 @@ for (let i = 1; i<retrievedProjectList.length;i++){
 
     for (let f = 0; f<projectContents.length;f++){
         let task = projectContents[f];
+
+
+
+// task.delete() = function(retrievedProjectList){
+//     for(let project of retrievedProjectList){
+//         if (project.name == this.project){
+//             let contents = project.contents;
+//             for(let i = 0; i < contents.length; i++){
+//                 if (contents[i].name == this.name){
+//                     let index = i;
+//                     contents.splice(index, 1);
+//                 }
+//             }
+//         }
+//     }
+
+
+// }
+
+
+
+
+
         console.log(`making taskbar for ${task.name}`);
         makeTaskBar(task, retrievedProjectList)
     }
