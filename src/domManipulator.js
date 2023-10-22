@@ -321,7 +321,7 @@ function selectProject(element, projectList){
 
 
 
-    
+
 
     return;
 }
@@ -337,7 +337,8 @@ export {
     addListenerToProjectSubmit,
     toggleProjectDisplays,
     updateProjectClasses,
-    selectProject
+    selectProject,
+    newProjectElement
 }
 
 

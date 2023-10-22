@@ -24,7 +24,8 @@ import {
     cancelButtons,
     addListenerToTaskSubmit,
     addListenerToProjectSubmit,
-    selectProject
+    selectProject,
+    newProjectElement
 } from './domManipulator';
 
 import {
@@ -78,7 +79,7 @@ cancelButtons(),
 // Create Misc project Dom element (This can't be deleted by user)
 const miscProject = createElement([`MiscProjectElement`, `projectElement`, `clickable`], `div`, `Misc`);
 miscProject.addEventListener(`click`, function(){
-    selectProject(miscProject, projectList);
+    selectProject(miscProject, retrievedProjectList);
 })
 projectContainer = document.getElementById(`projectContainer`);
 projectContainer.appendChild(miscProject);
@@ -91,9 +92,6 @@ let taskContainer = document.getElementById(`taskContainer`);
 //Next we'll need to search through our retrieved projectList and see if there are any tasks in the Misc project, then create dom elements for them. 
 
 
-
-console.log(retrievedProjectList)
-
 for (let i = 0; i < retrievedProjectList.length; i++){
 
     console.log(retrievedProjectList[i].name)
@@ -102,16 +100,54 @@ for (let i = 0; i < retrievedProjectList.length; i++){
         let MiscContents = retrievedProjectList[i].contents;
         console.log(MiscContents);
         for (let f = 0; f < MiscContents.length; f++){
+            console.log(`making taskbar`)
             makeTaskBar(MiscContents[f], retrievedProjectList);
         }
     }
+
+
 }
 
 
-
+// for every project that isn't Misc:
 for (let i = 1; i<retrievedProjectList.length;i++){
-    let projectName = retrievedProjectList[i].name;
+
+    let project = retrievedProjectList[i];
+    // Get project Object
+
+    newProjectElement(project, retrievedProjectList);
+
+    let projectElement = document.getElementById(`${project.name}ProjectElement`)
+    //Create project element
+        projectElement.addEventListener(`click`, function(){
+            selectProject(projectElement, retrievedProjectList);
+        })
+
+    let projectName = project.name;
+    let projectTaskContainer = createElement([`${projectName}taskContainer`, `projectTaskList`], `div`, ``);
     
+    let taskContainer = document.getElementById(`taskContainer`);
+        taskContainer.appendChild(projectTaskContainer);
+
+
+
+// ******************************************************************************************
+// I'm pretty sure it works at this point, the only thing it doesn't do is update the isSelected class of the proper project Element
+
+
+
+
+
+    let projectContents = project.contents;
+
+    console.log(`projectContents: ${projectContents}`)
+
+    for (let f = 0; f<projectContents.length;f++){
+        let task = projectContents[f];
+        console.log(`making taskbar for ${task.name}`);
+        makeTaskBar(task, retrievedProjectList)
+    }
+
 }
 
 
