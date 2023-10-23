@@ -50,6 +50,11 @@ function checkLocalStorage(){
 
 
 function getLocalStorage(){
+    // Retrieves local storage as a string, parse that to get an array of strings, then parse each value again and create an array with those values. 
+
+
+    // Perhaps here would be a good time to add the delete Method?
+
     console.log(`get local storage activated`);
     let rawStorageValue = localStorage.getItem(`projectList`);
     let parsedRaw = JSON.parse(rawStorageValue);
@@ -58,7 +63,6 @@ function getLocalStorage(){
         let parsed = JSON.parse(parsedRaw[i]);
         formattedProjectList.push(parsed);
     }
-    // console.log(`formatted projectList: ${formattedProjectList}`);
     return formattedProjectList;
 }
 

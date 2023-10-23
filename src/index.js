@@ -45,12 +45,10 @@ import { makeTaskBar } from './taskCards';
 
 
 
-
+// Upon page load, check if local storage exists. If so, get local storage. 
 if(checkLocalStorage()){
     let retrievedProjectList = getLocalStorage()
     console.log(`Local storage has been found and projectList retrieved. retrieved list is: ${retrievedProjectList}`)
-// At this point we are checking to see if there is an existing project list, and if there is, we retrieve it and log it. 
-// The next step is to build dom elements based on the retrieved projectList.
 
 
 console.log(`building page with retrieved projectList`);
@@ -73,19 +71,23 @@ displayTaskForm(retrievedProjectList),
 cancelButtons(),
     console.log(`cancelButtons has run`);
 
-// Create Misc project Dom element (This can't be deleted by user)
+// Create Misc project Dom element and append to projectContainer
 const miscProject = createElement([`MiscProjectElement`, `projectElement`, `clickable`], `div`, `Misc`);
-miscProject.addEventListener(`click`, function(){
-    selectProject(miscProject, retrievedProjectList);
-})
-projectContainer = document.getElementById(`projectContainer`);
-projectContainer.appendChild(miscProject);
+    miscProject.addEventListener(`click`, function(){
+        selectProject(miscProject, retrievedProjectList);
+    })
+let projectContainer = document.getElementById(`projectContainer`);
+    projectContainer.appendChild(miscProject);
 
-// Create Misc project task container:
+// Create Misc project task container and append to task container:
 let MisctaskContainer = createElement([`MisctaskContainer`, `projectTaskList`], `div`, ``);
 let taskContainer = document.getElementById(`taskContainer`);
     taskContainer.appendChild(MisctaskContainer)
 
+
+
+
+// Loop through each project and add the ability to delete that project
 for (let i = 0; i < retrievedProjectList.length; i++){
         retrievedProjectList[i].delete = function(projectList){
             if (this.canDelete = true){
@@ -105,93 +107,123 @@ for (let i = 0; i < retrievedProjectList.length; i++){
                 }
             }
         }
+    }
 
 
 
 
-            console.log(retrievedProjectList[i].name)
-            if(retrievedProjectList[i].name == `Misc`){
-                console.log(`found Misc project`);
-                let MiscContents = retrievedProjectList[i].contents;
-                console.log(MiscContents);
-                for (let f = 0; f < MiscContents.length; f++){
-                    console.log(`making taskbar`)
-                    makeTaskBar(MiscContents[f], retrievedProjectList);
 
 
-        // Here we're attempting to assign the delete method to every task in Misc project
 
 
-console.log(MiscContents[f]);
 
-                    MiscContents[f].delete = function(retrievedProjectList){
-                        console.log(`Deleting task: ${this.name} from project: ${this.project}`);
-                        for(let project of retrievedProjectList){
-                            if (project.name == this.project){
-                                let contents = project.contents;
-                                for(let i = 0; i < contents.length; i++){
-                                    if (contents[i].name == this.name){
-                                        let index = i;
-                                        contents.splice(index, 1);
-                                    }
-                                }
+
+// looping through project list again to find misc project, then making task bars for each task in Misc project
+for (let i = 0; i < retrievedProjectList.length; i++){
+    console.log(retrievedProjectList[i].name)
+    if(retrievedProjectList[i].name == `Misc`){
+        console.log(`found Misc project`);
+        let MiscContents = retrievedProjectList[i].contents;
+        console.log(MiscContents);
+        for (let f = 0; f < MiscContents.length; f++){
+            console.log(`making taskbar`)
+            makeTaskBar(MiscContents[f], retrievedProjectList);
+
+
+            // While we've accessed the task, we'll add the delete method
+            MiscContents[f].delete = function(retrievedProjectList){
+                console.log(`Deleting task: ${this.name} from project: ${this.project}`);
+                for(let project of retrievedProjectList){
+                    if (project.name == this.project){
+                        let contents = project.contents;
+                        for(let i = 0; i < contents.length; i++){
+                            if (contents[i].name == this.name){
+                                let index = i;
+                                contents.splice(index, 1);
                             }
                         }
                     }
                 }
             }
+
+
+
+        }
+    }
+}        
+
+
+
+
+
+
+
+
+// for every project that isn't Misc: create project element and task container
+for (let i = 1; i<retrievedProjectList.length;i++){
+    let project = retrievedProjectList[i];
+    let projectName = project.name;
+    console.log(project.name)
+
+
+    //create project element
+    console.log(`creating project element`);
+
+    newProjectElement(project, retrievedProjectList);
+    let projectElement = document.getElementById(`${projectName}ProjectElement`)
+        projectElement.addEventListener(`click`, function(){
+            selectProject(projectElement, retrievedProjectList);
+        })
+    
+    // create project Task container
+    console.log(`creating project task container`)
+    let projectTaskContainer = createElement([`${projectName}taskContainer`, `projectTaskList`], `div`, ``);
+    let taskContainer = document.getElementById(`taskContainer`);
+        taskContainer.appendChild(projectTaskContainer);
+
 }
 
 
-// for every project that isn't Misc:
-for (let i = 1; i<retrievedProjectList.length;i++){
-    let project = retrievedProjectList[i];
-    // Get project Object
-    let contents = project.contents;
 
-for(i = 0; i<contents.length;i++){
-console.log(contents[i]);
-    contents[i].delete = function(){
-        for(let project of retrievedProjectList){
-            if (project.name == this.project){
-                let contents = project.contents;
-                for(let i = 0; i < contents.length; i++){
-                    if (contents[i].name == this.name){
-                        let index = i;
-                        contents.splice(index, 1);
+
+// We now need to create task elements for non-misc project tasks, and add delete function
+// looping through all non-Misc projects:
+for (let i = 1; i< retrievedProjectList.length; i++){
+    let project = retrievedProjectList[i];
+    let projectContents = project.contents;
+    // Looping through the tasks of each project:
+    for (let f = 0; f<projectContents.length; f++){
+        let task = projectContents[f];
+
+
+//Make taskbar
+        makeTaskBar(task, retrievedProjectList);
+
+
+// add delete function
+        console.log(`adding delete function to ${task.name}`);
+        task.delete = function(){
+            for(let project of retrievedProjectList){
+                if (project.name == this.project){
+                    let contents = project.contents;
+                    for(let i = 0; i < contents.length; i++){
+                        if (contents[i].name == this.name){
+                            let index = i;
+                            contents.splice(index, 1);
+                        }
                     }
                 }
             }
         }
     }
 }
-    newProjectElement(project, retrievedProjectList);
-        console.log(`created a project element`);
-    let projectElement = document.getElementById(`${project.name}ProjectElement`)
-    //Create project element
-        projectElement.addEventListener(`click`, function(){
-console.log(`select project event listener added to that project element`)
-            selectProject(projectElement, retrievedProjectList);
-        })
-    let projectName = project.name;
-    let projectTaskContainer = createElement([`${projectName}taskContainer`, `projectTaskList`], `div`, ``);
-    let taskContainer = document.getElementById(`taskContainer`);
-        taskContainer.appendChild(projectTaskContainer);
-    let projectContents = project.contents;
-console.log(`projectContents: ${projectContents}`)
-    for (let f = 0; f<projectContents.length;f++){
-        let task = projectContents[f];
-        console.log(`making taskbar for ${task.name}`);
-        makeTaskBar(task, retrievedProjectList)
-    }
+
+
+
 
 
 updateProjectClasses(retrievedProjectList);
-
-
-}
-
-
+    console.log(`updated project classes`)
 
 
 
@@ -203,18 +235,6 @@ addListenerToProjectSubmit(retrievedProjectList);
 
 
 console.log(`RETRIEVED LIST PAGE LOAD COMPLETE`)
-
-
-
-
-
-
-
-// I'm noticing that sometimes the misc project div doesn't have isSelected class at page load, so manually adding that here:
-// let MiscProjectElement = document.getElementById(`MiscProjectElement`);
-// MiscProjectElement.classList.add(`isSelected`);
-// this is no good -- if there is another project that is selected it will still apply the class to Misc, we don't want that. 
-
 
 
 }
