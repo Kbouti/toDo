@@ -281,3 +281,6 @@ console.log(`FRESH PAGE LOAD COMPLETE`)
 }
 
 
+
+
+// installed lint extension
